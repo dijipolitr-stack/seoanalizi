@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>www.lastikcim.com.tr — 12 Aylık SEO Yol Haritası</title>
+<style>
+
+    @page {
+        margin: 2cm 1.5cm;
+        size: A4;
+        @top-right {
+            content: "Lastikborsasi.com SEO Audit"; /* TODO: Dinamik yapılabilir, ama sağ üst gri başlık */
+            font-size: 9pt;
+            color: #999;
+        }
+        @bottom-center {
+            content: "Sayfa " counter(page) " / " counter(pages);
+            font-size: 10pt;
+            color: #999;
+        }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+        color: #2c3e50;
+        line-height: 1.6;
+        font-size: 11pt;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ana Başlık */
+    .main-title {
+        text-align: center;
+        font-size: 26pt;
+        font-weight: bold;
+        color: #0d2040;
+        margin-top: 1cm;
+        margin-bottom: 0.3cm;
+    }
+
+    .main-title-divider {
+        border-bottom: 3px solid #d4af37;
+        margin: 0 auto 1cm auto;
+        width: 100%;
+    }
+
+    /* Meta kutusu (Hazırlayan vs) */
+    .meta-box {
+        background-color: #fcf9f2;
+        border-left: 6px solid #d4af37;
+        padding: 15px 20px;
+        margin-bottom: 30px;
+        font-size: 10.5pt;
+        color: #555;
+        font-style: italic;
+    }
+    
+    .meta-box strong {
+        font-style: normal;
+        color: #333;
+    }
+
+    /* Başlık 1 (H1) - Sarı sol çizgili bej kutu */
+    h1 {
+        background-color: #fcf9f2;
+        border-left: 8px solid #d4af37;
+        color: #0d2040;
+        font-size: 16pt;
+        font-weight: bold;
+        padding: 12px 15px;
+        margin-top: 2em;
+        margin-bottom: 1em;
+        text-transform: uppercase;
+        page-break-after: avoid;
+    }
+
+    /* Başlık 2 (H2) - Lacivert metin */
+    h2 {
+        color: #0d2040;
+        font-size: 14pt;
+        font-weight: bold;
+        margin-top: 1.5em;
+        margin-bottom: 0.8em;
+        page-break-after: avoid;
+    }
+
+    /* Başlık 3 (H3) */
+    h3 {
+        color: #2c3e50;
+        font-size: 12pt;
+        margin-top: 1.2em;
+        margin-bottom: 0.5em;
+        page-break-after: avoid;
+    }
+
+    /* Satır içi kod (inline code) - Kırmızımsı arka plan */
+    code {
+        background-color: #faebeb;
+        color: #c0392b;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: Consolas, monospace;
+        font-size: 10pt;
+    }
+    
+    pre code {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+    }
+
+    pre {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #e9ecef;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 10.5pt;
+        page-break-inside: avoid;
+    }
+
+    td, th {
+        padding: 10px 14px;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+    }
+    
+    th {
+        background: #fcf9f2;
+        color: #0d2040;
+        font-weight: bold;
+        border-bottom: 2px solid #d4af37;
+    }
+
+    tr:nth-child(even) {
+        background: #fafafa;
+    }
+
+    p {
+        margin-bottom: 1.2em;
+        orphans: 3;
+        widows: 3;
+    }
+    
+    ul, ol {
+        margin-bottom: 1.2em;
+        padding-left: 25px;
+    }
+    
+    li {
+        margin-bottom: 6px;
+    }
+
+    strong {
+        color: #0d2040;
+    }
+    
+/* Header sağ üst metni PDF motoru için */
+@page {
+    @top-right {
+        content: "www.lastikcim.com.tr SEO Audit";
+        font-size: 9pt;
+        color: #aaa;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="main-title">
+    www.lastikcim.com.tr — 12 Aylık SEO Yol Haritası
+</div>
+<div class="main-title-divider"></div>
+
+<div class="meta-box">
+    <strong>Hazırlayan:</strong> Akıllı Watchdog SEO Uzman Analizi &nbsp;&nbsp;&nbsp; 
+    <strong>Tarih:</strong> 15 May 2026 &nbsp;&nbsp;&nbsp; 
+    <strong>Yöntem:</strong> Akıllı Watchdog Bot Crawler, OpenAI (GPT-4o) ve SERP Analizi Entegrasyonu üzerinden üretilmiştir.
+</div>
+
+<h2>0. YÖNETİCİ ÖZETİ</h2>
+<p>Lastikcim.com.tr'nin mevcut SEO durumu, web sitesinin arama motorlarında daha iyi bir sıralama elde etmesi ve kullanıcı deneyimini artırması için acil müdahale gerektiren bazı kritik sorunlar içermektedir. Teknik ve on-page SEO sorunları, sitenin organik trafiğini ve dolayısıyla potansiyel müşteri dönüşüm oranlarını olumsuz etkileyebilir. Bu sorunlar arasında, sayfalarda title tag eksikliği, meta description eksikliği ve H1 etiketi eksikliği gibi temel SEO unsurlarının eksikliği bulunmaktadır. Bu eksiklikler, arama motorlarının sayfaları doğru bir şekilde indekslemesini ve kullanıcıların arama sonuçlarında sitenizi çekici bulmasını zorlaştırmaktadır.</p>
+<p>Ayrıca, schema markup ve görsel alt text gibi daha gelişmiş SEO unsurlarının eksikliği, sitenin arama motoru sonuç sayfalarında (SERP) zengin snippet'ler elde etmesini engellemektedir. Bu durum, sitenin görünürlüğünü ve kullanıcıların dikkatini çekme potansiyelini azaltmaktadır. İç linkleme stratejisinin yetersizliği, sitenin crawl bütçesini verimli kullanmasını engellerken, E-E-A-T (Expertise, Authoritativeness, Trustworthiness) skorunun düşük olması, sitenin güvenilirlik ve otorite sinyallerini zayıflatmaktadır. Bu durum, Google'ın sıralama algoritmalarında önemli bir faktör olan güvenilirlik algısını olumsuz etkileyebilir.</p>
+<p>Bu SEO sorunlarının çözülmesi, Lastikcim.com.tr'nin organik arama performansını artırmak ve kullanıcılar için daha iyi bir deneyim sunmak adına kritik öneme sahiptir. Bu nedenle, 12 aylık bir yol haritası oluşturulmuş ve bu sorunların önceliklendirilerek çözülmesi planlanmıştır. Bu plan, sitenin arama motoru görünürlüğünü artırmak, kullanıcı deneyimini iyileştirmek ve nihayetinde satışları artırmak için stratejik bir yaklaşım sunmaktadır.</p>
+<h2>1. METODOLOJİ — AKSİYONLAR NASIL SIRALANDI?</h2>
+<p>SEO sorunlarının çözümünde etkili bir strateji geliştirmek için ICE (Impact, Confidence, Ease) skorlaması kullanılmıştır. Bu metodoloji, her bir SEO sorununun potansiyel etkisini (Impact), çözümün uygulanabilirliğine olan güveni (Confidence) ve çözümün uygulanma kolaylığını (Ease) değerlendirir. Bu üç faktör, her bir sorunun önceliklendirilmesinde temel alınarak, en yüksek etkiye sahip ve en kolay uygulanabilir çözümler öncelikli olarak ele alınmıştır.</p>
+<ul>
+<li>
+<p><strong>Impact (Etkisi):</strong> Her bir sorunun çözülmesiyle elde edilecek potansiyel fayda değerlendirilmiştir. Örneğin, title tag ve meta description eksikliklerinin giderilmesi, sayfaların arama motorlarında daha iyi indekslenmesini ve daha çekici snippet'ler oluşturulmasını sağlayarak, organik trafiği artırabilir.</p>
+</li>
+<li>
+<p><strong>Confidence (Güven):</strong> Çözümün başarıyla uygulanabileceğine olan güven düzeyi değerlendirilmiştir. Teknik sorunların çözümünde, mevcut kaynakların ve uzmanlığın yeterliliği göz önünde bulundurulmuştur.</p>
+</li>
+<li>
+<p><strong>Ease (Kolaylık):</strong> Çözümün uygulanmasının ne kadar kolay olduğu değerlendirilmiştir. Örneğin, title tag eklemek nispeten basit bir işlemken, E-E-A-T skorunu artırmak daha kapsamlı bir çaba gerektirebilir.</p>
+</li>
+</ul>
+<p>Bu değerlendirmeler sonucunda, SEO sorunları P0, P1 ve P2 olarak önceliklendirilmiştir:</p>
+<ul>
+<li>
+<p><strong>P0 (Acil Öncelik):</strong> Kritik etkisi olan ve kolayca uygulanabilir çözümler. Örneğin, title tag ve meta description eksikliklerinin giderilmesi P0 önceliğinde ele alınacaktır.</p>
+</li>
+<li>
+<p><strong>P1 (Yüksek Öncelik):</strong> Orta düzeyde etkiye sahip ve uygulanabilir çözümler. İç linkleme stratejisinin geliştirilmesi ve görsel alt text eklenmesi bu kategoride yer alabilir.</p>
+</li>
+<li>
+<p><strong>P2 (Orta Öncelik):</strong> Düşük etkiye sahip veya uygulanması daha zor çözümler. E-E-A-T skorunu artırmak için gerekli olan kapsamlı içerik ve güvenilirlik geliştirmeleri bu kategoride değerlendirilecektir.</p>
+</li>
+</ul>
+<p>Bu metodoloji, Lastikcim.com.tr'nin SEO performansını optimize etmek için sistematik ve etkili bir yol haritası sunmaktadır. Her bir adım, sitenin genel arama motoru görünürlüğünü ve kullanıcı deneyimini artırmak için stratejik bir şekilde planlanmıştır.</p>
+<h2>1. Eylem Planı</h2>
+<h3>Aksiyon 1: On-Page SEO: 1 sayfada title tag eksik (ICE: 57.6)</h3>
+<p><strong>I: 8 — C: 9 — E: 8</strong></p>
+<ul>
+<li>
+<p><strong>Sorun:</strong> Title tag'lerin eksik olması, sayfanın Google tarafından doğru bir şekilde indekslenmesini engeller. Title tag'ler, arama motorlarının sayfanın içeriğini anlamasına yardımcı olur ve kullanıcıların arama sonuçlarında sayfanızın ne hakkında olduğunu görmelerini sağlar. Eksik title tag'ler, organik trafik kaybına ve dolayısıyla potansiyel gelir kaybına yol açabilir.</p>
+</li>
+<li>
+<p><strong>Aksiyon:</strong> Eksik olan sayfa için benzersiz bir title tag oluşturulacak. Geliştirici, bu title tag'i HTML koduna ekleyecek. Önerilen format, 30-60 karakter arasında, anahtar kelime odaklı ve kullanıcı dostu bir başlık olacaktır.</p>
+</li>
+<li>
+<p><strong>Maliyet:</strong> Bu işlem, bir geliştirici tarafından yaklaşık 0.5 adam-gün sürecektir. Ortalama bir geliştirici maliyeti günlük 1,000 TL olarak hesaplanırsa, bu aksiyonun maliyeti 500 TL olacaktır.</p>
+</li>
+<li>
+<p><strong>Beklenen Fayda:</strong> Title tag'in eklenmesi, sayfanın arama motoru sonuç sayfalarında (SERP) daha iyi bir sıralama almasına yardımcı olabilir. Bu, organik trafiği artırarak potansiyel olarak aylık %5-10 daha fazla ziyaretçi çekebilir. Eğer mevcut aylık organik trafik 10,000 ziyaretçi ise, bu aksiyon 500-1,000 ek ziyaretçi sağlayabilir. Ortalama dönüşüm oranı %2 ve ortalama sepet değeri 100 TL ise, bu aksiyonun aylık ek gelir potansiyeli 1,000-2,000 TL olabilir.</p>
+</li>
+<li>
+<p><strong>Süre:</strong> Title tag'in eklenmesi ve canlıya alınması 1 gün sürecektir. Google'ın bu değişikliği fark etmesi ve indekslemesi genellikle 1-2 hafta alabilir.</p>
+</li>
+</ul>
+<h3>Aksiyon 2: E-E-A-T: E-E-A-T skoru düşük (0.8/10) (ICE: 50.4)</h3>
+<p><strong>I: 8 — C: 9 — E: 7</strong></p>
+<ul>
+<li>
+<p><strong>Sorun:</strong> E-E-A-T (Uzmanlık, Yetkinlik, Güvenilirlik ve Güvenilirlik) skoru düşük olan siteler, Google'ın gözünde güvenilirlik açısından zayıf görünür. Bu durum, özellikle YMYL (Your Money Your Life) kategorisindeki içerikler için sıralama kaybına neden olabilir. Düşük E-E-A-T skoru, kullanıcıların siteye olan güvenini azaltabilir ve dönüşüm oranlarını düşürebilir.</p>
+</li>
+<li>
+<p><strong>Aksiyon:</strong> Web sitesine Hakkımızda, İletişim ve Gizlilik Politikası sayfaları eklenecek. Ayrıca, sosyal medya hesaplarının linkleri footer'a yerleştirilecek ve müşteri yorumları/puanlama sistemi entegre edilecek. Geliştirici, bu sayfaların oluşturulması ve gerekli entegrasyonların yapılması için çalışacaktır.</p>
+</li>
+<li>
+<p><strong>Maliyet:</strong> Bu aksiyonun tamamlanması yaklaşık 5 adam-gün sürecektir. Geliştirici maliyeti günlük 1,000 TL olarak hesaplandığında, toplam maliyet 5,000 TL olacaktır.</p>
+</li>
+<li>
+<p><strong>Beklenen Fayda:</strong> E-E-A-T skorunun artırılması, sitenin güvenilirliğini artırarak arama motoru sıralamalarında iyileşme sağlayabilir. Bu, organik trafiği %10-15 oranında artırabilir. Mevcut aylık organik trafik 10,000 ziyaretçi ise, bu aksiyon 1,000-1,500 ek ziyaretçi sağlayabilir. Ortalama dönüşüm oranı %2 ve ortalama sepet değeri 100 TL ise, bu aksiyonun aylık ek gelir potansiyeli 2,000-3,000 TL olabilir.</p>
+</li>
+<li>
+<p><strong>Süre:</strong> Sayfaların oluşturulması ve entegrasyonların tamamlanması 1 hafta sürecektir. Google'ın bu değişiklikleri fark etmesi ve indekslemesi 2-4 hafta alabilir.</p>
+</li>
+</ul>
+<h3>Aksiyon 3: On-Page SEO: 1 sayfada H1 etiketi eksik (ICE: 43.2)</h3>
+<p><strong>I: 6 — C: 8 — E: 9</strong></p>
+<ul>
+<li>
+<p><strong>Sorun:</strong> H1 etiketi, bir sayfanın ana konusunu belirtir ve SEO için kritik öneme sahiptir. Eksik H1 etiketi, arama motorlarının sayfanın içeriğini anlamasını zorlaştırabilir ve bu da sıralama kaybına yol açabilir.</p>
+</li>
+<li>
+<p><strong>Aksiyon:</strong> Eksik olan sayfa için açıklayıcı bir H1 etiketi oluşturulacak ve HTML koduna eklenecektir. Geliştirici, bu etiketi sayfanın en üst kısmına yerleştirecektir.</p>
+</li>
+<li>
+<p><strong>Maliyet:</strong> Bu işlem, bir geliştirici tarafından yaklaşık 0.5 adam-gün sürecektir. Ortalama bir geliştirici maliyeti günlük 1,000 TL olarak hesaplanırsa, bu aksiyonun maliyeti 500 TL olacaktır.</p>
+</li>
+<li>
+<p><strong>Beklenen Fayda:</strong> H1 etiketinin eklenmesi, sayfanın SEO performansını artırabilir ve organik trafiği %3-5 oranında artırabilir. Mevcut aylık organik trafik 10,000 ziyaretçi ise, bu aksiyon 300-500 ek ziyaretçi sağlayabilir. Ortalama dönüşüm oranı %2 ve ortalama sepet değeri 100 TL ise, bu aksiyonun aylık ek gelir potansiyeli 600-1,000 TL olabilir.</p>
+</li>
+<li>
+<p><strong>Süre:</strong> H1 etiketinin eklenmesi ve canlıya alınması 1 gün sürecektir. Google'ın bu değişikliği fark etmesi ve indekslemesi genellikle 1-2 hafta alabilir.</p>
+</li>
+</ul>
+<h3>Aksiyon 4: Teknik SEO: Schema markup kapsamı düşük (%0) (ICE: 39.2)</h3>
+<p><strong>I: 7 — C: 8 — E: 7</strong></p>
+<ul>
+<li>
+<p><strong>Sorun:</strong> Schema markup eksikliği, arama motorlarının sayfanın içeriğini anlamasını zorlaştırabilir ve rich snippet gösterimlerini engelleyebilir. Bu, tıklama oranlarını düşürebilir ve organik trafik kaybına yol açabilir.</p>
+</li>
+<li>
+<p><strong>Aksiyon:</strong> Ürün sayfalarına Product, kategori sayfalarına ItemList ve blog yazılarına Article schema markup eklenecektir. Geliştirici, bu markup'ları HTML koduna entegre edecektir.</p>
+</li>
+<li>
+<p><strong>Maliyet:</strong> Bu işlem, bir geliştirici tarafından yaklaşık 3 adam-gün sürecektir. Ortalama bir geliştirici maliyeti günlük 1,000 TL olarak hesaplanırsa, bu aksiyonun maliyeti 3,000 TL olacaktır.</p>
+</li>
+<li>
+<p><strong>Beklenen Fayda:</strong> Schema markup'un eklenmesi, SERP'te rich snippet gösterimlerini artırabilir ve tıklama oranlarını %5-10 oranında artırabilir. Mevcut aylık organik trafik 10,000 ziyaretçi ise, bu aksiyon 500-1,000 ek ziyaretçi sağlayabilir. Ortalama dönüşüm oranı %2 ve ortalama sepet değeri 100 TL ise, bu aksiyonun aylık ek gelir potansiyeli 1,000-2,000 TL olabilir.</p>
+</li>
+<li>
+<p><strong>Süre:</strong> Schema markup'un eklenmesi ve canlıya alınması 3 gün sürecektir. Google'ın bu değişiklikleri fark etmesi ve indekslemesi 2-4 hafta alabilir.</p>
+</li>
+</ul>
+<h3>Aksiyon 5: İç Linkleme: Ortalama iç link sayısı düşük (0.0) (ICE: 39.2)</h3>
+<p><strong>I: 7 — C: 8 — E: 7</strong></p>
+<ul>
+<li>
+<p><strong>Sorun:</strong> Yetersiz iç linkleme, arama motoru botlarının siteyi etkili bir şekilde taramasını engelleyebilir ve crawl bütçesinin verimsiz kullanılmasına neden olabilir. Bu, sayfaların indekslenme hızını yavaşlatabilir ve SEO performansını olumsuz etkileyebilir.</p>
+</li>
+<li>
+<p><strong>Aksiyon:</strong> Her sayfada en az 5-10 ilgili iç link eklenecektir. Geliştirici, bu linkleri sayfa içeriğine doğal bir şekilde entegre edecektir.</p>
+</li>
+<li>
+<p><strong>Maliyet:</strong> Bu işlem, bir geliştirici tarafından yaklaşık 4 adam-gün sürecektir. Ortalama bir geliştirici maliyeti günlük 1,000 TL olarak hesaplanırsa, bu aksiyonun maliyeti 4,000 TL olacaktır.</p>
+</li>
+<li>
+<p><strong>Beklenen Fayda:</strong> İç linklemenin artırılması, sayfaların daha hızlı indekslenmesine ve organik trafiğin %5-10 oranında artmasına yardımcı olabilir. Mevcut aylık organik trafik 10,000 ziyaretçi ise, bu aksiyon 500-1,000 ek ziyaretçi sağlayabilir. Ortalama dönüşüm oranı %2 ve ortalama sepet değeri 100 TL ise, bu aksiyonun aylık ek gelir potansiyeli 1,000-2,000 TL olabilir.</p>
+</li>
+<li>
+<p><strong>Süre:</strong> İç linklerin eklenmesi ve canlıya alınması 4 gün sürecektir. Google'ın bu değişiklikleri fark etmesi ve indekslemesi 2-4 hafta alabilir.</p>
+</li>
+</ul>
+<h3>Aksiyon 6: Görsel SEO: Görsel alt text kapsamı düşük (%0) (ICE: 36.0)</h3>
+<p><strong>I: 5 — C: 9 — E: 8</strong></p>
+<ul>
+<li>
+<p><strong>Sorun:</strong> Görsellerin alt text'lerinin eksik olması, erişilebilirlik sorunlarına ve Google Görseller'de düşük sıralamalara neden olabilir. Alt text, görsellerin arama motorları tarafından anlaşılmasını sağlar ve görsel aramalardan gelen trafiği artırabilir.</p>
+</li>
+<li>
+<p><strong>Aksiyon:</strong> Tüm görsellere açıklayıcı alt text eklenecektir. Format, '{Ürün adı} {özellik}' şeklinde olacaktır (örn: '205/55R16 Michelin lastik'). Geliştirici, bu alt text'leri HTML koduna entegre edecektir.</p>
+</li>
+<li>
+<p><strong>Maliyet:</strong> Bu işlem, bir geliştirici tarafından yaklaşık 2 adam-gün sürecektir. Ortalama bir geliştirici maliyeti günlük 1,000 TL olarak hesaplanırsa, bu aksiyonun maliyeti 2,000 TL olacaktır.</p>
+</li>
+<li>
+<p><strong>Beklenen Fayda:</strong> Alt text'in eklenmesi, görsel aramalardan gelen trafiği %3-5 oranında artırabilir. Mevcut aylık organik trafik 10,000 ziyaretçi ise, bu aksiyon 300-500 ek ziyaretçi sağlayabilir. Ortalama dönüşüm oranı %2 ve ortalama sepet değeri 100 TL ise, bu aksiyonun aylık ek gelir potansiyeli 600-1,000 TL olabilir.</p>
+</li>
+<li>
+<p><strong>Süre:</strong> Alt text'lerin eklenmesi ve canlıya alınması 2 gün sürecektir. Google'ın bu değişiklikleri fark etmesi ve indekslemesi 1-2 hafta alabilir.</p>
+</li>
+</ul>
+<h2>2. Zaman Çizelgesi — 12 Ay Haritası</h2>
+<table>
+<thead>
+<tr>
+<th>Ay</th>
+<th>Aksiyonlar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Aksiyon 1, Aksiyon 2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Aksiyon 3, Aksiyon 4</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Aksiyon 5, Aksiyon 6</td>
+</tr>
+<tr>
+<td>4</td>
+<td>İzleme ve Analiz</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Optimizasyon ve Geri Bildirim</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Ek İçerik ve Linkleme Çalışmaları</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Performans Değerlendirmesi</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Yeni SEO Stratejileri Geliştirme</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Teknik Güncellemeler</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Kullanıcı Deneyimi İyileştirmeleri</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Yıllık SEO Raporu Hazırlığı</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Strateji Gözden Geçirme ve Planlama</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Finansal Özet</h2>
+<p>Bu eylem planı, toplamda 15,000 TL'lik bir yatırım gerektirmektedir. Her bir aksiyonun potansiyel faydaları göz önüne alındığında, toplamda aylık 6,200-10,000 TL ek gelir elde etme potansiyeli bulunmaktadır. Bu, yıllık bazda 74,400-120,000 TL ek gelir anlamına gelir.</p>
+<p>ROI hesaplaması yapıldığında, yatırımın geri dönüş süresi yaklaşık 1.5-2.5 ay olarak öngörülmektedir. Bu, oldukça kısa bir süre olup, yatırımın yüksek verimlilikle geri döneceğini göstermektedir. Ayrıca, bu aksiyonların uzun vadeli etkileri göz önüne alındığında, organik trafik ve gelir artışının sürdürülebilir olması beklenmektedir. </p>
+<p>Bu eylem planı, hem kısa vadede hızlı sonuçlar elde etmeyi hem de uzun vadede sürdürülebilir bir SEO stratejisi oluşturmayı hedeflemektedir. Her bir aksiyonun etkisi, düzenli olarak izlenecek ve gerektiğinde optimizasyonlar yapılacaktır. Bu sayede, SEO performansı sürekli olarak iyileştirilecek ve maksimum fayda sağlanacaktır.</p>
+
+</body>
+</html>

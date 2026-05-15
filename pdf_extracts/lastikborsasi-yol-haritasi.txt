@@ -1,0 +1,378 @@
+=== lastikborsasi-yol-haritasi.txt === (10 sayfa)
+
+Lastikborsasi.com — 12 Aylık SEO Yol
+Haritası
+Bu  rapor  neyi  yapıyor: Önceki  16-keyword  pozisyon  ölçümümüz  "mevcut  durum
+fotoğrafı"ydı. Bu rapor "fotoğraftan sonra hareket planı". Hangi aksiyon önce, hangisi
+sonra, hangisi hiç değil — her birinin sayısal gerekçesiyle.
+Kim için: Lastikborsasi.com'u "müşteri adayımız" varsayan senaryo. Aksiyonlar gerçek
+SEO sorunlarına çözüm önerir. Bot çıktısı için şablon niteliğinde.
+Yöntem: ICE skorlaması (Impact × Confidence × Ease) + finansal etki tahminleri +
+zaman çizelgesi.
+0. HATIRLATMA — MEVCUT DURUM FOTOĞRAFI (3 SATIR)
+16 keyword'ün yarısı top 10'da yok. Programatik ebat sayfaları dominant (%80 #1-2),
+kış  lastiği  özel  sayfaları  yok,  AEO/blog  kategorisi  sıfır,  multi-kategori  (motor  yağı,
+motosiklet) yok. Mevcut güç tek bir kapıdan geliyor, geri kalan boş.
+1. METODOLOJİ — AKSİYONLAR NASIL SIRALANDI?
+Her aksiyon 3 parametreyle puanlandı:
+IMPACT (Etki, 1-10): Eğer yapılırsa kaç keyword'de iyileşme, yaklaşık aylık ek ziyaret/
+ciro  tahmini.  CONFIDENCE  (Olasılık,  1-10): Bu  sonuca  ulaşma  ihtimali.  Domain
+otoritesi yüksek bir site için yüksek; spekülatif şeyler için düşük. EASE (Kolaylık, 1-10):
+Kaynak, süre, teknik karmaşıklık. 1 = çok zor, 10 = kolayca yapılır.
+ICE skoru = (I × C × E) / 10
+Maksimum skor 100. 70+ "P0 ŞİMDİ", 50-69 "P1 NEXT", 30-49 "P2 SONRA", <30
+"P3 DİKKAT İLE".
+Bot çıktısında bu skorlama otomatik renklendirme yapar — kırmızı/sarı/yeşil hızlı görsel
+okuma için.
+Sayfa 1 / 10
+
+---PAGE_BREAK---
+2. AKSİYONLAR — ICE SKORUNA GÖRE SIRALI
+P0 — ÖNCELİK 1 (BU AY BAŞLAYIN)
+Aksiyon 1: Kış lastiği × ebat landing fabrikası kur (ICE: 80)
+I:9 — C:9 — E:10
+Sorun: Ölçtüğümüz 4 ebat × mevsim sorgusundan  3'ü top 10'da yok. "X X X kış
+lastiği" sorguları lastikborsasi'da var ama özel landing değil, genel sayfa yarışa giriyor ve
+sezonda 2-6. sıraya düşüyor.
+Aksiyon: Mevcut ebat × mevsim mimarisini 4 mevsime de uygula — özellikle "kış
+lastiği" ve "4 mevsim" varyantları için. URL şablonu: - /205-55-r16-kis-lastigi - /195-65-
+r15-4-mevsim-lastik - (her ebat için 3 mevsim varyantı = ~150-200 ebat × 3 = 450-600
+yeni sayfa)
+Maliyet: Programatik altyapı zaten var, yeni şablon + içerik tetik kelimesi varyasyonu.
+Tahmini iç geliştirme: 2 hafta × 1 SEO + 1 dev. ~120.000-180.000 TL (tek seferlik).
+Beklenen  fayda: Kasım-Mart  kış  sezonu  lastikborsasi'nın  yıllık  cirosunun  yaklaşık
+%40-50'sini üretir (sektör verisi). Kış lastiği sorgularında #1'e çıkmak, sezonsal trafiği
+2-3 katına çıkarabilir. Konservatif tahmin: yıllık  200-400M TL ek ciro etkisi. ROI:
+1000-2000×.
+Süre: Sayfalar Haziran-Temmuz'da canlıya alınırsa, Ekim'e kadar Google indekslemesi
+olgunlaşır. Kış sezonuna tam zamanında yetişir.
+Lastikborsasi Yol Haritasi
+Sayfa 2 / 10
+
+---PAGE_BREAK---
+Aksiyon 2: Multi-kategori SEO mimarisi (motor yağı, akü, motosiklet) — özel
+kategori hub'ları (ICE: 72)
+I:8 — C:9 — E:10
+Sorun: "Motosiklet lastik fiyatları" ve "5w 30 motor yağı fiyat" sorgularında top 10'da
+yoklar — multi-kategori iddiası Google'da karşılığını bulmamış.
+Aksiyon: Her yan kategori için bağımsız landing fabrikası kur: - Motor yağı: Marka
+× viskozite × araç tipi (örn: "shell helix 5w 30 dizel", "castrol 0w 20 hibrit") — yaklaşık
+150-200 sayfa. - Akü: Marka × amper × araç tipi (örn: "mutlu 60 ah binek", "yiğit 75 ah
+dizel") — ~100 sayfa. - Motosiklet lastik: Ebat × marka × motor tipi — ~120 sayfa.
+Maliyet: 
+Lastik  mimarisinin  kopyası.  Veri  sağlayıcı  entegrasyonu  +  içerik.
+~200.000-300.000 TL tek seferlik.
+Beklenen fayda: Yan kategorilerin lastik dışı ciroya katkısı şu anda muhtemelen %5-10
+civarı. Bu aksiyonla yıllık ek 150-300M TL üretebilir. Lead-aware bir ekleme: lastik alan
+müşteri yağ + akü + jant da satın alır (cross-sell).
+Süre: 3 ay geliştirme + 3 ay indeksleme = 6 ay. Q4 2026'da sonuç.
+Aksiyon 3: AEO/Blog katmanı — "X nedir" sorgu yakalama (ICE: 70)
+I:7 — C:10 — E:10
+Sorun: 2 bilgilendirici sorgu test ettik ("lastik hız endeksi nedir", "run flat lastik nedir"),
+ikisinde de top 10'da yok. AI Search çağında bu kritik bir açık.
+Aksiyon: 50 öncelikli "lastik X nedir" / "lastik nasıl seçilir" / "X farkı nedir" sorgusu için
+uzun,  derinlemesine,  schema'lı  blog  yazıları yaz.  Hedef:  -  HowTo,  FAQ,  Article
+schema'ları - 1500-2500 kelime uzunluğunda - Görsel + video + tablo zengin - Featured
+snippet yapısı (kısa cevap üstte, detay aşağıda) - AI Overview alıntısı için optimize
+İlk  10  keyword  listesi:  1.  lastik  hız  endeksi  nedir  2.  run  flat  lastik  nedir  3.  lastik
+üzerindeki yazılar ne anlama gelir 4. en iyi yaz lastiği markaları 5. kış lastiği ne zaman
+takılır 6. 4 mevsim lastik fayda zarar 7. lastik dot kodu nedir 8. lastik basıncı kaç olmalı
+9. lastik ne zaman değiştirilir 10. yaz kış lastik fark
+Maliyet: Sayfa başına ~10.000-15.000 TL (içerik + uzman görüşü + görselleştirme). 50
+sayfa = 500.000-750.000 TL.
+Beklenen fayda: Bilgilendirici sorgular  funnel başlangıcıdır. Bugün Continental ve
+Bridgestone'a giden trafik, blog yazılarınızdan girip ürün sayfanıza geçecek. Ek aylık
+100K-300K organik ziyaret + ChatGPT/Perplexity alıntıları. Yıllık dolaylı katkı: 80-150M
+TL.
+Süre: 6 aya yayılarak — ilk hafta 5 yazı, sonra haftada 2-3. 30 yazıdan sonra Google
+"tematik otorite" tanır.
+Lastikborsasi Yol Haritasi
+Sayfa 3 / 10
+
+---PAGE_BREAK---
+Aksiyon 4: Staging site indeks temizliği (ICE: 70)
+I:7 — C:10 — E:10
+Sorun: Önceki teknik audit'te tespit ettiğimiz  test.lastikborsasi.com indekslenmiş
+durumda. Bu Google için "duplicate content" sinyali — ana domain'in otoritesi seyrelir.
+Aksiyon: - test.lastikborsasi.com → noindex meta tag + robots.txt disallow - Mevcut
+indeksli  sayfalar  için  Search  Console'dan  "URL  kaldırma"  talep  et  -  Tüm  staging
+URL'lerinde HTTP basic auth aktive et (Google bot bile erişemesin) - DNS seviyesinde
+subdomain'i Google'dan blokla
+Maliyet: 1 dev + 1 SEO uzmanı, 1 gün. ~10.000 TL (gerçek anlamda yok).
+Beklenen  fayda: Bu  anlık  ölçülemez ama  domain  otoritesinin  %5-15  oranında
+kuvvetlenmesini sağlar. Tüm diğer aksiyonların "çarpan" etkisini artırır.
+Süre: 1 gün uygulama, 4-8 hafta Google'ın staging URL'leri index'ten silmesi.
+P1 — ÖNCELİK 2 (3-6 AY İÇİNDE)
+Aksiyon 5: Marka × Desen uzun-kuyruk sayfaları (ICE: 56)
+I:7 — C:8 — E:10
+Sorun: "Michelin Pilot Sport 5" gibi spesifik desen aramaları top 10'da yok. Yabancı
+siteler (michelinman.com, tirerack.com) Türkçe SERP'i istila etmiş.
+Aksiyon: İlk  30  popüler  Türkiye'de  aranan  marka  ×  desen için  optimize  sayfa:  -
+Michelin: Pilot Sport 5, Primacy 4, CrossClimate 2, Latitude Cross, Energy Saver+ -
+Bridgestone: Turanza T005, Turanza 6, Potenza S001, Blizzak LM005, Weather Control
+A005 - Continental: PremiumContact 6/7, WinterContact, AllSeasonContact 2 - Goodyear,
+Pirelli, Hankook, Lassa, Petlas — top desenler
+Her sayfa: Ürün özellikleri + uzman incelemesi + uyumlu araç listesi + benzer modeller
++ alıcı yorumları + ebat seçici + fiyat geçmişi.
+Maliyet: Sayfa başına 8.000-12.000 TL. 30 sayfa = 240.000-360.000 TL.
+Beklenen fayda: Aylık ek 30-80K organik ziyaret. Bu sorgularda  satın alma niyeti
+yüksek (kullanıcı modeli biliyor, fiyat arıyor). Yüksek dönüşüm. Yıllık ek 80-150M TL.
+Süre: 2-4 ay geliştirme + 2 ay indeksleme.
+Aksiyon 6: Featured snippet ve schema agresif uygulaması (ICE: 56)
+I:7 — C:8 — E:10
+Sorun: Bilgilendirici  içeriklerde  lastikborsasi  yok  demiştik.  Buna  eklenmesi  gereken:
+mevcut ürün sayfalarındaki schema markup'ı zenginleştirme.
+Aksiyon: Tüm aktif sayfalara şu schema'ları ekle: -  Product +  Offer schema (fiyat,
+stok,  satıcı  puanı)  —  zaten  kısmen  var,  AggregateOffer ekle  -  BreadcrumbList
+Lastikborsasi Yol Haritasi
+Sayfa 4 / 10
+
+---PAGE_BREAK---
+schema -  Review ve  AggregateRating schema (ürün başına yorum sayısı + puan) -
+FAQ  schema (kategori  sayfalarında  alt  sorular)  -  HowTo  schema (montaj,  bakım
+sayfalarında) - VideoObject schema (varsa demo videoları için)
+Featured snippet için sayfa yapısı revizyonu: - "X X X kış lastiği fiyatı 2026'da X TL'dir."
+gibi kısa, doğrudan cevap paragrafları - H2/H3 başlıklarının soru cümlesi formatında
+olması - 40-60 kelimelik snippet'a uygun paragraflar
+Maliyet: Tek seferlik teknik geliştirme. ~80.000-150.000 TL.
+Beklenen  fayda: SERP'te  öne  çıkan  kutu  yakalama  → CTR  2-3  katına  çıkar.  Aynı
+pozisyondan daha çok tıklama. Mevcut #1 sıralarının değeri %30-50 artar.
+Süre: 1-2 ay.
+Aksiyon 7: Site mimarisi içinde domain otoritesi paylaşımı (ICE: 54)
+I:6 — C:9 — E:10
+Sorun: Önceki  tespit:  OtoPratik (FD  grubu  mağaza  markası)  "lastik  hız  endeksi"
+sorgusunda  7-8.  sıradayken  lastikborsasi.com  yok.  Grup  içi  domain'ler  birbirinin
+SEO'sunu desteklemiyor.
+Aksiyon: Grup içi link mimarisi optimizasyonu: - otopratik.com → lastikborsasi.com'a
+stratejik  içerik  bağlantıları  (footer'da  değil,  içerik  içinde)  -  lastikborsasi.com  →
+otopratik.com'a  (mağaza  bulucu  sayfasından)  -  Cross-promotion:  blog  yazılarında
+karşılıklı  referans  -  Her  grup  şirketi  sitesinde  footer/about  bölümünde
+lastikborsasi.com marka mention'ı
+Maliyet: Düşük. İçerik editörlüğü + frontend güncellemesi. ~20.000-40.000 TL.
+Beklenen fayda: Lastikborsasi'nın domain otoritesi (DR/DA) tahmini 3-5 puan artar.
+Tüm pozisyonlar genel olarak yarım-bir sıra yukarı çıkar. Çarpan etkisi diğer aksiyonların.
+Süre: 2-4 hafta.
+Aksiyon 8: Backlink kampanyası — sektör referansı olma (ICE: 50)
+I:8 — C:7 — E:9
+Sorun: Önceki analizler lastikborsasi'nın güçlü içerik üreticisi olduğunu gösterdi (Fast
+Company  100  listesinde,  kitle  fonlaması,  ciro  açıklamaları).  Ama  backlink  kalitesini
+ölçemedik — bu kategori muhtemelen olgunluk açığı.
+Aksiyon: -  Sektör raporu yayını: "Türkiye Lastik Pazarı 2026" raporu üret, sektör
+gazetecileri  +  ekonomi  sitelerine  basın  bülteni  gönder.  Hedef:  20-30  yeni  dofollow
+backlink. - Veri gazeteciliği: Lastik fiyat trendleri ay ay grafik analizi, Reuters/AA tarzı
+kullanılabilir veri seti yayını - Uzman görüş yazıları: Sektör basınında (otomotiv.com,
+sektorel sayfalar) periyodik analiz makaleleri - Üniversite işbirliği: İTÜ Otomotiv, ODTÜ
+Mühendislik fakülteleriyle akademik içerik üretimi → .edu.tr backlink'leri (çok değerli)
+Lastikborsasi Yol Haritasi
+Sayfa 5 / 10
+
+---PAGE_BREAK---
+Maliyet: PR + içerik + AR-GE. ~300.000-500.000 TL yıllık.
+Beklenen fayda: Domain otoritesi yıl içinde 5-10 puan artar. Tüm sıralamalarda yapısal
+iyileşme. Yıllık dolaylı etki: 100-250M TL.
+Süre: 6-12 ay sürekli kampanya.
+Aksiyon 9: Core Web Vitals + sayfa hızı (ICE: 48)
+I:6 — C:8 — E:10
+Sorun: Önceki audit'te Cloudflare WAF Googlebot'u bile bloklamıştı — bu sadece koruma
+değil,  mobil hız,  LCP,  INP ve  CLS üzerinde bilinmeyen riskler taşıyor olabilir. Ölçüm
+yapmadan kesin söyleyemeyiz.
+Aksiyon: - Google PageSpeed Insights ile tüm popüler 50 sayfayı tara - Core Web Vitals
+(LCP <2.5s, INP <200ms, CLS <0.1) hedeflerini her sayfa için ölçtür - Mobil-first index
+için  lazy  loading,  image  WebP/AVIF  dönüşümü,  JavaScript  bundling  optimizasyonu  -
+Cloudflare WAF kurallarını Googlebot/Bingbot whitelist ile yapılandır
+Maliyet: Performans uzmanı + dev. ~150.000-250.000 TL tek seferlik.
+Beklenen fayda: Mobil sıralama %10-20 boost. Türkiye trafiğinin %70-80'i mobil → ciddi
+etki.
+Süre: 2-3 ay.
+P2 — ÖNCELİK 3 (6-12 AY)
+Aksiyon 10: Araç-bazlı uyumluluk SEO (ICE: 42)
+I:6 — C:7 — E:10
+Sorun: "Toyota Corolla lastik", "Hyundai i20 lastik" gibi araç-bazlı sorgular test ettik —
+lastikborsasi top 10'da pek görünmüyor.
+Aksiyon: Araç-modeli  ×  ebat  eşleştirme  sayfaları:  -  /toyota-corolla-2020-lastik  -  /
+hyundai-i20-2022-lastik - /renault-clio-5-lastik - (Yaklaşık 400 popüler araç modeli × 3-5
+model yılı = 1.500-2.000 sayfa)
+Her sayfa: Aracın fabrika çıkış ebadı + alternatif ebatlar + önerilen lastikler + fiyat
+aralığı + yorumlar.
+Maliyet: Programatik altyapı + araç verisi (TÜV/TÜVTÜRK verileri). ~250.000-400.000
+TL.
+Beklenen fayda: Araç-spesifik aramalar yüksek niyet taşır (kullanıcı modelinizi biliyor,
+doğru lastiği soruyor). Aylık ek 50-150K ziyaret. Yıllık 50-100M TL.
+Süre: 4-6 ay.
+Lastikborsasi Yol Haritasi
+Sayfa 6 / 10
+
+---PAGE_BREAK---
+Aksiyon 11: Uluslararası SEO + hreflang (ICE: 36)
+I:6 — C:6 — E:10
+Sorun: Şirket Almanya'da Tyre Supply GmbH kurmuş, halka arz hazırlığı yapıyor. Ama
+lastikborsasi.com tamamen TR-domestic. Uluslararası dijital genişleme hazır değil.
+Aksiyon: Multi-region site mimarisi: - /tr/ — Türkiye (mevcut) - /de/ — Almanya pazarı - /
+en/ — İngilizce (uluslararası B2B) - /ar/ — Orta Doğu pazarı (Suudi, BAE)
+Her dil için: Hreflang etiketleri, dil-spesifik schema, yerel fiyat para birimi, yerel ödeme
+seçenekleri.
+Maliyet: Yüksek — çoklu dilde içerik + altyapı. ~600.000-1.000.000 TL.
+Beklenen fayda: Uzun vadeli — Almanya pazarı tek başına yıllık ek  200M-1Mr TL
+olabilir. Halka arz değerlemesini katlar.
+Süre: 12-18 ay.
+Aksiyon 12: Video SEO + YouTube kanalı (ICE: 32)
+I:5 — C:8 — E:8
+Sorun: Lastikborsasi'nın YouTube/sosyal görünürlüğü organik trafik kanallarına entegre
+değil.
+Aksiyon: - Marka × Desen incelemeleri (video formatında) - Lastik bakım, takım montaj
+eğitimleri - "X X X kış lastiği test ettim" tarzı influencer/uzman içerikler - Video schema
+markup → Google video carousel'inde görünme
+Maliyet: Video prodüksiyon altyapısı. ~400.000-700.000 TL yıllık.
+Beklenen fayda: Video SERP'ler için ciddi avantaj. YouTube ikinci en büyük arama
+motoru. Brand search 1.5-2x artışı.
+Süre: Sürekli faaliyet — 6 ay yatırım sonrası fayda görünür.
+P3 — ÖNCELİK 4 (DİKKATLE — UYARI)
+Aksiyon 13: AI search optimizasyonu (LLM SEO) (ICE: 24)
+I:8 — C:3 — E:10
+Not: Yüksek etki potansiyeli (I:8) ama düşük güvenirlik (C:3) çünkü bu alan oturmamış,
+deneysel. Etki tahmin edilemiyor.
+Aksiyon: ChatGPT, Perplexity, Google AI Overview, Claude gibi LLM'lere alıntılanma için
+içerik: - Open data formatları (Schema.org Dataset) - Yapay zekanın anlayacağı net
+cevap paragrafları - Markdown-friendly içerik yapıları - LLM'lerin training data'sına dahil
+olacak public/açık erişim içerik
+Maliyet: Mevcut blog stratejisinin uzantısı. Ek ~100.000-200.000 TL yıllık.
+Lastikborsasi Yol Haritasi
+Sayfa 7 / 10
+
+---PAGE_BREAK---
+Beklenen fayda: Bilinmiyor. 2027-2028'de AI search payı yükseldiğinde değeri ortaya
+çıkacak.
+Süre: Sürekli, deneysel.
+3. ZAMAN ÇİZELGESİ — 12 AY HARITASI
+Aksiyonları aylara dağıttığım takvim — paralel ve seri görevleri dengeleyerek:
+Ay
+Yapılacak (P0/P1)
+Beklenen sonuç
+Ay 1
+A1 (kış landing), A4 (staging temizlik), A7 (grup
+içi link) başlat
+Hazırlık tamam
+Ay 2
+A1 yayın, A3 blog (ilk 10 yazı), A6 schema, A9 hız
+Yeni 600 sayfa indekslenmeye
+başlar
+Ay 3
+A2 (motor yağı + akü) başlat, A8 (PR kampanya)
+başlat
+Multi-kategori altyapı kurulur
+Ay 4
+A2 yayın, A5 (Marka × Desen) başlat, A3 (20
+yazı)
+İndeksleme olgunlaşır
+Ay 5
+A5 yayın, A8 (sektör raporu yayını)
+30 yeni backlink
+Ay 6
+A3 (50 yazı tamamlandı), A9 son optimizasyon
+Q1 değerlendirme
+Ay 7
+A10 (araç-bazlı landing) başlat
+—
+Ay 8
+A10 yayın, A11 (uluslararası) başlat
+—
+Ay 9
+A12 (video) başlat
+—
+Ay
+10-12
+A11 olgunlaşma + A13 (AI search deney)
+Yıl sonu hedef: tüm aksiyonlar
+canlı
+Kritik  nokta: A1  (kış  landing) Ekim'den  önce  canlıya  alınmalı,  yoksa  kış  sezonu
+kaçırılır → 200M+ TL kayıp.
+Lastikborsasi Yol Haritasi
+Sayfa 8 / 10
+
+---PAGE_BREAK---
+4. FİNANSAL ÖZET — YATIRIM vs. GERİ DÖNÜŞ
+Toplam yatırım (12 ay)
+Kategori
+Min
+Max
+P0 (4 aksiyon)
+830.000 TL
+1.240.000 TL
+P1 (5 aksiyon)
+790.000 TL
+1.300.000 TL
+P2 (3 aksiyon)
+1.250.000 TL
+2.100.000 TL
+P3 (1 aksiyon)
+100.000 TL
+200.000 TL
+TOPLAM
+~3.0M TL
+~4.8M TL
+Beklenen yıllık ek ciro (konservatif tahmin)
+Aksiyon
+Yıllık etki
+A1 — Kış lastiği landing
+200-400M TL
+A2 — Multi-kategori
+150-300M TL
+A3 — AEO/Blog
+80-150M TL
+A5 — Marka × Desen
+80-150M TL
+A8 — Backlink kampanya
+100-250M TL
+A10 — Araç-bazlı
+50-100M TL
+Diğer (A4, A6, A7, A9, A11, A12) — dolaylı çarpan
+100-200M TL
+TOPLAM EK CİRO TAHMİNİ
+760M - 1.55Mr TL
+ROI hesabı
+Yatırım: ~4M TL ortalama  1 yılda ek ciro: ~1Mr TL ortalama  ROI: ~250× ilk yılda.
+Yıllık tekrarlayan büyüme (yatırım amorti olduktan sonra): Tüm bu sayfalar ve mimari
+kalıcı asset.
+Hiç bir şey yapılmazsa ne olur?
+"Yapmama  maliyeti": -  Akakce,  Cimri,  Trendyol  pazaryeri  olarak  agresifleşiyor  -
+Continental, Bridgestone gibi üreticiler kendi DTC kanallarını güçlendiriyor - AI search
+çağında bilgilendirici içerik üretmemek sektörel önderlik kaybı demek - Mevcut %80 lider
+olduğu  "ebat  fiyat"  kategorisinde  rakipler  programatik  geçişi  tamamlarsa
+Lastikborsasi'nın 2-3 yıl içinde liderliği erir
+Status quo'nun kaybı: Yıllık 300-600M TL fırsat maliyeti.
+Lastikborsasi Yol Haritasi
+Sayfa 9 / 10
+
+---PAGE_BREAK---
+5. ÖZET — 3 SATIRDA TAMAMI
+Acil  (Ay  1-3): Kış  lastiği  landing  fabrikası  +  multi-kategori  altyapı  +  AEO  blog
+başlangıcı + staging temizlik.  Yatırım: ~1.2M TL. Beklenen yıllık etki: 500M+
+TL.
+Önemli (Ay 4-6): Marka × Desen + schema agresif + backlink + grup içi domain +
+Core Web Vitals. Yatırım: ~1.3M TL. Beklenen yıllık etki: 300M+ TL.
+Stratejik (Ay 7-12): Araç-bazlı landing + uluslararası açılım + video SEO + AI
+search  hazırlığı.  Yatırım:  ~2.3M  TL.  Beklenen  yıllık  etki:  250M+  TL  ve
+uluslararası halka arz değerleme katkısı.
+EK — BOT İÇİN BU RAPORUN DİJİTAL ÇIKTI ŞABLONU
+Bu raporun yapısı, botun her müşteriye üreteceği çıktının iskeleti olmalı. Bot mantığı:
+1. Müşteri URL'ini al
+2. Pozisyon ölçümü yap (DataForSEO ile 50 keyword)
+3. Sektör tespiti yap (otomatik klasifikasyon)
+4. Sektör için altın benchmark seti yükle
+5. Açıkları tespit et — kategori-bazlı
+6. Her açık için aksiyon önerisi üret (önceden hazırlanmış playbook'tan)
+7. ICE skorlama yap
+8. Yatırım vs. ciro tahminini hesapla
+9. PDF rapor üret + lead form
+10. Müşteriyi ücretli strateji çağrısına yönlendir
+Bot  çıktısı  sabit  format üretir  ama  müşteri  verisiyle  özelleşir.  Her  müşteri  bu
+raporun aynısını alır ama içeriği farklı olur — bot'un satış gücü tam olarak budur.
+Bu  yol  haritası,  lastikborsasi.com  müşteri  olsaydı  vereceğimiz  değer  ürünü.  Aynı
+framework her sektör için kullanılabilir — bot'un evrensel çıktı şablonu burada başlar.
+1. 
+2. 
+3. 
+Lastikborsasi Yol Haritasi
+Sayfa 10 / 10
+
+---PAGE_BREAK---

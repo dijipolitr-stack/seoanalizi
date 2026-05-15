@@ -1,0 +1,15 @@
+# SEO Analyzer Bot — Gereksinimler
+# ===================================
+
+# HTTP istekleri
+requests>=2.31.0
+
+# HTML parse
+beautifulsoup4>=4.12.0
+
+# LLM — Groq
+groq>=0.4.0
+
+# PDF üretimi ve Formatlama
+playwright>=1.40.0
+markdown>=3.5.0

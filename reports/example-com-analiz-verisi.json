@@ -1,0 +1,382 @@
+{
+  "domain": "example.com",
+  "analysis_date": "2026-05-15T11:11:18.082493",
+  "crawl_summary": {
+    "pages_crawled": 1,
+    "duration": 0.9587180614471436,
+    "ssl_valid": true,
+    "robots_accessible": false,
+    "sitemap_accessible": false
+  },
+  "technical_seo": {
+    "score": 77.0,
+    "issues": [
+      {
+        "severity": "WARNING",
+        "category": "redirect",
+        "title": "HTTP → HTTPS yönlendirmesi yok",
+        "description": "HTTP versiyonundan HTTPS'e otomatik yönlendirme tespit edilemedi.",
+        "affected_urls": [],
+        "recommendation": "Tüm HTTP trafiğini 301 redirect ile HTTPS'e yönlendirin."
+      },
+      {
+        "severity": "WARNING",
+        "category": "robots",
+        "title": "robots.txt erişilemiyor",
+        "description": "robots.txt dosyasına erişilemiyor. Bu dosya arama motoru botlarına hangi sayfaları tarayabileceklerini söyler.",
+        "affected_urls": [],
+        "recommendation": "Kök dizine uygun bir robots.txt dosyası ekleyin."
+      },
+      {
+        "severity": "WARNING",
+        "category": "sitemap",
+        "title": "XML Sitemap bulunamadı",
+        "description": "sitemap.xml veya sitemap_index.xml erişilemiyor. Sitemap, Google'ın sayfalarınızı keşfetmesini hızlandırır.",
+        "affected_urls": [],
+        "recommendation": "XML sitemap oluşturup /sitemap.xml adresinde yayınlayın."
+      },
+      {
+        "severity": "WARNING",
+        "category": "meta",
+        "title": "1 sayfada meta description eksik",
+        "description": "Meta description olmayan sayfalarda Google kendi snippet'ini oluşturur.",
+        "affected_urls": [
+          "https://example.com"
+        ],
+        "recommendation": "Her sayfaya 120-160 karakter arası özgün meta description yazın."
+      },
+      {
+        "severity": "WARNING",
+        "category": "schema",
+        "title": "Schema markup kapsamı düşük (%0)",
+        "description": "1 sayfanın sadece 0'inde schema var. Schema markup SERP'te rich snippet gösterimini sağlar.",
+        "affected_urls": [],
+        "recommendation": "Ürün sayfalarına Product, kategori sayfalarına ItemList, blog yazılarına Article schema ekleyin."
+      }
+    ],
+    "ssl_status": {
+      "valid": true,
+      "issuer": "CLOUDFLARE, INC.",
+      "expiry": "Jul  1 21:24:46 2026 GMT"
+    },
+    "robots_status": {
+      "accessible": false,
+      "content_length": 0,
+      "has_sitemap_ref": false,
+      "has_disallow": false
+    },
+    "sitemap_status": {
+      "accessible": false,
+      "url": "",
+      "url_count": 0
+    },
+    "url_analysis": {
+      "total_urls": 1,
+      "long_urls": 0,
+      "param_urls": 0,
+      "uppercase_urls": 0,
+      "underscore_urls": 0,
+      "deep_urls": 0
+    },
+    "meta_analysis": {
+      "missing_title": 0,
+      "long_title": 0,
+      "short_title": 1,
+      "duplicate_titles": 0,
+      "missing_description": 1,
+      "long_description": 0,
+      "short_description": 0,
+      "missing_canonical": 1
+    },
+    "heading_analysis": {
+      "missing_h1": 0,
+      "multiple_h1": 0,
+      "empty_h1": 0
+    },
+    "schema_analysis": {
+      "total_pages": 1,
+      "pages_with_schema": 0,
+      "coverage_percent": 0.0,
+      "schema_types": {},
+      "pages_without_schema": 1
+    },
+    "speed_analysis": {
+      "avg_load_time": 0.04,
+      "min_load_time": 0.04,
+      "max_load_time": 0.04,
+      "slow_pages": 0
+    },
+    "mobile_analysis": {
+      "viewport_coverage": 100.0,
+      "pages_without_viewport": 0
+    },
+    "redirect_analysis": {
+      "https_redirect": false,
+      "www_redirect": false
+    }
+  },
+  "onpage_seo": {
+    "score": 72.0,
+    "issues": [
+      {
+        "severity": "WARNING",
+        "category": "content",
+        "title": "1 sayfada thin content var (<300 kelime)",
+        "description": "Az içerikli sayfalar Google'ın 'Helpful Content' filtresine takılabilir. Ortalama kelime sayısı: 21",
+        "affected_urls": [
+          "https://example.com"
+        ],
+        "recommendation": "Thin content sayfalarını en az 500 kelimeye çıkarın, veya ilgili sayfalarla birleştirin."
+      },
+      {
+        "severity": "WARNING",
+        "category": "images",
+        "title": "Görsel alt text kapsamı düşük (%0)",
+        "description": "0 görselden 0'inde alt text yok. Alt text hem erişilebilirlik hem Google Görseller SEO'su için önemli.",
+        "affected_urls": [],
+        "recommendation": "Tüm görsellere açıklayıcı alt text ekleyin. Format: '{Ürün adı} {özellik}' (örn: '205/55R16 Michelin lastik')"
+      },
+      {
+        "severity": "WARNING",
+        "category": "links",
+        "title": "Ortalama iç link sayısı düşük (0.0)",
+        "description": "Az iç link, crawl bütçesinin verimsiz kullanılması demektir.",
+        "affected_urls": [],
+        "recommendation": "Her sayfada en az 5-10 ilgili iç link bulundurun."
+      },
+      {
+        "severity": "WARNING",
+        "category": "eeat",
+        "title": "E-E-A-T skoru düşük (0.8/10)",
+        "description": "12 kriterden sadece 1'i karşılanıyor. Google, güvenilirlik sinyallerini sıralama için kullanır.",
+        "affected_urls": [],
+        "recommendation": "Hakkımızda, İletişim, Gizlilik Politikası sayfaları ekleyin. Sosyal medya linklerini footer'a koyun. Müşteri yorumları/puanlama sistemi ekleyin."
+      }
+    ],
+    "content_stats": {
+      "total_pages": 1,
+      "avg_word_count": 21.0,
+      "min_word_count": 21,
+      "max_word_count": 21,
+      "thin_content_pages": [
+        "https://example.com"
+      ],
+      "pages_without_images": [
+        "https://example.com"
+      ],
+      "images_without_alt": 0,
+      "total_images": 0,
+      "alt_coverage": 0
+    },
+    "link_stats": {
+      "avg_internal_links": 0.0,
+      "avg_external_links": 1.0,
+      "orphan_pages": [],
+      "pages_without_internal_links": [
+        "https://example.com"
+      ],
+      "total_unique_internal": 0,
+      "total_unique_external": 1,
+      "external_domains": {
+        "iana.org": 1
+      }
+    },
+    "eeat_signals": {
+      "signals": {
+        "about": false,
+        "contact": false,
+        "privacy": false,
+        "terms": false,
+        "return": false,
+        "faq": false,
+        "blog": false,
+        "ssl": true,
+        "social_media": false,
+        "phone_number": false,
+        "email": false,
+        "reviews": false
+      },
+      "score": 0.8,
+      "details": {}
+    },
+    "title_analysis": {
+      "total_with_title": 1,
+      "avg_length": 14.0,
+      "too_long": 0,
+      "too_short": 1,
+      "with_year": 0,
+      "with_brand_suffix": 0
+    },
+    "keyword_patterns": {
+      "trust_keywords": {},
+      "total_trust_mentions": 0,
+      "cta_count": 0,
+      "has_pricing_language": false,
+      "has_urgency_language": false
+    }
+  },
+  "actions": [
+    {
+      "id": 1,
+      "title": "On-Page SEO: 1 sayfada meta description eksik",
+      "category": "On-Page SEO",
+      "impact": 8,
+      "confidence": 9,
+      "ease": 8,
+      "ice_score": 57.6,
+      "priority": "P1",
+      "description": "Meta description olmayan sayfalarda Google kendi snippet'ini oluşturur.",
+      "recommendation": "Her sayfaya 120-160 karakter arası özgün meta description yazın.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "1 sayfada meta description eksik"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Teknik SEO: HTTP → HTTPS yönlendirmesi yok",
+      "category": "Teknik SEO",
+      "impact": 7,
+      "confidence": 9,
+      "ease": 9,
+      "ice_score": 56.7,
+      "priority": "P1",
+      "description": "HTTP versiyonundan HTTPS'e otomatik yönlendirme tespit edilemedi.",
+      "recommendation": "Tüm HTTP trafiğini 301 redirect ile HTTPS'e yönlendirin.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "HTTP → HTTPS yönlendirmesi yok"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Teknik SEO: XML Sitemap bulunamadı",
+      "category": "Teknik SEO",
+      "impact": 7,
+      "confidence": 9,
+      "ease": 9,
+      "ice_score": 56.7,
+      "priority": "P1",
+      "description": "sitemap.xml veya sitemap_index.xml erişilemiyor. Sitemap, Google'ın sayfalarınızı keşfetmesini hızlandırır.",
+      "recommendation": "XML sitemap oluşturup /sitemap.xml adresinde yayınlayın.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "XML Sitemap bulunamadı"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "E-E-A-T: E-E-A-T skoru düşük (0.8/10)",
+      "category": "E-E-A-T",
+      "impact": 8,
+      "confidence": 9,
+      "ease": 7,
+      "ice_score": 50.4,
+      "priority": "P1",
+      "description": "12 kriterden sadece 1'i karşılanıyor. Google, güvenilirlik sinyallerini sıralama için kullanır.",
+      "recommendation": "Hakkımızda, İletişim, Gizlilik Politikası sayfaları ekleyin. Sosyal medya linklerini footer'a koyun. Müşteri yorumları/puanlama sistemi ekleyin.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "E-E-A-T skoru düşük (0.8/10)"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Teknik SEO: robots.txt erişilemiyor",
+      "category": "Teknik SEO",
+      "impact": 6,
+      "confidence": 8,
+      "ease": 10,
+      "ice_score": 48.0,
+      "priority": "P2",
+      "description": "robots.txt dosyasına erişilemiyor. Bu dosya arama motoru botlarına hangi sayfaları tarayabileceklerini söyler.",
+      "recommendation": "Kök dizine uygun bir robots.txt dosyası ekleyin.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "robots.txt erişilemiyor"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Teknik SEO: Schema markup kapsamı düşük (%0)",
+      "category": "Teknik SEO",
+      "impact": 7,
+      "confidence": 8,
+      "ease": 7,
+      "ice_score": 39.2,
+      "priority": "P2",
+      "description": "1 sayfanın sadece 0'inde schema var. Schema markup SERP'te rich snippet gösterimini sağlar.",
+      "recommendation": "Ürün sayfalarına Product, kategori sayfalarına ItemList, blog yazılarına Article schema ekleyin.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "Schema markup kapsamı düşük (%0)"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "İç Linkleme: Ortalama iç link sayısı düşük (0.0)",
+      "category": "İç Linkleme",
+      "impact": 7,
+      "confidence": 8,
+      "ease": 7,
+      "ice_score": 39.2,
+      "priority": "P2",
+      "description": "Az iç link, crawl bütçesinin verimsiz kullanılması demektir.",
+      "recommendation": "Her sayfada en az 5-10 ilgili iç link bulundurun.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "Ortalama iç link sayısı düşük (0.0)"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Görsel SEO: Görsel alt text kapsamı düşük (%0)",
+      "category": "Görsel SEO",
+      "impact": 5,
+      "confidence": 9,
+      "ease": 8,
+      "ice_score": 36.0,
+      "priority": "P2",
+      "description": "0 görselden 0'inde alt text yok. Alt text hem erişilebilirlik hem Google Görseller SEO'su için önemli.",
+      "recommendation": "Tüm görsellere açıklayıcı alt text ekleyin. Format: '{Ürün adı} {özellik}' (örn: '205/55R16 Michelin lastik')",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "Görsel alt text kapsamı düşük (%0)"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "İçerik: 1 sayfada thin content var (<300 kelime)",
+      "category": "İçerik",
+      "impact": 7,
+      "confidence": 8,
+      "ease": 6,
+      "ice_score": 33.6,
+      "priority": "P2",
+      "description": "Az içerikli sayfalar Google'ın 'Helpful Content' filtresine takılabilir. Ortalama kelime sayısı: 21",
+      "recommendation": "Thin content sayfalarını en az 500 kelimeye çıkarın, veya ilgili sayfalarla birleştirin.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "1 sayfada thin content var (<300 kelime)"
+      ]
+    }
+  ]
+}

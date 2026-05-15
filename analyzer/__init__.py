@@ -1,0 +1,1 @@
+# SEO Analyzer — Analiz Modülleri

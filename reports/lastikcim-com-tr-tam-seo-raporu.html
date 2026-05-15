@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>www.lastikcim.com.tr — 360° SEO Audit Raporu</title>
+<style>
+
+    @page {
+        margin: 2cm 1.5cm;
+        size: A4;
+        @top-right {
+            content: "Lastikborsasi.com SEO Audit"; /* TODO: Dinamik yapılabilir, ama sağ üst gri başlık */
+            font-size: 9pt;
+            color: #999;
+        }
+        @bottom-center {
+            content: "Sayfa " counter(page) " / " counter(pages);
+            font-size: 10pt;
+            color: #999;
+        }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+        color: #2c3e50;
+        line-height: 1.6;
+        font-size: 11pt;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ana Başlık */
+    .main-title {
+        text-align: center;
+        font-size: 26pt;
+        font-weight: bold;
+        color: #0d2040;
+        margin-top: 1cm;
+        margin-bottom: 0.3cm;
+    }
+
+    .main-title-divider {
+        border-bottom: 3px solid #d4af37;
+        margin: 0 auto 1cm auto;
+        width: 100%;
+    }
+
+    /* Meta kutusu (Hazırlayan vs) */
+    .meta-box {
+        background-color: #fcf9f2;
+        border-left: 6px solid #d4af37;
+        padding: 15px 20px;
+        margin-bottom: 30px;
+        font-size: 10.5pt;
+        color: #555;
+        font-style: italic;
+    }
+    
+    .meta-box strong {
+        font-style: normal;
+        color: #333;
+    }
+
+    /* Başlık 1 (H1) - Sarı sol çizgili bej kutu */
+    h1 {
+        background-color: #fcf9f2;
+        border-left: 8px solid #d4af37;
+        color: #0d2040;
+        font-size: 16pt;
+        font-weight: bold;
+        padding: 12px 15px;
+        margin-top: 2em;
+        margin-bottom: 1em;
+        text-transform: uppercase;
+        page-break-after: avoid;
+    }
+
+    /* Başlık 2 (H2) - Lacivert metin */
+    h2 {
+        color: #0d2040;
+        font-size: 14pt;
+        font-weight: bold;
+        margin-top: 1.5em;
+        margin-bottom: 0.8em;
+        page-break-after: avoid;
+    }
+
+    /* Başlık 3 (H3) */
+    h3 {
+        color: #2c3e50;
+        font-size: 12pt;
+        margin-top: 1.2em;
+        margin-bottom: 0.5em;
+        page-break-after: avoid;
+    }
+
+    /* Satır içi kod (inline code) - Kırmızımsı arka plan */
+    code {
+        background-color: #faebeb;
+        color: #c0392b;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: Consolas, monospace;
+        font-size: 10pt;
+    }
+    
+    pre code {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+    }
+
+    pre {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #e9ecef;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 10.5pt;
+        page-break-inside: avoid;
+    }
+
+    td, th {
+        padding: 10px 14px;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+    }
+    
+    th {
+        background: #fcf9f2;
+        color: #0d2040;
+        font-weight: bold;
+        border-bottom: 2px solid #d4af37;
+    }
+
+    tr:nth-child(even) {
+        background: #fafafa;
+    }
+
+    p {
+        margin-bottom: 1.2em;
+        orphans: 3;
+        widows: 3;
+    }
+    
+    ul, ol {
+        margin-bottom: 1.2em;
+        padding-left: 25px;
+    }
+    
+    li {
+        margin-bottom: 6px;
+    }
+
+    strong {
+        color: #0d2040;
+    }
+    
+/* Header sağ üst metni PDF motoru için */
+@page {
+    @top-right {
+        content: "www.lastikcim.com.tr SEO Audit";
+        font-size: 9pt;
+        color: #aaa;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="main-title">
+    www.lastikcim.com.tr — 360° SEO Audit Raporu
+</div>
+<div class="main-title-divider"></div>
+
+<div class="meta-box">
+    <strong>Hazırlayan:</strong> Akıllı Watchdog SEO Uzman Analizi &nbsp;&nbsp;&nbsp; 
+    <strong>Tarih:</strong> 15 May 2026 &nbsp;&nbsp;&nbsp; 
+    <strong>Yöntem:</strong> Akıllı Watchdog Bot Crawler, OpenAI (GPT-4o) ve SERP Analizi Entegrasyonu üzerinden üretilmiştir.
+</div>
+
+<h1>0. YÖNETİCİ ÖZETİ</h1>
+<p>www.lastikcim.com.tr, Türkiye'nin lastik sektöründe faaliyet gösteren önemli bir e-ticaret platformudur. Sektördeki konumunu güçlendirmek amacıyla dijital pazarlama stratejilerine odaklanan site, kullanıcılarına geniş bir ürün yelpazesi sunmaktadır. SEO mimari olgunluğu açısından değerlendirildiğinde, site bazı temel SEO uygulamalarını yerine getirmiş olsa da, daha fazla iyileştirme potansiyeline sahiptir. Bu rapor, sitenin mevcut SEO durumunu detaylı bir şekilde analiz ederek, güçlü yönlerini ve iyileştirilmesi gereken alanları ortaya koymaktadır.</p>
+<p>Sitenin teknik SEO skoru 79.0 olarak belirlenmiştir, bu da temel SEO gereksinimlerinin büyük ölçüde karşılandığını göstermektedir. Ancak, bu skorun daha üst seviyelere taşınması için bazı kritik alanlarda geliştirmeler yapılması gerekmektedir. Özellikle, sitenin içerik kalitesi ve kullanıcı deneyimi gibi faktörler üzerinde daha fazla çalışılması, sektördeki rekabet gücünü artıracaktır. Ayrıca, sitenin SSL sertifikasının geçerli olması ve robots.txt ile sitemap dosyalarının erişilebilir olması, teknik altyapının sağlam olduğunu göstermektedir.</p>
+<p>SEO mimarisinin olgunluğu açısından, www.lastikcim.com.tr'nin mevcut durumu, temel SEO uygulamalarının ötesine geçerek daha stratejik bir yaklaşım benimsemesi gerektiğini işaret etmektedir. Özellikle, içerik stratejisi ve kullanıcı etkileşimini artıracak unsurların geliştirilmesi, sitenin arama motorlarındaki görünürlüğünü artıracaktır. Bu bağlamda, site yönetiminin SEO stratejilerini sürekli olarak güncelleyerek, sektördeki değişimlere hızlı bir şekilde adapte olması önem arz etmektedir.</p>
+<p><strong>Güçlü Yönler:</strong></p>
+<ul>
+<li>
+<p><strong>Teknik Performans:</strong> Sitenin teknik skoru 79.0 olup, sektördeki ortalama benchmark olan 75'in üzerindedir. Bu, sitenin teknik altyapısının genel olarak iyi durumda olduğunu göstermektedir. Özellikle, sayfa yükleme süresinin 0.58 saniye ile oldukça hızlı olması, kullanıcı deneyimini olumlu yönde etkilemektedir.</p>
+</li>
+<li>
+<p><strong>SSL Sertifikası:</strong> Sitenin SSL sertifikasının geçerli olması, kullanıcı güvenliğini sağlamaktadır. Bu durum, arama motorları tarafından olumlu bir sinyal olarak algılanmakta ve sıralamalara olumlu katkı sağlamaktadır.</p>
+</li>
+<li>
+<p><strong>Robots ve Sitemap Erişilebilirliği:</strong> Sitenin robots.txt ve sitemap.xml dosyalarının erişilebilir olması, arama motorlarının siteyi daha iyi taramasını ve dizine eklemesini kolaylaştırmaktadır. Bu, sitenin SEO performansını artıran önemli bir faktördür.</p>
+</li>
+<li>
+<p><strong>Benchmark Üstünlüğü:</strong> Sitenin genel SEO skoru, sektör benchmark'ının üzerinde yer almaktadır. Bu, sitenin rekabetçi bir SEO performansına sahip olduğunu ve mevcut stratejilerin etkili bir şekilde uygulandığını göstermektedir.</p>
+</li>
+<li>
+<p><strong>Hız Avantajı:</strong> Sitenin sayfa yükleme süresi, sektör ortalamasının oldukça altında olup, kullanıcı deneyimini iyileştirmektedir. Hızlı yükleme süreleri, kullanıcıların sitede daha uzun süre kalmasını ve dönüşüm oranlarının artmasını sağlamaktadır.</p>
+</li>
+</ul>
+<p><strong>Sayısal Özet Tablosu:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Kategori</th>
+<th>Değer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Teknik Skor</td>
+<td>79.0</td>
+</tr>
+<tr>
+<td>Toplam İndekslenebilir Sayfa</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Tahmini Ölçek</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Ortalama Yükleme Süresi</td>
+<td>0.58</td>
+</tr>
+<tr>
+<td>Ortalama İçerik Kelime Sayısı</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Backlink Domain Otoritesi</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Referans Domain Sayısı</td>
+<td>51</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Kritik Açıklar ve Risk Noktaları:</strong></p>
+<p>www.lastikcim.com.tr'nin SEO performansını olumsuz etkileyebilecek bazı kritik açıklar ve risk noktaları bulunmaktadır. İlk olarak, sitenin içerik stratejisi zayıf görünmektedir. Ortalama kelime sayısının 0 olması, sitenin içerik açısından zengin olmadığını göstermektedir. Bu durum, arama motorlarının siteyi daha düşük kaliteli olarak değerlendirmesine neden olabilir. İçerik kalitesinin artırılması, sitenin arama motorlarındaki sıralamalarını iyileştirebilir.</p>
+<p>İkinci olarak, sitenin E-E-A-T (Uzmanlık, Yetkinlik, Güvenilirlik) sinyalleri yetersizdir. Hakkında, iletişim, gizlilik politikası gibi önemli sayfaların eksikliği, sitenin güvenilirlik algısını zayıflatmaktadır. Bu sayfaların oluşturulması, hem kullanıcı güvenini artıracak hem de arama motorları tarafından olumlu bir sinyal olarak değerlendirilecektir. Ayrıca, schema markup kapsamının %0 olması, sitenin arama motorları tarafından daha iyi anlaşılmasını engellemektedir. Schema markup kullanımı, sitenin arama sonuçlarında daha zengin bir görünüm kazanmasına yardımcı olabilir.</p>
+<p>Sonuç olarak, www.lastikcim.com.tr'nin SEO performansını artırmak için içerik kalitesine ve E-E-A-T sinyallerine odaklanması gerekmektedir. Bu alanlarda yapılacak iyileştirmeler, sitenin arama motorlarındaki görünürlüğünü ve kullanıcı etkileşimini artıracaktır.</p>
+<h1>1. TEKNİK SEO — ALTYAPI KATMANI</h1>
+<h2>1.1 Domain ve Teknoloji Yığını (Gözlem)</h2>
+<p>Domain, bir web sitesinin internet üzerindeki adresidir ve bu adresin doğru yapılandırılması, SEO performansı açısından kritik öneme sahiptir. "lastikcim.com.tr" domaini, Türkiye'ye özgü ".tr" uzantısına sahip olup, yerel SEO stratejileri için avantaj sağlayabilir. Subdomain kullanımı, genellikle farklı içerik türlerini veya hizmetleri ayırmak için tercih edilir, ancak bu web sitesinde subdomain kullanımı gözlemlenmemiştir. Subdomainlerin doğru kullanımı, SEO açısından faydalı olabilir çünkü arama motorları subdomainleri ayrı bir site olarak değerlendirebilir.</p>
+<p>Bot koruması, web sitesinin arama motoru botları tarafından taranmasını kontrol etmek için kullanılan bir mekanizmadır. Bot koruması, sitenin tarama bütçesini optimize etmek ve kötü niyetli botlardan korunmak için önemlidir. Ancak, aşırı bot koruması, arama motorlarının siteyi taramasını engelleyebilir ve bu da SEO performansını olumsuz etkileyebilir. Web Application Firewall (WAF), web uygulamalarını çeşitli saldırılardan koruyan bir güvenlik katmanıdır. WAF, sitenin güvenliğini artırırken, aynı zamanda doğru yapılandırılmadığında arama motoru botlarının erişimini kısıtlayabilir.</p>
+<p>Sunucu yanıt süreçleri, bir kullanıcının veya botun bir sayfayı talep etmesi ile sunucunun bu talebe yanıt vermesi arasında geçen süreyi kapsar. Bu süreç, sayfa yükleme sürelerini etkileyebilir ve dolayısıyla kullanıcı deneyimi ve SEO performansı üzerinde doğrudan bir etkiye sahiptir. Hızlı sunucu yanıt süreleri, arama motorlarının siteyi daha verimli bir şekilde taramasına olanak tanır.</p>
+<h2>1.2 URL Yapısı ve Değerlendirme</h2>
+<p><strong>Güçlü Yanlar:</strong><br />
+1. <strong>Kısa ve Anlamlı URL'ler:</strong> Web sitesinde kullanılan URL'ler kısa ve anlamlıdır. Bu durum, hem kullanıcı deneyimini iyileştirir hem de arama motorlarının URL'leri daha kolay anlamasına yardımcı olur.<br />
+2. <strong>Parametre Kullanımının Azlığı:</strong> URL'lerde parametre kullanımının olmaması, arama motorlarının sayfaları daha kolay taramasına ve indekslemesine olanak tanır. Parametreler, genellikle tarama bütçesini tüketebilir ve indeksleme sorunlarına yol açabilir.<br />
+3. <strong>Tutarlı Slug Mimarisi:</strong> Slug'lar, URL'lerin son kısmını oluşturur ve genellikle sayfanın konusunu özetler. Tutarlı ve açıklayıcı slug kullanımı, hem kullanıcılar hem de arama motorları için faydalıdır.</p>
+<p><strong>Zayıf Yanlar:</strong><br />
+1. <strong>Kategori ID'lerinin Eksikliği:</strong> URL yapısında kategori ID'lerinin olmaması, site hiyerarşisinin ve içerik organizasyonunun arama motorları tarafından tam olarak anlaşılmasını zorlaştırabilir.<br />
+2. <strong>URL'lerde Büyük Harf Kullanımı:</strong> Her ne kadar mevcut analizde büyük harf kullanımı olmasa da, URL'lerde büyük harf kullanımı, farklı URL'lerin aynı içeriğe işaret etmesine neden olabilir ve bu da kopya içerik sorunlarına yol açabilir.<br />
+3. <strong>Derin URL Yapısı:</strong> Derin URL yapıları, arama motorlarının sayfaları taramasını zorlaştırabilir. Ancak, mevcut analizde derin URL'lerin olmaması bu sorunu minimize etmektedir.</p>
+<h2>1.3 HTTPS, Redirect Zincirleri ve Canonical</h2>
+<p>HTTPS, bir web sitesinin güvenliğini sağlamak için kullanılan bir protokoldür ve SSL sertifikası ile desteklenir. "lastikcim.com.tr" domaini, geçerli bir SSL sertifikasına sahip olup, Google Trust Services tarafından sağlanmaktadır. Bu, kullanıcı verilerinin güvenliğini sağlarken, aynı zamanda arama motorları tarafından bir sıralama faktörü olarak değerlendirilmektedir.</p>
+<p>Redirect zincirleri, bir URL'nin başka bir URL'ye yönlendirilmesi sürecinde oluşan birden fazla yönlendirme adımını ifade eder. Bu zincirler, sayfa yükleme sürelerini artırabilir ve arama motoru botlarının sayfaları taramasını zorlaştırabilir. Mevcut analizde, HTTPS ve www yönlendirmelerinin doğru yapılandırıldığı gözlemlenmiştir, bu da kullanıcıların ve botların doğru URL'ye yönlendirilmesini sağlamaktadır.</p>
+<p>Canonical etiketler, arama motorlarına bir sayfanın hangi sürümünün indekslenmesi gerektiğini belirtir. Bu etiketlerin doğru kullanımı, kopya içerik sorunlarını önler ve tarama bütçesinin daha verimli kullanılmasına yardımcı olur. Ancak, analizde bir sayfada canonical etiketin eksik olduğu belirtilmiştir. Bu durum, arama motorlarının hangi sayfayı indekslemesi gerektiği konusunda kararsız kalmasına neden olabilir.</p>
+<h2>1.4 Robots.txt ve Sitemap.xml Stratejisi</h2>
+<p>Robots.txt dosyası, arama motoru botlarına hangi sayfaların taranıp taranamayacağını belirtir. Bu dosya, sitenin tarama bütçesini optimize etmek için kritik öneme sahiptir. Mevcut analizde, robots.txt dosyasının erişilebilir olduğu ve disallow komutları içerdiği belirtilmiştir. Bu, belirli sayfaların arama motorları tarafından taranmasını engelleyerek tarama bütçesinin daha verimli kullanılmasını sağlar.</p>
+<p>Sitemap.xml, bir web sitesindeki sayfaların listesini içeren bir dosyadır ve arama motorlarının siteyi daha etkili bir şekilde taramasına yardımcı olur. Sitemap'in erişilebilir olduğu ve 7 URL içerdiği belirtilmiştir. Ancak, sitemap'in kapsamının genişletilmesi, daha fazla sayfanın arama motorları tarafından taranmasını ve indekslenmesini sağlayabilir.</p>
+<h2>1.5 Mobil Uyumluluk ve Core Web Vitals (Hız)</h2>
+<p>Mobil uyumluluk, bir web sitesinin mobil cihazlarda ne kadar iyi çalıştığını ifade eder. Mobil cihazlardan yapılan aramaların artmasıyla birlikte, mobil uyumluluk SEO için kritik bir faktör haline gelmiştir. Mevcut analizde, sitenin %100 viewport coverage sağladığı ve tüm sayfaların mobil uyumlu olduğu belirtilmiştir.</p>
+<p>Core Web Vitals, bir web sitesinin kullanıcı deneyimini değerlendiren bir dizi metrikten oluşur. LCP (Largest Contentful Paint), CLS (Cumulative Layout Shift) ve FID (First Input Delay) gibi metrikler, sayfa yükleme süreleri ve etkileşim süreleri hakkında bilgi sağlar. Ortalama yükleme süresinin 0.58 saniye olduğu belirtilmiştir, bu da oldukça hızlı bir performans sergilediğini göstermektedir. Ancak, CLS ve FID gibi metriklerin de değerlendirilmesi, kullanıcı deneyimini daha da iyileştirebilir.</p>
+<h2>1.6 Schema Markup (Yapısal Veri) Ekosistemi</h2>
+<p>Schema markup, arama motorlarına bir sayfanın içeriği hakkında daha fazla bilgi veren bir kod yapısıdır. Bu markup'lar, arama sonuçlarında rich snippet olarak adlandırılan zengin sonuçların gösterilmesini sağlar. Mevcut analizde, schema markup kapsamının %0 olduğu ve hiçbir sayfanın schema içermediği belirtilmiştir.</p>
+<table>
+<thead>
+<tr>
+<th>Schema Türü</th>
+<th>Sayfa Sayısı</th>
+<th>Etki</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product</td>
+<td>0</td>
+<td>Ürün sayfalarında ürün bilgilerini zenginleştirir.</td>
+</tr>
+<tr>
+<td>Review</td>
+<td>0</td>
+<td>Kullanıcı yorumlarını ve değerlendirmelerini öne çıkarır.</td>
+</tr>
+<tr>
+<td>BreadcrumbList</td>
+<td>0</td>
+<td>Sayfa hiyerarşisini ve kullanıcı yolunu gösterir.</td>
+</tr>
+<tr>
+<td>Organization</td>
+<td>0</td>
+<td>Şirket bilgilerini ve iletişim detaylarını sunar.</td>
+</tr>
+</tbody>
+</table>
+<p>Schema markup'ların eksikliği, sitenin arama sonuçlarında zengin snippet'ler göstermesini engelleyebilir. Özellikle ürün sayfalarında Product schema kullanımı, ürün bilgilerini öne çıkararak kullanıcıların dikkatini çekebilir. Benzer şekilde, Review schema, kullanıcı yorumlarını ve değerlendirmelerini arama sonuçlarında göstererek kullanıcıların satın alma kararlarını etkileyebilir. BreadcrumbList schema, kullanıcıların site içindeki konumlarını anlamalarına yardımcı olurken, Organization schema, şirket bilgilerini arama sonuçlarında daha belirgin hale getirebilir. Bu nedenle, schema markup'ların stratejik bir şekilde uygulanması, sitenin arama motoru görünürlüğünü ve kullanıcı etkileşimini artırabilir.</p>
+<h3>2.1 Hiyerarşi Haritası</h3>
+<p>Bir e-ticaret sitesinin bilgi mimarisi, kullanıcıların ürünleri kolayca bulabilmesi ve sitenin arama motorları tarafından etkili bir şekilde taranabilmesi için kritik öneme sahiptir. Lastikcim.com.tr için önerilen bir hiyerarşi haritası aşağıdaki gibi olabilir:</p>
+<pre><code>- Anasayfa
+  - Ürün Kategorileri
+    - Lastikler
+      - Yaz Lastikleri
+      - Kış Lastikleri
+      - 4 Mevsim Lastikler
+    - Jantlar
+      - Alüminyum Jantlar
+      - Çelik Jantlar
+    - Aksesuarlar
+      - Lastik Basınç Sensörleri
+      - Bijonlar
+  - Markalar
+    - Marka A
+    - Marka B
+    - Marka C
+  - Blog
+    - Lastik Bakımı
+    - Mevsimsel Lastik Seçimi
+    - Güvenli Sürüş İpuçları
+</code></pre>
+<h3>2.2 Hiyerarşi Kalitesi ve Tıklama Derinliği</h3>
+<p><strong>3 Tıklama Kuralı:</strong> E-ticaret sitelerinde kullanıcı deneyimini artırmak için yaygın bir kural, kullanıcıların aradıkları ürüne en fazla üç tıklama ile ulaşabilmeleridir. Lastikcim.com.tr'nin hiyerarşisi, kullanıcıların ana kategorilerden alt kategorilere ve nihayetinde ürün sayfalarına hızlı bir şekilde erişmelerini sağlamalıdır. Önerilen yapı, ana sayfadan başlayarak ürün kategorileri ve alt kategoriler aracılığıyla kullanıcıları ürün sayfalarına yönlendirir. Bu, kullanıcıların aradıkları bilgilere hızla ulaşmalarını sağlar ve siteyi daha kullanıcı dostu hale getirir.</p>
+<p><strong>Yatay Genişleme:</strong> Yatay genişleme, ana kategorilerin sayısını artırarak kullanıcıların daha geniş bir ürün yelpazesine doğrudan erişim sağlamasına olanak tanır. Lastikcim.com.tr'nin mevcut yapısı, lastikler, jantlar ve aksesuarlar gibi ana kategorilere sahip olmalıdır. Bu kategoriler, kullanıcıların doğrudan ilgilendikleri ürün türlerine erişmelerini sağlar. Ancak, çok fazla ana kategori eklemek, kullanıcıları bunaltabilir ve seçim yapmayı zorlaştırabilir. Bu nedenle, her kategori altında anlamlı ve iyi organize edilmiş alt kategoriler sunmak önemlidir.</p>
+<p><strong>Dikey Derinlik:</strong> Dikey derinlik, bir kategorinin alt kategoriler ve ürün sayfaları ile ne kadar derine indiğini ifade eder. Lastikcim.com.tr için önerilen yapı, kullanıcıların ana kategorilerden alt kategorilere ve nihayetinde ürün sayfalarına ulaşmasını sağlar. Dikey derinliğin fazla olması, kullanıcıların aradıkları ürünlere ulaşmasını zorlaştırabilir ve siteyi karmaşık hale getirebilir. Bu nedenle, her alt kategori, kullanıcıların ihtiyaç duyduğu belirli ürün türlerini kolayca bulabilmeleri için dikkatlice yapılandırılmalıdır.</p>
+<h3>2.3 Subdomain vs. Subdirectory Kararı</h3>
+<p>SEO açısından, bir sitenin blog içeriğini subdomain (örneğin, blog.lastikcim.com.tr) yerine subdirectory (örneğin, lastikcim.com.tr/blog) altında barındırması genellikle daha faydalıdır. Subdirectory kullanımı, ana domainin otoritesini ve link equity'sini daha etkili bir şekilde blog içeriğine aktarır. Bu, blog yazılarının arama motorlarında daha iyi sıralanmasına yardımcı olabilir. </p>
+<p>Lastikcim.com.tr'nin mevcut SEO sorunları göz önüne alındığında, blog içeriğinin subdirectory altında tutulması, sitenin genel SEO performansını artırabilir. Subdirectory yapısı, ana sitenin otoritesinden faydalanarak blog yazılarının daha hızlı indekslenmesine ve daha yüksek sıralamalar elde etmesine olanak tanır. Ayrıca, kullanıcılar için daha tutarlı bir deneyim sunar, çünkü blog içeriği ana siteyle aynı URL yapısını paylaşır.</p>
+<p>Öte yandan, subdomain kullanımı, blog içeriğini ana siteden bağımsız hale getirir ve ayrı bir SEO stratejisi gerektirebilir. Bu, blogun kendi başına otorite kazanmasını zorlaştırabilir ve daha fazla kaynak gerektirebilir. Bu nedenle, Lastikcim.com.tr gibi bir e-ticaret sitesi için, blog içeriğinin subdirectory altında barındırılması, SEO otoritesinin daha etkili bir şekilde aktarılmasını ve genel site performansının iyileştirilmesini sağlayabilir.</p>
+<p>Sonuç olarak, Lastikcim.com.tr'nin bilgi mimarisi, kullanıcı deneyimini optimize etmek ve SEO performansını artırmak için dikkatlice yapılandırılmalıdır. Hiyerarşi haritası, tıklama derinliği ve subdirectory kullanımı gibi faktörler, sitenin genel başarısını etkileyen önemli unsurlardır.</p>
+<h3>5.1 Core Web Vitals ve Sayfa Hızı Öngörüleri</h3>
+<p>Core Web Vitals, Google'ın bir web sitesinin kullanıcı deneyimini değerlendirmek için kullandığı üç temel metrikten oluşur: Largest Contentful Paint (LCP), First Input Delay (FID) ve Cumulative Layout Shift (CLS). Bu metrikler, özellikle e-ticaret siteleri için kritik öneme sahiptir çünkü kullanıcıların siteyle etkileşime geçme hızını ve genel deneyimlerini doğrudan etkiler.</p>
+<p><strong>Largest Contentful Paint (LCP)</strong>, bir sayfanın ana içeriğinin yüklenmesi için geçen süreyi ölçer. E-ticaret siteleri için bu, ürün görsellerinin veya önemli içeriklerin hızlı bir şekilde yüklenmesi anlamına gelir. Yavaş LCP süreleri, kullanıcıların sayfayı terk etmesine neden olabilir, bu da potansiyel satış kaybı demektir. Verilere göre, analiz edilen site için ortalama yükleme süresi 0.58 saniye olarak belirtilmiş, bu da oldukça iyi bir performans gösteriyor. Ancak, bu süreyi daha da iyileştirmek, kullanıcı deneyimini ve dolayısıyla dönüşüm oranlarını artırabilir.</p>
+<p><strong>First Input Delay (FID)</strong>, bir kullanıcının bir sayfayla etkileşime geçmeye çalıştığında (örneğin, bir butona tıkladığında) yanıt alması için geçen süreyi ölçer. E-ticaret siteleri için bu, kullanıcıların hızlı bir şekilde ürünleri sepete ekleyebilmesi veya filtreleri kullanabilmesi anlamına gelir. FID'nin düşük olması, kullanıcıların siteyi daha akıcı bir şekilde kullanmalarını sağlar. Verilerde FID ile ilgili doğrudan bir bilgi bulunmamakla birlikte, genel sayfa yükleme süresinin düşük olması, FID'nin de muhtemelen iyi olduğunu gösterir.</p>
+<p><strong>Cumulative Layout Shift (CLS)</strong>, sayfa yüklenirken beklenmedik düzen değişikliklerini ölçer. E-ticaret sitelerinde bu, kullanıcıların yanlışlıkla istenmeyen ürünlere tıklamasına veya yanlış işlemler yapmasına neden olabilir. CLS'nin düşük olması, kullanıcıların sayfayı daha rahat ve güvenli bir şekilde kullanmalarını sağlar. Analiz edilen site için CLS ile ilgili spesifik bir veri verilmemiş olsa da, genel olarak düşük CLS değerleri, kullanıcı memnuniyetini artırır.</p>
+<p>SEO açısından, sayfa hızı ve Core Web Vitals metrikleri, Google'ın sıralama algoritmasında önemli bir rol oynar. Hızlı yüklenen ve iyi optimize edilmiş bir site, arama motoru sonuçlarında daha üst sıralarda yer alabilir. Bu, daha fazla organik trafik ve potansiyel müşteri anlamına gelir. Dolayısıyla, e-ticaret siteleri için Core Web Vitals metriklerini optimize etmek, hem kullanıcı deneyimini hem de SEO performansını iyileştirmek için kritik öneme sahiptir.</p>
+<h3>5.2 Bot Koruması ve Tarama Bütçesi</h3>
+<p>Web sitelerinde kullanılan agresif Web Application Firewall (WAF) veya Cloudflare gibi koruma mekanizmaları, genellikle güvenliği artırmak ve kötü niyetli botları engellemek için kullanılır. Ancak, bu tür korumalar, Googlebot gibi arama motoru tarayıcılarının siteyi taramasını da etkileyebilir. Eğer bu korumalar doğru bir şekilde yapılandırılmamışsa, Googlebot'un siteyi taraması engellenebilir veya yavaşlatılabilir. Bu da sitenin indekslenmesini ve arama motoru sıralamalarını olumsuz etkileyebilir.</p>
+<p>İlk olarak, agresif bir WAF veya Cloudflare koruması, Googlebot'un siteye erişimini zorlaştırabilir. Eğer Googlebot, siteye erişim sağlamakta zorluk çekerse, bu durum tarama bütçesinin etkili bir şekilde kullanılmasını engelleyebilir. Tarama bütçesi, Googlebot'un belirli bir zaman diliminde bir siteyi ne kadar tarayabileceğini belirler. Eğer Googlebot, siteye erişim sağlamakta zorluk çekerse, bu durum tarama bütçesinin etkili bir şekilde kullanılmasını engelleyebilir. Bu da sitenin yeni içeriklerinin veya güncellemelerinin geç indekslenmesine neden olabilir.</p>
+<p>İkinci olarak, bu tür korumalar, Googlebot'un siteyi tararken karşılaştığı hataların artmasına neden olabilir. Eğer Googlebot, siteyi tararken sürekli olarak hata mesajları alıyorsa, bu durum tarama bütçesinin boşa harcanmasına yol açabilir. Ayrıca, Googlebot'un siteyi tararken karşılaştığı hataların artması, sitenin arama motoru sıralamalarını da olumsuz etkileyebilir. Bu nedenle, WAF veya Cloudflare gibi koruma mekanizmalarının, Googlebot'un siteyi sorunsuz bir şekilde tarayabilmesi için doğru bir şekilde yapılandırılması önemlidir.</p>
+<p>Son olarak, bu tür korumalar, Googlebot'un siteyi tararken karşılaştığı hataların artmasına neden olabilir. Eğer Googlebot, siteyi tararken sürekli olarak hata mesajları alıyorsa, bu durum tarama bütçesinin boşa harcanmasına yol açabilir. Ayrıca, Googlebot'un siteyi tararken karşılaştığı hataların artması, sitenin arama motoru sıralamalarını da olumsuz etkileyebilir. Bu nedenle, WAF veya Cloudflare gibi koruma mekanizmalarının, Googlebot'un siteyi sorunsuz bir şekilde tarayabilmesi için doğru bir şekilde yapılandırılması önemlidir. Bu, genellikle Googlebot'un IP adreslerinin beyaz listeye alınması veya belirli tarama kurallarının uygulanması ile sağlanabilir.</p>
+<p>On-page SEO, bir web sitesinin arama motoru sıralamalarını iyileştirmek için sayfa içeriğinin ve HTML kaynak kodunun optimize edilmesini içerir. Ürün ve kategori sayfaları, e-ticaret siteleri için kritik öneme sahiptir çünkü bu sayfalar genellikle kullanıcıların aradıkları ürünleri buldukları ve satın alma kararlarını verdikleri yerlerdir. Bu nedenle, bu sayfaların SEO açısından optimize edilmesi, hem kullanıcı deneyimini artırmak hem de arama motoru sıralamalarını iyileştirmek için hayati önem taşır. Şimdi, bu optimizasyonun farklı yönlerini detaylı bir şekilde inceleyelim.</p>
+<h3>3.1 Title ve Meta Description Şablonları</h3>
+<p>Title ve meta description etiketleri, arama motoru sonuç sayfalarında (SERP) görünen ilk unsurlardır ve kullanıcıların sayfanıza tıklayıp tıklamayacaklarını büyük ölçüde etkiler. İyi bir title etiketi, sayfanın içeriğini doğru bir şekilde yansıtmalı ve kullanıcıların dikkatini çekmelidir. Title uzunlukları genellikle 50-60 karakter arasında tutulmalı, çünkü daha uzun başlıklar arama motoru sonuçlarında kesilebilir. Bu kesilme, kullanıcıların sayfanızın ne hakkında olduğunu tam olarak anlamalarını zorlaştırabilir.</p>
+<p>Meta description ise, sayfanızın içeriğini özetleyen kısa bir paragraftır. Bu açıklama, genellikle 150-160 karakter arasında olmalıdır. Meta description, kullanıcıları sayfanıza çekmek için bir fırsattır ve benzersiz satış tekliflerinizi (USP) içermelidir. Örneğin, "Ücretsiz kargo", "24 saat içinde teslimat" gibi ifadeler, kullanıcıların dikkatini çekebilir ve tıklama oranlarını artırabilir.</p>
+<h3>3.2 H1 / H2 / H3 Hiyerarşisi</h3>
+<p>Başlık etiketleri (H1, H2, H3 vb.), sayfa içeriğinin yapısını belirlemek ve arama motorlarına içeriğin önem sırasını göstermek için kullanılır. Ürün ve kategori sayfalarında başlık hiyerarşisi, hem kullanıcı deneyimi hem de SEO için önemlidir. H1 etiketi, sayfanın ana başlığıdır ve her sayfada yalnızca bir kez kullanılmalıdır. Bu etiket, sayfanın ana konusunu özetlemelidir.</p>
+<p>H2 ve H3 etiketleri, içeriği daha küçük bölümlere ayırmak için kullanılır. Bu etiketler, sayfanın okunabilirliğini artırır ve kullanıcıların aradıkları bilgiyi hızlı bir şekilde bulmalarına yardımcı olur. Başlık hiyerarşisinin semantik temizliği, arama motorlarının sayfanızın içeriğini daha iyi anlamasına yardımcı olur ve bu da sıralamalarınızı olumlu yönde etkileyebilir.</p>
+<h3>3.3 Ürün Açıklamaları ve Duplicate Content (Kopya İçerik) Riski</h3>
+<p>Ürün açıklamaları, kullanıcıların satın alma kararlarını etkileyen önemli bir unsurdur. A kalite ürünler için özgün ve detaylı açıklamalar yazmak, hem kullanıcı deneyimini artırır hem de arama motorları tarafından olumlu değerlendirilir. Özgün içerik, sitenizin benzersizliğini korur ve kopya içerik riskini azaltır. Kopya içerik, arama motorları tarafından cezalandırılabilir ve sıralamalarınızı olumsuz etkileyebilir.</p>
+<p>Düşük kuyruklu (long-tail) ürünler için ise, genellikle şablon metinler kullanılır. Bu metinler, ürünün temel özelliklerini ve faydalarını özetler. Ancak, bu tür metinlerin de mümkün olduğunca özgün ve kullanıcı odaklı olması önemlidir. Her ürün için benzersiz bir açıklama yazmak, kullanıcıların ürün hakkında daha fazla bilgi edinmelerine yardımcı olur ve satın alma kararlarını olumlu yönde etkileyebilir.</p>
+<h3>3.4 Görsel Optimizasyon ve Alt Metinler (Alt Text)</h3>
+<p>Görseller, ürün ve kategori sayfalarının vazgeçilmez bir parçasıdır. Ancak, görsellerin arama motorları tarafından doğru bir şekilde anlaşılabilmesi için optimize edilmesi gerekir. Görsel optimizasyonunun en önemli unsurlarından biri, alt metin (alt text) kullanımıdır. Alt metin, bir görselin ne hakkında olduğunu açıklayan kısa bir metindir ve arama motorları tarafından görselin içeriğini anlamak için kullanılır.</p>
+<p>Alt metin, görselin içeriğini doğru bir şekilde yansıtmalı ve anahtar kelimeler içermelidir. Ancak, anahtar kelime doldurma (keyword stuffing) yapılmamalıdır. Alt metinler, aynı zamanda erişilebilirlik açısından da önemlidir. Görme engelli kullanıcılar, ekran okuyucular aracılığıyla alt metinleri dinleyerek görselin içeriği hakkında bilgi edinebilirler.</p>
+<h3>3.5 İç Linkleme (Internal Linking) ve Hub-Spoke Yapısı</h3>
+<p>İç linkleme, bir web sitesindeki sayfalar arasında bağlantılar oluşturarak otorite akışını sağlamaya yardımcı olur. İyi bir iç linkleme stratejisi, kullanıcıların site içinde kolayca gezinmelerine ve aradıkları bilgilere hızlı bir şekilde ulaşmalarına yardımcı olur. Ayrıca, arama motorları için de sitenizin yapısını anlamayı kolaylaştırır.</p>
+<p>Hub-spoke yapısı, iç linkleme stratejisinde sıkça kullanılan bir modeldir. Bu yapıda, ana bir sayfa (hub) etrafında toplanan ilgili sayfalar (spokes) bulunur. Örneğin, bir kategori sayfası (hub), o kategoriye ait ürün sayfalarına (spokes) bağlanabilir. Bu yapı, kullanıcıların ilgili içeriklere kolayca ulaşmalarını sağlar ve arama motorları için de sitenizin yapısını daha anlaşılır hale getirir.</p>
+<p>Sonuç olarak, ürün ve kategori sayfalarının on-page SEO optimizasyonu, hem kullanıcı deneyimini artırmak hem de arama motoru sıralamalarını iyileştirmek için kritik öneme sahiptir. Başlık ve meta description etiketlerinden başlık hiyerarşisine, ürün açıklamalarından görsel optimizasyona kadar birçok faktör, bu optimizasyon sürecinde dikkate alınmalıdır. İç linkleme stratejileri ise, site içi otorite akışını sağlamak ve kullanıcıların site içinde daha iyi bir deneyim yaşamalarına yardımcı olmak için önemlidir.</p>
+<h1>4. İçerik Stratejisi ve E-E-A-T Değerlendirmesi</h1>
+<h2>4.1 Blog Yapısı Genel Görünümü</h2>
+<p>Verilen veriler ışığında, sitenin içerik yönetim sistemi (CMS) ve içerik yapısının detaylı bir analizi yapılmamış olsa da, bazı temel eksiklikler dikkat çekmektedir. Örneğin, içerik sayfalarının toplam sayısı, ortalama kelime sayısı, minimum ve maksimum kelime sayısı gibi metrikler belirtilmemiştir. Bu durum, sitenin içerik derinliği ve kapsamı hakkında net bir fikir edinmeyi zorlaştırmaktadır.</p>
+<p>Yayın sıklığı ve yazar profili varlığı gibi unsurlar da belirtilmemiştir. Bu tür bilgiler, sitenin içerik stratejisinin etkinliğini değerlendirmek için kritik öneme sahiptir. Örneğin, düzenli ve sık güncellenen bir blog, kullanıcılar ve arama motorları nezdinde daha fazla değer kazanabilir. Yazar profili varlığı ise, içeriklerin güvenilirliğini ve otoritesini artırabilir.</p>
+<h2>4.2 İçerik Tipolojisi</h2>
+<h3>Tanımlayıcı İçerik</h3>
+<p>Tanımlayıcı içerikler, genellikle bir konu veya kavram hakkında temel bilgiler sunar. Bu tür içerikler, kullanıcıların belirli bir konuda hızlı ve anlaşılır bilgi edinmelerine yardımcı olur. Tanımlayıcı içerikler, genellikle giriş seviyesindeki kullanıcılar için tasarlanmıştır ve karmaşık konuları basit bir dille açıklar. Bu nedenle, SEO açısından da değerlidir, çünkü kullanıcıların sıkça aradığı temel sorulara yanıt verir.</p>
+<p>Ancak, tanımlayıcı içeriklerin kalitesi, içeriğin derinliği ve doğruluğuna bağlıdır. Yüzeysel veya yanlış bilgiler içeren tanımlayıcı içerikler, kullanıcı deneyimini olumsuz etkileyebilir ve sitenin güvenilirliğini zedeleyebilir. Bu nedenle, tanımlayıcı içeriklerin hazırlanmasında dikkatli bir araştırma süreci izlenmeli ve güvenilir kaynaklardan yararlanılmalıdır.</p>
+<h3>Karşılaştırma İçerikleri</h3>
+<p>Karşılaştırma içerikleri, genellikle iki veya daha fazla ürün, hizmet veya kavramın özelliklerini karşılaştırarak kullanıcıların bilinçli bir seçim yapmasına yardımcı olur. Bu tür içerikler, özellikle alışveriş yapan kullanıcılar için değerlidir, çünkü farklı seçenekler arasında karşılaştırma yaparak en iyi kararı vermelerine olanak tanır.</p>
+<p>Karşılaştırma içeriklerinin etkinliği, tarafsız ve objektif bir bakış açısıyla hazırlanmasına bağlıdır. Yanlı veya eksik bilgiler içeren karşılaştırmalar, kullanıcıların güvenini sarsabilir. Ayrıca, görsel unsurların (tablo, grafik vb.) kullanımı, karşılaştırma içeriklerinin anlaşılabilirliğini artırabilir.</p>
+<h3>Rehber İçerikler</h3>
+<p>Rehber içerikler, kullanıcıların belirli bir görevi veya süreci adım adım tamamlamalarına yardımcı olan detaylı kılavuzlardır. Bu tür içerikler, genellikle "nasıl yapılır" formatında hazırlanır ve kullanıcıların belirli bir konuda derinlemesine bilgi edinmelerini sağlar. Rehber içerikler, kullanıcıların sorunlarını çözmelerine yardımcı olduğu için yüksek bir değer taşır.</p>
+<p>Rehber içeriklerin başarısı, içeriğin kapsamlılığı ve açıklayıcılığı ile doğrudan ilişkilidir. Adım adım talimatlar, görsel destekler ve pratik ipuçları, rehber içeriklerin kullanıcılar tarafından daha kolay anlaşılmasını sağlar. Ayrıca, rehber içerikler, sitenin otoritesini artırabilir ve kullanıcıların siteye olan bağlılığını güçlendirebilir.</p>
+<h3>Haber İçerikleri</h3>
+<p>Haber içerikleri, genellikle güncel olaylar veya gelişmeler hakkında bilgi verir. Bu tür içerikler, kullanıcıların en son haberleri takip etmelerine olanak tanır ve genellikle hızlı bir şekilde güncellenir. Haber içerikleri, sitenin trafiğini artırabilir ve kullanıcıların siteye düzenli olarak geri dönmelerini teşvik edebilir.</p>
+<p>Ancak, haber içeriklerinin doğruluğu ve güncelliği büyük önem taşır. Yanlış veya yanıltıcı bilgiler içeren haberler, sitenin güvenilirliğini ciddi şekilde zedeleyebilir. Bu nedenle, haber içeriklerinin hazırlanmasında güvenilir kaynaklardan yararlanılmalı ve içerikler düzenli olarak güncellenmelidir.</p>
+<h2>4.3 Yapay Zeka (AI) İçerik Kokusu ve İnce İçerik (Thin Content)</h2>
+<p>Google'ın Helpful Content güncellemeleri, içeriklerin kullanıcılar için ne kadar faydalı olduğunu değerlendirmeye odaklanır. Bu bağlamda, sitenin mevcut metin kalitesini değerlendirmek önemlidir. Verilere göre, sitenin ince içerik (thin content) sayfaları hakkında bilgi verilmemiştir, ancak sayfa başına ortalama kelime sayısının düşük olması, ince içerik olasılığını artırabilir.</p>
+<p>Yapay zeka tarafından üretilen içerikler, genellikle yüzeysel ve tekrarlayıcı olabilir. Bu tür içerikler, kullanıcıların beklentilerini karşılamayabilir ve sitenin SEO performansını olumsuz etkileyebilir. Google, kullanıcıların ihtiyaçlarını karşılamayan içerikleri tespit etmek için çeşitli algoritmalar kullanmaktadır. Bu nedenle, içeriklerin özgün, derinlemesine ve kullanıcı odaklı olması önemlidir.</p>
+<h2>4.4 E-E-A-T Sinyalleri Paneli</h2>
+<p>E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) sinyalleri, bir sitenin güvenilirliğini ve otoritesini değerlendirmek için kritik öneme sahiptir. Verilere göre, sitenin birçok temel E-E-A-T sinyali eksiktir. Örneğin, "Hakkımızda", "İletişim", "KVKK ve İade Politikaları" gibi sayfaların eksikliği, sitenin güvenilirliğini olumsuz etkileyebilir.</p>
+<h3>Şirket Bilgisi / Hakkımızda</h3>
+<p>Sitenin "Hakkımızda" sayfasının olmaması, kullanıcıların şirket hakkında bilgi edinmesini zorlaştırır. Bu tür bilgiler, kullanıcıların siteye olan güvenini artırabilir ve sitenin otoritesini güçlendirebilir.</p>
+<h3>İletişim / Adres / Vergi No</h3>
+<p>İletişim bilgileri, kullanıcıların siteyle etkileşim kurmasını kolaylaştırır. Adres ve vergi numarası gibi bilgiler, sitenin meşruiyetini artırabilir.</p>
+<h3>KVKK ve İade Politikaları</h3>
+<p>KVKK ve iade politikaları, kullanıcıların kişisel verilerinin nasıl korunduğunu ve iade süreçlerinin nasıl işlediğini açıklar. Bu tür bilgiler, kullanıcıların siteye olan güvenini artırabilir.</p>
+<h3>Editöryel İlke Beyanı</h3>
+<p>Editöryel ilke beyanı, sitenin içerik üretim süreçlerini ve standartlarını açıklar. Bu tür bir beyan, sitenin güvenilirliğini ve otoritesini artırabilir.</p>
+<h3>Müşteri Yorumları (UGC)</h3>
+<p>Müşteri yorumları, kullanıcıların site hakkında gerçek deneyimlerini paylaşmalarına olanak tanır. Bu tür içerikler, sitenin güvenilirliğini artırabilir ve kullanıcıların satın alma kararlarını etkileyebilir.</p>
+<h3>Gerçek Yazar Profilleri</h3>
+<p>Gerçek yazar profilleri, içeriklerin kim tarafından yazıldığını ve yazarların uzmanlık alanlarını açıklar. Bu tür bilgiler, içeriklerin güvenilirliğini artırabilir ve kullanıcıların siteye olan güvenini güçlendirebilir.</p>
+<p>Sonuç olarak, sitenin E-E-A-T sinyallerini güçlendirmek için çeşitli adımlar atılması gerekmektedir. Bu adımlar, sitenin güvenilirliğini artırabilir ve kullanıcı deneyimini iyileştirebilir.</p>
+
+</body>
+</html>

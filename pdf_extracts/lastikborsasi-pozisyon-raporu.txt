@@ -1,0 +1,245 @@
+=== lastikborsasi-pozisyon-raporu.txt === (6 sayfa)
+
+Lastikborsasi.com — Google Pozisyon
+Ölçüm Raporu
+Ölçüm tarihi: 12 Mayıs 2026  Ölçüm yöntemi: Web search (Anthropic native) —
+Google Türkiye SERP yansıması  Doğruluk: ~%70 (gerçek Google TR SERP'i Maltepe
+konumundan  çekilmedi;  trend  yakalanır,  hassas  sıralama  vermez)  Test  edilen: 16
+anahtar kelime / 6 stratejik kategori
+YÖNETİCİ ÖZETİ
+Tek cümlede: Lastikborsasi.com'un SEO görünürlüğü çok dar bir kapıdan geliyor —
+programatik ebat landing'leri muazzam çalışıyor, geri kalan her kategori boşta.
+Sayısal panel:
+Metrik
+Değer
+Test edilen keyword
+16
+Top 10'da bulunan
+8 / 16 (%50)
+#1 sıralama
+4 / 16 (%25)
+Top 3 sıralama
+5 / 16 (%31)
+Top 5 sıralama
+7 / 16 (%44)
+Top 10'da hiç yok
+8 / 16 (%50)
+16 keyword'ün yarısı top 10'da bile yok. Bu önceden tahmin ettiğim "Türkiye lastik
+dijital  lideri"  portresiyle  uyuşmuyor  —  ama  detayları  görünce  mantıklı:  lastikborsasi
+spesifik bir SEO kapısından dominasyon kuruyor, geri kalanı es geçiyor.
+Sayfa 1 / 6
+
+---PAGE_BREAK---
+GÖRSEL ÖZET
+KATEGORİ BAZLI ANALİZ — GÜÇLÜ VE ZAYIF NEREDE?
+KATEGORİ 1: Ebat genel fiyat — %80 başarı, GÜÇLÜ
+Keyword
+Pozisyon
+Yorum
+205 55 r16 lastik fiyatları
+#1
+Programatik landing dominans
+195 65 r15 lastik fiyatları
+#1
+Programatik landing dominans
+225 45 r17 lastik fiyatları
+#1
+Programatik landing dominans
+215 55 r17 lastik fiyatları
+#2
+Akakce 1., lastikborsasi 2.
+175 65 r14 lastik fiyatları
+YOK
+Küçük ebat için sayfa yok
+Yargı: Lastikborsasi'nın  ana SEO motoru burası. Popüler ebatlarda Türkiye genelinde
+#1 ya da #2. Tek istisna 175 65 r14 — bu küçük ebatın landing'i ya yok ya da düşük
+öncelik. Bu kategoride lastikborsasi sektör lideri olarak konumlanmış.
+KATEGORİ 2: Ebat × mevsim spesifik — %33 başarı, KARMA
+Keyword
+Pozisyon
+Yorum
+205 55 r16 yaz lastiği
+#1
+Genel sayfa 1. çıkmış (yaz sayfası değil)
+195 65 r15 yaz lastiği
+#6
+Genel sayfa alt sırada
+205 55 r16 kış lastiği
+YOK
+Özel kış landing'i top 10'da yok
+205 55 r16 4 mevsim lastik
+YOK
+Özel 4 mevsim landing'i yok
+Lastikborsasi Pozisyon Raporu
+Sayfa 2 / 6
+
+---PAGE_BREAK---
+Kritik bulgu: Lastikborsasi'nın özel mevsim sayfaları zayıf. "Yaz lastiği" sorgusunda
+genel  sayfa  yakalıyor  (çünkü  Google  başlığı  "kış/yaz/4  mevsim  seçenekleriyle"  diye
+yazıyor — tüm mevsimleri tek sayfada kapsamış). Ama özel kış / özel 4 mevsim sayfaları
+yarışta yok.
+Bu lastikborsasi'nın en büyük SEO açığı. Çünkü: - Kasım-Aralık kış lastiği sezonunda
+trafik patlaması olur - Bu dönemde "X X X kış lastiği" sorgularında rakipler (akakce,
+cimri, n11) öne geçer - Lastikborsasi'nın yıllık cirosunun büyük kısmı kış sezonunda
+satılır — bu sorgularda zayıf olmak yüksek bir maliyet
+KATEGORİ 3: Marka generik — %100 bulundu ama #1 değil
+Keyword
+Pozisyon
+Yorum
+michelin lastik fiyatları
+#5
+Premium marka, 4 büyük site önde
+bridgestone lastik fiyatları
+#4
+Bridgestone resmi sitesi önde
+Yargı: Marka  sayfalarında  lastikborsasi  var  ama  lider  değil.  Trendyol,  Akakce  ve
+markaların kendi resmi siteleri öne geçiyor. Bu kategori orta seviye — kötü değil ama
+yarışta değil. Marka aramalarının pazar payı düşünüldüğünde, #1 yerine #4-5 olmak
+ciddi kayıp.
+KATEGORİ 4: Marka × Desen — %0 başarı, YOK
+Keyword
+Pozisyon
+Yorum
+michelin pilot sport 5
+YOK
+Yabancı siteler dolduruyor, TR sitelerine yer yok
+Yargı: Uzun-kuyruk "Marka X Desen" aramalarında lastikborsasi yok. Bu beklenmedik —
+programatik  mantıkla  bu  sayfaların  da  üretilmesi  gerekirdi.  Tek  bir  desen  örneklemi
+yetersiz olsa da, sinyal anlamlı.
+KATEGORİ 5: Bilgilendirici (AEO/Blog) — %0 başarı, KRİTİK ZAYIFLIK
+Keyword
+Pozisyon
+Yorum
+lastik hız endeksi
+nedir
+YOK
+Euromaster, Toyota, Bosch, Lassa önde — ilginç: OtoPratik
+(FD grubu) var, lastikborsasi yok
+run flat lastik
+nedir
+YOK
+Continental, Bridgestone, Michelin önde — markalar
+dominant
+Kritik bulgu — En büyük açık burada: AEO ("Answer Engine Optimization") çağında
+"X nedir" formatlı sorularda lastikborsasi hiç görünmüyor. Bu önemli çünkü:
+AI Search çağı — ChatGPT, Perplexity, Google AI Overview gibi sistemler
+bilgilendirici içerikten alıntılıyor. Lastikborsasi bu kaynaklardan ayrı kalıyor.
+1. 
+Lastikborsasi Pozisyon Raporu
+Sayfa 3 / 6
+
+---PAGE_BREAK---
+Featured snippet fırsatı kayıp — Google'da öne çıkan kutucuklarda lastikborsasi
+yok.
+Funnel başlangıcı — "X nedir" arayan kullanıcı eğitim sürecindedir, sonra "X X X
+lastik fiyatı" sorar. Bu kullanıcıya ilk temas Continental'la oluyor, lastikborsasi'yla
+değil.
+İlginç detay: OtoPratik (Ferhat Değer grubunun fiziksel mağaza markası) "lastik hız
+endeksi"  sorgusunda  var  ama  ana  marka  lastikborsasi.com yok.  Yani  grup  içinde
+domain otoritesi paylaşılmamış.
+KATEGORİ 6: Multi-kategori (yağ, motosiklet) — %0 başarı, ZAYIF
+Keyword
+Pozisyon
+Yorum
+motosiklet lastik
+fiyatları
+YOK
+LinkedIn'de motosiklet reklamı yapıyorlar ama
+Google'da yok
+5w 30 motor yağı fiyat
+YOK
+Motor yağı kategorisinde lider değiller
+Yargı: Multi-kategori  (jant  +  akü  +  yağ  +  motosiklet)  iddiası  SEO'da  karşılığını
+bulmamış. Ana lastik kategorisinde dominant ama yan kategorilerde diğer specialty
+sitelere kaybetmişler.
+STRATEJİK YORUM — BU DATA NEYİ ANLATIYOR?
+Lastikborsasi'nın SEO portresi 3 katmanda görülüyor:
+KATMAN  1  —  DOMİNASYON  ALANI  (en  güçlü) -  "Ebat  lastik  fiyatları"  (genel)
+sorguları - Programatik landing'ler kusursuz çalışıyor - 4 büyük ebatın 3'ünde #1, birinde
+#2 - Burası asıl ciro motoru olmalı
+KATMAN  2  —  KARMA  ALAN  (orta) -  Marka  generik  sayfaları  -  Yaz  lastiği  (özel)
+sayfaları - Var ama lider değil - Trafik almaya devam ediyor ama kuyrukta
+KATMAN 3 — YOK ALANI (en zayıf — fırsat) - Mevsim spesifik (kış, 4 mevsim)
+sayfaları - Marka × Desen kombinasyonları - Bilgilendirici blog (AEO) - Multi-kategori
+(motosiklet, yağ) - 8/16 keyword'ün hepsi bu katmanda
+Bu portre senin botun için ne anlama geliyor?
+Bot tasarımı için bu çok önemli bir bulgu. Çünkü:
+Lastikborsasi'yı tek başına benchmark almak yanlış olur. Sektör liderliği "Ebat
+fiyat" kategorisinde tartışmasız. Ama mevsim, bilgi içerik, multi-kategori için lider
+başkası (Akakce, Continental, Trendyol).
+Bot çoklu benchmark mantığıyla çalışmalı. Her kategoride kim lider, ona göre
+kıyaslama: - Ebat sorguları → lastikborsasi - Mevsim spesifik → akakce, cimri - Marka
+2. 
+3. 
+1. 
+2. 
+Lastikborsasi Pozisyon Raporu
+Sayfa 4 / 6
+
+---PAGE_BREAK---
+generik  → trendyol,  akakce  -  Bilgi/AEO  → euromaster,  bridgestone,  michelin
+(markalar)  -  Motor  yağı  → trendyol,  turkoilmarket  -  Motosiklet  → kolayoto,
+lastikdeposu
+Müşteri sitesi nereye kıyaslanacak? Bota gelen müşteri lastik perakendecisi mi?
+Otomotiv  parça  satıcısı  mı?  Geniş  e-ticaret  mi?  Buna  göre  benchmark  seti
+değişmeli.
+BOT İÇİN GERÇEK FRAMEWORK ÖNERİSİ
+Bu 16 keyword testinin sana verdiği en değerli ders: "Sektör lideri" tek bir site değil,
+kategoriye  göre  değişen  6-8  sitelik  bir  kompozisyon. Bunu  botun  mimarisine
+yedir.
+Önerdiğim bot mantığı:
+1) MÜŞTERİ URL'i alınır
+2) Müşterinin sektörü tespit edilir (otomatik veya manuel)
+3) O sektör için PUSULA TABLOSU yüklenir:
+   - Kategori 1 lideri = X site
+   - Kategori 2 lideri = Y site
+   - ...
+4) Müşteri her kategoride en yakın hangi siteye benziyor?
+5) Açıklar listeleneir
+6) Aksiyon önerileri verilir
+7) Lead toplanır
+Lastikborsasi'nı  sabit  benchmark  kabul  edersek,  bu  sadece  "Ebat  fiyat"
+kategorisinde anlamlı olur. Diğer 5 kategoride farklı liderlere kıyaslama lazım.
+VERİ KALİTESİ NOTU — DÜRÜST PARAGRAF
+Bu test web_search ile yapıldı. Yani:
+İyi taraflar: - 16 keyword, 6 kategori — geniş tablo - Pattern net görünüyor: hangi
+kategori güçlü, hangi zayıf - Hızlı, ücretsiz, hemen aksiyona dönülebilir
+Sınırlı  taraflar: -  Web  search  Google  Türkiye'nin  tam  SERP'i  değil  —  Maltepe
+konumundan kişiselleştirilmiş arama yapılsa farklı çıkabilir - Top 10 görüyor, 11-20 arası
+göremiyor — yani "YOK" diye işaretlediğim 8 keyword aslında 11-15. sıralarda olabilir -
+Tek bir günde tek bir snapshot — günler, saatler arası dalgalanma yansımıyor - Aramalar
+Mayıs ortasında yapıldı — sezonsallık etkisi var (Mayıs'ta kış lastiği sorgularına Google
+düşük öncelik verir)
+3. 
+Lastikborsasi Pozisyon Raporu
+Sayfa 5 / 6
+
+---PAGE_BREAK---
+Bot için bu yöntem kullanılamaz, çünkü: - Her müşteri için her sorgu için bunu
+tekrarlamak elle imkansız - Hassasiyet %70 — müşteri raporunda %100 doğruluk lazım -
+Pozisyon sıralaması (#3 mü #7 mi) önemli, web search bunu net vermez
+Gerçek bot için gereken araç: DataForSEO API ya da SerpAPI. Maliyet keyword
+başına $0.001-$0.005 — 50 keyword'lük bir audit $0.25-$0.50. Bot ayda 100 lead alsa
+$25-50 maliyet, lead başına 1 TL'den az. Bu sürdürülebilir.
+SONUÇ — 30 SANİYELİK ÖZET
+Lastikborsasi'nın SEO'su tek bir alanda dominant: Ebat fiyat sayfaları (#1 oranı
+%80)
+Diğer kategorilerde lider değil veya hiç yok: Mevsim (1/4), Marka (orta), Desen
+(0/1), AEO (0/2), Multi-kategori (0/2)
+En büyük açıkları: Bilgilendirici blog (AEO), kış lastiği özel sayfaları, multi-kategori
+Bot için en kritik ders: Tek benchmark yetmez, kategori-bazlı çoklu benchmark
+gerekir
+Sürdürülebilir bot için: DataForSEO API entegrasyonu şart, manuel web search
+ölçek olmaz
+Bu rapor 16 keyword'lük temsili bir örneklem. Tam 50 keyword için DataForSEO API
+kullanırsak %100 doğruluk + tüm Türkiye SERP'i + pozisyon hassasiyeti elde edebiliriz.
+Tahmini maliyet: $5-10 tek seferlik, bot için aylık $25-50.
+1. 
+2. 
+3. 
+4. 
+5. 
+Lastikborsasi Pozisyon Raporu
+Sayfa 6 / 6
+
+---PAGE_BREAK---

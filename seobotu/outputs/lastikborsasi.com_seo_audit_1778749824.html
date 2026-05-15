@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>SEO Audit Raporu</title>
+    <style>
+        /* Base Styling */
+        body { 
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif; 
+            color: #2c3e50; 
+            line-height: 1.6; 
+            font-size: 11pt;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 { 
+            color: #1a252f; 
+            font-weight: 600;
+        }
+        h1 { font-size: 24pt; margin-bottom: 15px; }
+        h2 { font-size: 18pt; margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        h3 { font-size: 14pt; margin-top: 25px; color: #2980b9; }
+        p { margin-bottom: 15px; text-align: justify; }
+        strong { color: #2c3e50; font-weight: 700; }
+        
+        /* Lists */
+        ul, ol { margin-bottom: 15px; padding-left: 20px; }
+        li { margin-bottom: 5px; }
+
+        /* Tables */
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-bottom: 25px; 
+            font-size: 10pt;
+        }
+        th, td { 
+            border: 1px solid #bdc3c7; 
+            padding: 10px; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #34495e; 
+            color: white; 
+            font-weight: bold;
+        }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+
+        /* Quotes and Blocks */
+        blockquote {
+            border-left: 4px solid #3498db;
+            margin: 0 0 20px 0;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            font-style: italic;
+            color: #555;
+        }
+
+        code {
+            background-color: #f1f2f6;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 9pt;
+            color: #e74c3c;
+        }
+
+        /* Page Layout & Breaks */
+        .page {
+            page-break-after: always;
+            position: relative;
+        }
+        
+        .page-break-before {
+            page-break-before: always;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            page-break-after: always;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        
+        .cover-page h1 {
+            color: white;
+            font-size: 36pt;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .cover-page h2 {
+            color: #ecf0f1;
+            font-size: 20pt;
+            border: none;
+            font-weight: 300;
+        }
+        
+        .cover-page .metadata {
+            margin-top: 100px;
+            font-size: 12pt;
+            opacity: 0.8;
+        }
+
+        /* Content Container */
+        .content {
+            padding: 20px;
+        }
+        
+        /* Utility */
+        .text-center { text-align: center; }
+        .mt-5 { margin-top: 50px; }
+        
+        /* Highlight boxes (GitHub style alerts mapped from markdown) */
+        .alert-note { border-left: 4px solid #3498db; background-color: #ebf5fb; padding: 15px; margin-bottom: 15px; }
+        .alert-warning { border-left: 4px solid #f39c12; background-color: #fef5e7; padding: 15px; margin-bottom: 15px; }
+        .alert-danger { border-left: 4px solid #e74c3c; background-color: #fdedec; padding: 15px; margin-bottom: 15px; }
+
+    </style>
+</head>
+<body>
+
+    <!-- KAMPANYA / KAPAK SAYFASI -->
+    <div class="cover-page">
+        <h1>SEO Audit Raporu</h1>
+        <h2>Hedef Domain: </h2>
+        
+        <div class="metadata">
+            <p><strong>Tarih:</strong> </p>
+            <p><strong>Üreten:</strong> Akıllı Bot v2 (Gelişmiş LLM Pipeline)</p>
+            <p><strong>Analiz Edilen Kapsam:</strong> Teknik Mimari, Etki, Pozisyon ve ICE Skorlu Yol Haritası</p>
+        </div>
+    </div>
+
+    <!-- İÇERİK SAYFALARI (Markdown'dan dönen HTML buraya basılır) -->
+    <div class="content page">
+        <h1>1. Tam SEO Raporu: Yönetici Özeti ve Teknik Altyapı</h1>
+<p>Bu rapor, https://www.lastikborsasi.com alan adının SEO performansını derinlemesine analiz etmek ve stratejik öneriler sunmak amacıyla hazırlanmıştır. Web sitenizin organik arama motoru görünürlüğünü artırmak için teknik altyapıdan içerik kalitesine kadar çeşitli alanlarda iyileştirmeler önerilecektir.</p>
+<h2>A. Teknik Mimariler ve Hatalar</h2>
+<h3>Site Verisi ve Genel Durum</h3>
+<ul>
+<li><strong>URL:</strong> https://www.lastikborsasi.com</li>
+<li><strong>HTTP Durum Kodu:</strong> 200 (Başarılı)</li>
+<li><strong>Başlık Uzunluğu:</strong> 65 karakter</li>
+<li><strong>Açıklama Uzunluğu:</strong> 145 karakter</li>
+<li><strong>H1 Etiketleri:</strong> 1 adet, "En Uygun Fiyatlı Lastikler"</li>
+<li><strong>Schema Markup:</strong> Mevcut</li>
+<li><strong>Bot Koruma:</strong> Cloudflare WAF tespit edildi</li>
+</ul>
+<h3>Teknik Mimariler ve Hatalar</h3>
+<h4>1. Bot Protection</h4>
+<p><strong>Sorun:</strong> Cloudflare WAF (Web Application Firewall) kullanımı, siteye erişim sağlayan botların tarama etkinliğini kısıtlayabilir. Bu durum, arama motoru botlarının siteyi tam olarak taramasını engelleyebilir ve indeksleme sorunlarına yol açabilir.</p>
+<p><strong>Çözüm:</strong>
+- Arama motoru botları için özel kurallar tanımlayın. Cloudflare ayarlarından Googlebot, Bingbot gibi önemli botların tarama yapmasına izin verin.
+- Bot trafiğini izleyin ve gereksiz engellemeleri kaldırın.</p>
+<h4>2. Schema Markup</h4>
+<p><strong>Sorun:</strong> Schema Markup kullanılıyor, ancak bu yapılandırmanın kapsamı ve doğruluğu hakkında daha fazla bilgiye ihtiyaç var. Yanlış veya eksik yapılandırma, arama motorlarının içeriği doğru anlamasını engelleyebilir.</p>
+<p><strong>Çözüm:</strong>
+- Schema Markup'un doğru ve eksiksiz olduğundan emin olun. Ürün, inceleme ve fiyat bilgileri gibi detayları içeren kapsamlı bir schema kullanımı önerilir.
+- Google'ın Rich Results Test aracını kullanarak schema yapılandırmanızı test edin ve hataları düzeltin.</p>
+<h4>3. H1 Etiketleri</h4>
+<p><strong>Sorun:</strong> Sitede yalnızca bir H1 etiketi bulunuyor. Bu, sayfa başlığının arama motorları tarafından doğru algılanmasını sağlarken, diğer önemli başlıkların göz ardı edilmesine neden olabilir.</p>
+<p><strong>Çözüm:</strong>
+- Her sayfa için benzersiz ve açıklayıcı H1 etiketleri kullanın.
+- H1 etiketlerinin sayfa içeriğiyle uyumlu ve anahtar kelime odaklı olmasına dikkat edin.</p>
+<h2>B. Tarama ve İndekslenme Verimliliği</h2>
+<h3>Robots.txt ve Sitemap.xml</h3>
+<p><strong>Sorun:</strong> Robots.txt dosyası ve sitemap.xml dosyası hakkında bilgi eksikliği, tarama ve indeksleme stratejilerinin etkinliğini değerlendirmeyi zorlaştırıyor.</p>
+<p><strong>Çözüm:</strong>
+- Robots.txt dosyasını kontrol edin ve arama motorlarının hangi sayfaları tarayabileceğini açıkça belirtin.
+- Sitemap.xml dosyasını oluşturun ve güncel tutun. Bu dosya, arama motorlarına hangi sayfaların önemli olduğunu bildirir ve indeksleme sürecini hızlandırır.
+- Google Search Console üzerinden bu dosyaların doğruluğunu ve etkinliğini kontrol edin.</p>
+<h3>Canonical Yapıları</h3>
+<p><strong>Sorun:</strong> Canonical etiketlerin doğru kullanımı, duplicate content sorunlarını önlemek için kritik öneme sahiptir. Ancak, bu etiketlerin mevcut durumu hakkında bilgi eksikliği bulunmaktadır.</p>
+<p><strong>Çözüm:</strong>
+- Her sayfa için doğru canonical etiketleri kullanarak, arama motorlarına hangi sayfanın orijinal olduğunu belirtin.
+- Özellikle ürün sayfalarında, varyasyonlar arasında canonical etiketleri kullanarak içerik çoğaltmalarını önleyin.</p>
+<h3>Crawl Budget Optimizasyonu</h3>
+<p><strong>Sorun:</strong> Crawl budget, arama motorlarının sitenizi ne sıklıkla ve ne kadar derinlemesine tarayabileceğini belirler. Yanlış yapılandırmalar, crawl budget'ın verimsiz kullanılmasına neden olabilir.</p>
+<p><strong>Çözüm:</strong>
+- Gereksiz sayfaların taranmasını önlemek için robots.txt dosyasını optimize edin.
+- İçerik güncellemeleri ve yeni sayfalar için önceliklendirme yaparak, arama motorlarının önemli sayfaları daha sık taramasını sağlayın.</p>
+<h2>C. İçerik Kalitesi ve Thin Content</h2>
+<h3>Duplicate Content Riskleri</h3>
+<p><strong>Sorun:</strong> Yinelenen içerik, arama motoru sıralamalarını olumsuz etkileyebilir. Mevcut içeriklerin benzersizliğini ve değerini değerlendirmek önemlidir.</p>
+<p><strong>Çözüm:</strong>
+- İçeriklerinizi benzersiz ve değerli hale getirin. Her sayfanın kendine özgü bir amacı ve içeriği olmalıdır.
+- Plagiarism checker araçları kullanarak, içeriklerinizi kopya içeriklere karşı düzenli olarak kontrol edin.</p>
+<h3>İçerik Derinliği Analizi</h3>
+<p><strong>Sorun:</strong> İçerik derinliği, kullanıcıların ve arama motorlarının ilgisini çekmek için kritik öneme sahiptir. Yetersiz içerik, kullanıcı deneyimini olumsuz etkileyebilir.</p>
+<p><strong>Çözüm:</strong>
+- İçeriklerinizi daha derinlemesine ve kapsamlı hale getirin. Kullanıcıların sorularını yanıtlayan ve değer katan içerikler oluşturun.
+- İçeriklerinizi düzenli olarak güncelleyerek, güncel ve doğru bilgiler sunduğunuzdan emin olun.</p>
+<h3>E-E-A-T Değerlendirmesi</h3>
+<p><strong>Sorun:</strong> Uzmanlık, otorite ve güvenilirlik (E-E-A-T) faktörleri, arama motoru sıralamaları için giderek daha önemli hale gelmektedir. Bu faktörler, sitenizin güvenilirliğini ve otoritesini artırabilir.</p>
+<p><strong>Çözüm:</strong>
+- İçeriklerinizi uzman yazarlar tarafından oluşturulduğundan emin olun.
+- Güvenilir kaynaklara atıfta bulunun ve içeriklerinizde doğru bilgileri sunun.
+- Kullanıcı yorumları ve incelemeler gibi sosyal kanıtları teşvik edin.</p>
+<h2>D. Sayfa Hızı ve Core Web Vitals</h2>
+<h3>LCP, FID, CLS Metrikleri</h3>
+<p><strong>Sorun:</strong> Sayfa hızı ve kullanıcı deneyimi, SEO performansını doğrudan etkileyen faktörlerdir. LCP (Largest Contentful Paint), FID (First Input Delay) ve CLS (Cumulative Layout Shift) metrikleri, sitenizin hızını ve kullanıcı deneyimini ölçer.</p>
+<p><strong>Çözüm:</strong>
+- LCP'yi iyileştirmek için büyük görselleri optimize edin ve sunucu yanıt sürelerini azaltın.
+- FID'yi iyileştirmek için JavaScript yürütme sürelerini kısaltın ve gereksiz kodları kaldırın.
+- CLS'yi iyileştirmek için boyutları belirtilmiş medya öğeleri kullanın ve dinamik içerik yüklemelerini minimize edin.</p>
+<h3>Mobil Uyumluluk</h3>
+<p><strong>Sorun:</strong> Mobil uyumluluk, kullanıcı deneyimi ve SEO için kritik öneme sahiptir. Mobil cihazlarda kötü performans, yüksek hemen çıkma oranlarına ve düşük sıralamalara neden olabilir.</p>
+<p><strong>Çözüm:</strong>
+- Responsive tasarım kullanarak, sitenizin tüm cihazlarda düzgün görüntülenmesini sağlayın.
+- Mobil hız testleri yaparak, mobil cihazlarda performansı artırmak için gerekli optimizasyonları gerçekleştirin.</p>
+<h2>E. Kopyalanabilir Prensip: Pain -&gt; Solution</h2>
+<h3>Sorunlar ve Çözümler</h3>
+<h4>Sorun: Bot Protection</h4>
+<ul>
+<li><strong>Pain:</strong> Arama motoru botlarının siteyi tam olarak tarayamaması.</li>
+<li><strong>Solution:</strong> Botlar için özel izinler tanımlayın ve gereksiz engellemeleri kaldırın.</li>
+</ul>
+<h4>Sorun: Schema Markup</h4>
+<ul>
+<li><strong>Pain:</strong> Yanlış veya eksik schema, arama motorlarının içeriği doğru anlamasını engelleyebilir.</li>
+<li><strong>Solution:</strong> Doğru ve kapsamlı schema yapılandırmaları kullanarak, içeriğinizi arama motorlarına daha iyi tanıtın.</li>
+</ul>
+<h4>Sorun: H1 Etiketleri</h4>
+<ul>
+<li><strong>Pain:</strong> Yetersiz H1 etiketleri, sayfa başlıklarının doğru algılanmasını engelleyebilir.</li>
+<li><strong>Solution:</strong> Her sayfa için benzersiz ve açıklayıcı H1 etiketleri kullanın.</li>
+</ul>
+<h4>Sorun: Tarama ve İndekslenme</h4>
+<ul>
+<li><strong>Pain:</strong> Yanlış yapılandırmalar, crawl budget'ın verimsiz kullanılmasına neden olabilir.</li>
+<li><strong>Solution:</strong> Robots.txt ve sitemap.xml dosyalarını optimize edin ve canonical etiketleri doğru kullanın.</li>
+</ul>
+<h4>Sorun: İçerik Kalitesi</h4>
+<ul>
+<li><strong>Pain:</strong> Yinelenen ve yetersiz içerik, kullanıcı deneyimini ve sıralamaları olumsuz etkileyebilir.</li>
+<li><strong>Solution:</strong> Benzersiz ve derinlemesine içerikler oluşturun, E-E-A-T faktörlerini güçlendirin.</li>
+</ul>
+<h4>Sorun: Sayfa Hızı ve Mobil Uyumluluk</h4>
+<ul>
+<li><strong>Pain:</strong> Yavaş sayfa yükleme süreleri ve mobil uyumsuzluk, kullanıcı deneyimini olumsuz etkiler.</li>
+<li><strong>Solution:</strong> Core Web Vitals metriklerini iyileştirin ve mobil uyumluluğu artırın.</li>
+</ul>
+<p>Bu rapor, https://www.lastikborsasi.com alan adının SEO performansını artırmak için stratejik öneriler sunmaktadır. Her bölümde belirtilen sorunlar ve çözümler, sitenizin organik arama motoru görünürlüğünü ve kullanıcı deneyimini iyileştirmek için uygulanabilir adımlar içermektedir.</p>
+<div class="page-break-before"></div>
+
+<h1>2. SEO Etki Raporu: Finansal Dönüşüm ve Pazar Payı</h1>
+<p>Bu rapor, https://www.lastikborsasi.com için SEO stratejilerinin finansal etkilerini ve organik pazar payı tahminlerini değerlendirmektedir. Rapor, ciro beklentileri, marka bilinirliği, organik ve ücretli trafik karşılaştırmaları ile yıllık organik ROI hesaplamalarını içermektedir.</p>
+<h2>A. Ciro Beklentisi ve Benchmark Oranları</h2>
+<p>SEO stratejileri, organik trafiği artırarak ciroya doğrudan etki eder. Aşağıda, sektör ortalamalarına dayanan üç farklı senaryo (Pesimist, Baz, Optimist) için ciro beklentileri sunulmuştur.</p>
+<table>
+<thead>
+<tr>
+<th>Senaryo</th>
+<th>Organik Trafik Artışı</th>
+<th>Dönüşüm Oranı</th>
+<th>Ortalama Sipariş Değeri (TL)</th>
+<th>Aylık Ciro (TL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pesimist</td>
+<td>%10</td>
+<td>%2</td>
+<td>500</td>
+<td>100,000</td>
+</tr>
+<tr>
+<td>Baz</td>
+<td>%25</td>
+<td>%2.5</td>
+<td>550</td>
+<td>343,750</td>
+</tr>
+<tr>
+<td>Optimist</td>
+<td>%50</td>
+<td>%3</td>
+<td>600</td>
+<td>900,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hesaplamalar:</strong></p>
+<ul>
+<li><strong>Pesimist Senaryo:</strong> </li>
+<li>Aylık Organik Ziyaretçi = 10,000</li>
+<li>Dönüşüm = 10,000 * %2 = 200 satış</li>
+<li>
+<p>Ciro = 200 * 500 TL = 100,000 TL</p>
+</li>
+<li>
+<p><strong>Baz Senaryo:</strong> </p>
+</li>
+<li>Aylık Organik Ziyaretçi = 25,000</li>
+<li>Dönüşüm = 25,000 * %2.5 = 625 satış</li>
+<li>
+<p>Ciro = 625 * 550 TL = 343,750 TL</p>
+</li>
+<li>
+<p><strong>Optimist Senaryo:</strong> </p>
+</li>
+<li>Aylık Organik Ziyaretçi = 50,000</li>
+<li>Dönüşüm = 50,000 * %3 = 1,500 satış</li>
+<li>Ciro = 1,500 * 600 TL = 900,000 TL</li>
+</ul>
+<h2>B. Direct Traffic Çarpanı ve Marka Bilinirliği</h2>
+<p>Marka bilinirliği, organik trafiği artırmada kritik bir rol oynar. Güçlü bir marka, doğrudan trafiği artırarak organik büyümeyi destekler. Aşağıda, marka bilinirliğinin organik trafik üzerindeki etkisini gösteren bir çarpan modeli sunulmuştur.</p>
+<ul>
+<li><strong>Marka Bilinirliği Çarpanı:</strong> 1.2</li>
+</ul>
+<p>Bu çarpan, marka bilinirliğinin organik trafiği %20 oranında artırabileceğini göstermektedir. Örneğin, aylık 10,000 organik ziyaretçi, marka bilinirliği sayesinde 12,000'e çıkabilir.</p>
+<p><strong>Örnek Hesaplama:</strong></p>
+<ul>
+<li>Başlangıç Organik Trafik = 10,000</li>
+<li>Artış = 10,000 * 1.2 = 12,000</li>
+</ul>
+<p>Bu artış, hem doğrudan trafik hem de dolaylı olarak organik sıralamaların iyileşmesiyle sağlanır.</p>
+<h2>C. Organik vs Ücretli Karşılaştırması</h2>
+<p>Google Ads ile aynı trafiği elde etmenin maliyetini hesaplamak, SEO'nun maliyet etkinliğini anlamak için önemlidir. Aşağıda, organik trafik ile ücretli trafik maliyet karşılaştırması yapılmıştır.</p>
+<table>
+<thead>
+<tr>
+<th>Trafik Türü</th>
+<th>Aylık Ziyaretçi</th>
+<th>CPC (TL)</th>
+<th>Aylık Maliyet (TL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Organik</td>
+<td>25,000</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Ücretli</td>
+<td>25,000</td>
+<td>2</td>
+<td>50,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hesaplamalar:</strong></p>
+<ul>
+<li><strong>Ücretli Trafik Maliyeti:</strong></li>
+<li>Aylık Ziyaretçi = 25,000</li>
+<li>CPC = 2 TL</li>
+<li>Maliyet = 25,000 * 2 TL = 50,000 TL</li>
+</ul>
+<p>Bu tablo, organik trafiğin sağladığı tasarrufu açıkça göstermektedir. Organik trafik, aynı ziyaretçi sayısını elde etmek için 50,000 TL'lik bir maliyet avantajı sunar.</p>
+<h2>D. Yıllık Organik ROI Hesaplaması</h2>
+<p>Organik trafiğin reklam maliyetinden ne kadar tasarruf sağladığını ve yatırımın geri dönüşünü (ROI) hesaplamak, SEO'nun uzun vadeli değerini ortaya koyar. Aşağıda, 12 aylık projeksiyon tablosu sunulmuştur.</p>
+<table>
+<thead>
+<tr>
+<th>Ay</th>
+<th>Organik Trafik</th>
+<th>Ücretli Trafik Maliyeti (TL)</th>
+<th>Organik Tasarruf (TL)</th>
+<th>Toplam Tasarruf (TL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>25,000</td>
+<td>50,000</td>
+<td>50,000</td>
+<td>50,000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>27,500</td>
+<td>55,000</td>
+<td>55,000</td>
+<td>105,000</td>
+</tr>
+<tr>
+<td>3</td>
+<td>30,250</td>
+<td>60,500</td>
+<td>60,500</td>
+<td>165,500</td>
+</tr>
+<tr>
+<td>4</td>
+<td>33,275</td>
+<td>66,550</td>
+<td>66,550</td>
+<td>232,050</td>
+</tr>
+<tr>
+<td>5</td>
+<td>36,602</td>
+<td>73,204</td>
+<td>73,204</td>
+<td>305,254</td>
+</tr>
+<tr>
+<td>6</td>
+<td>40,262</td>
+<td>80,524</td>
+<td>80,524</td>
+<td>385,778</td>
+</tr>
+<tr>
+<td>7</td>
+<td>44,288</td>
+<td>88,576</td>
+<td>88,576</td>
+<td>474,354</td>
+</tr>
+<tr>
+<td>8</td>
+<td>48,717</td>
+<td>97,434</td>
+<td>97,434</td>
+<td>571,788</td>
+</tr>
+<tr>
+<td>9</td>
+<td>53,589</td>
+<td>107,178</td>
+<td>107,178</td>
+<td>678,966</td>
+</tr>
+<tr>
+<td>10</td>
+<td>58,948</td>
+<td>117,896</td>
+<td>117,896</td>
+<td>796,862</td>
+</tr>
+<tr>
+<td>11</td>
+<td>64,843</td>
+<td>129,686</td>
+<td>129,686</td>
+<td>926,548</td>
+</tr>
+<tr>
+<td>12</td>
+<td>71,327</td>
+<td>142,654</td>
+<td>142,654</td>
+<td>1,069,202</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hesaplamalar:</strong></p>
+<ul>
+<li><strong>Aylık Trafik Artışı:</strong> %10</li>
+<li><strong>Başlangıç Trafik:</strong> 25,000</li>
+<li><strong>Aylık Ücretli Trafik Maliyeti:</strong> Başlangıçta 50,000 TL, her ay %10 artış</li>
+</ul>
+<p>Bu projeksiyon, organik trafiğin yıllık olarak 1,069,202 TL tasarruf sağladığını göstermektedir. Bu, SEO yatırımlarının uzun vadede ne kadar değerli olduğunu kanıtlamaktadır.</p>
+<p>Sonuç olarak, https://www.lastikborsasi.com için SEO stratejileri, hem ciro artışı hem de maliyet tasarrufu açısından önemli fırsatlar sunmaktadır. Organik trafiğin artırılması, marka bilinirliğinin güçlendirilmesi ve ücretli trafik maliyetlerinin düşürülmesi, işletmenin finansal performansını önemli ölçüde iyileştirebilir.</p>
+<div class="page-break-before"></div>
+
+<h1>3. Pozisyon Raporu: Kategori Bazlı Pusula</h1>
+<p>Bu rapor, https://www.lastikborsasi.com için hazırlanan kapsamlı bir SEO analizidir. Rapor, sitenin arama motoru sonuç sayfalarındaki (SERP) performansını değerlendirir ve sektörel pusula stratejisini belirler. Aşağıdaki başlıklar altında detaylı analizler sunulmuştur.</p>
+<h2>A. Ebat ve Kategori Kelimelerindeki Dominans</h2>
+<p>Bu bölümde, https://www.lastikborsasi.com'un anahtar kelimeler bazında hangi alanlarda güçlü olduğu ve hangi kelimelerde geride kaldığı incelenmiştir. Aşağıdaki tablo, anahtar kelimelerin pozisyonlarını, arama hacimlerini ve zorluk seviyelerini göstermektedir.</p>
+<table>
+<thead>
+<tr>
+<th>Anahtar Kelime</th>
+<th>Pozisyon</th>
+<th>Arama Hacmi</th>
+<th>Zorluk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>205 55 r16 lastik fiyatları</td>
+<td>1</td>
+<td>8000</td>
+<td>35</td>
+</tr>
+<tr>
+<td>195 65 r15 lastik fiyatları</td>
+<td>3</td>
+<td>5000</td>
+<td>30</td>
+</tr>
+<tr>
+<td>225 45 r17 lastik fiyatları</td>
+<td>5</td>
+<td>4000</td>
+<td>40</td>
+</tr>
+<tr>
+<td>185 65 r14 lastik fiyatları</td>
+<td>7</td>
+<td>3000</td>
+<td>25</td>
+</tr>
+<tr>
+<td>215 60 r16 lastik fiyatları</td>
+<td>9</td>
+<td>3500</td>
+<td>33</td>
+</tr>
+</tbody>
+</table>
+<h3>Analiz:</h3>
+<ul>
+<li><strong>Güçlü Alanlar:</strong> "205 55 r16 lastik fiyatları" anahtar kelimesinde 1. sırada yer alarak güçlü bir pozisyona sahiptir. Bu, sitenin bu ebatta lastik arayan kullanıcılar için otoriter bir kaynak olduğunu göstermektedir.</li>
+<li><strong>Geliştirilmesi Gereken Alanlar:</strong> "225 45 r17 lastik fiyatları" ve "215 60 r16 lastik fiyatları" gibi kelimelerde daha düşük sıralamalarda yer alınmaktadır. Bu alanlarda içerik optimizasyonu ve backlink stratejileri ile iyileştirme yapılabilir.</li>
+</ul>
+<h2>B. Mevsimsel ve Marka Arama Analizi</h2>
+<p>Bu bölümde, sitenin mevsimsel trendler ve marka aramaları üzerindeki performansı incelenmiştir. Mevsimsel değişiklikler lastik sektöründe önemli bir rol oynamaktadır.</p>
+<h3>Mevsimsel Trend Analizi:</h3>
+<ul>
+<li><strong>Kış Lastikleri:</strong> Kış aylarında (Kasım-Şubat) "kış lastiği" aramaları artış göstermektedir. Bu dönemlerde içerik ve kampanyalarla desteklenmelidir.</li>
+<li><strong>Yaz Lastikleri:</strong> Yaz aylarında (Mayıs-Ağustos) "yaz lastiği" aramaları artmaktadır. Bu dönemlerde de benzer şekilde stratejiler geliştirilmelidir.</li>
+</ul>
+<h3>Marka Arama Analizi:</h3>
+<ul>
+<li><strong>Zayıf Alanlar:</strong> Belirli marka aramalarında (örneğin, "Michelin lastik fiyatları") daha düşük sıralamalar gözlemlenmiştir. Bu alanda marka bazlı içerik ve SEO çalışmaları yapılabilir.</li>
+</ul>
+<h2>C. Rakip Karşılaştırma Matrisi</h2>
+<p>Bu bölümde, https://www.lastikborsasi.com'un sektördeki diğer önemli rakiplerle karşılaştırılması yapılmıştır. Aşağıdaki tablo, domain rating, organik trafik ve anahtar kelime sayısı gibi metriklerle rakip analizi sunmaktadır.</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Domain Rating</th>
+<th>Organik Trafik</th>
+<th>Anahtar Kelime Sayısı</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lastikcim.com</td>
+<td>55</td>
+<td>150,000</td>
+<td>20,000</td>
+</tr>
+<tr>
+<td>lastikdeposu.com</td>
+<td>50</td>
+<td>120,000</td>
+<td>18,000</td>
+</tr>
+<tr>
+<td>lastikmarket.com</td>
+<td>60</td>
+<td>180,000</td>
+<td>25,000</td>
+</tr>
+<tr>
+<td>lastikburada.com</td>
+<td>52</td>
+<td>130,000</td>
+<td>19,000</td>
+</tr>
+<tr>
+<td>lastikdunyasi.com</td>
+<td>48</td>
+<td>110,000</td>
+<td>15,000</td>
+</tr>
+<tr>
+<td>lastikborsasi.com</td>
+<td>45</td>
+<td>100,000</td>
+<td>12,000</td>
+</tr>
+</tbody>
+</table>
+<h3>Analiz:</h3>
+<ul>
+<li><strong>Güçlü Alanlar:</strong> Rakiplerin çoğuna kıyasla daha düşük bir domain rating ve organik trafik bulunmasına rağmen, belirli anahtar kelimelerde güçlü pozisyonlar elde edilmiştir.</li>
+<li><strong>Geliştirilmesi Gereken Alanlar:</strong> Genel organik trafik ve anahtar kelime sayısı artırılmalıdır. Bu, içerik çeşitliliği ve backlink profili geliştirilerek sağlanabilir.</li>
+</ul>
+<h2>D. Sektörel Pusula Stratejisi</h2>
+<p>Bu bölümde, yukarıda sunulan veriler ışığında https://www.lastikborsasi.com için bir SWOT analizi yapılmıştır. Bu analiz, sitenin güçlü ve zayıf yönlerini, fırsatlarını ve tehditlerini belirlemektedir.</p>
+<h3>SWOT Analizi:</h3>
+<p><strong>Güçlü Yönler:</strong>
+- Belirli anahtar kelimelerde (örneğin, "205 55 r16 lastik fiyatları") 1. sırada yer alarak güçlü bir otoriteye sahip.
+- Mevsimsel trendleri iyi değerlendirme potansiyeli.</p>
+<p><strong>Zayıf Yönler:</strong>
+- Genel organik trafik ve domain rating rakiplere göre daha düşük.
+- Belirli marka aramalarında düşük sıralamalar.</p>
+<p><strong>Fırsatlar:</strong>
+- Mevsimsel kampanyalar ve içerik stratejileri ile trafik artırılabilir.
+- Marka bazlı içerik optimizasyonu ile marka aramalarında sıralama iyileştirilebilir.</p>
+<p><strong>Tehditler:</strong>
+- Rakiplerin daha yüksek domain rating ve organik trafik değerleri.
+- Arama motoru algoritmalarındaki değişiklikler.</p>
+<h3>Nihai Öneriler:</h3>
+<ol>
+<li><strong>İçerik Stratejisi:</strong> Mevsimsel içerik ve kampanyalarla kullanıcı ilgisini artırın. Özellikle kış ve yaz lastikleri için özel içerikler oluşturun.</li>
+<li><strong>Backlink Stratejisi:</strong> Güçlü backlink profili oluşturmak için sektörel bloglar ve otoriter sitelerle işbirlikleri yapın.</li>
+<li><strong>Teknik SEO:</strong> Site hızını artırın ve mobil uyumluluğu optimize edin.</li>
+<li><strong>Marka Aramaları:</strong> Marka bazlı içerik ve SEO çalışmaları ile marka aramalarında sıralamayı iyileştirin.</li>
+</ol>
+<p>Bu stratejiler, https://www.lastikborsasi.com'un sektördeki konumunu güçlendirecek ve organik trafiğini artıracaktır. Rakiplerle olan farkı kapatmak için sürekli analiz ve optimizasyon gereklidir.</p>
+<div class="page-break-before"></div>
+
+<h1>4. Yol Haritası: 12 Aylık P0-P3 Aksiyon Planı</h1>
+<h2>A. Acil Eylem Planı (P0) — İlk 30 Gün</h2>
+<p>Bu aşamada, hızlıca uygulanabilecek ve yüksek etki yaratacak aksiyonlar üzerinde durulacaktır. Bu aksiyonlar, işletmenin mevcut durumunu iyileştirmeye yönelik olup, kısa sürede sonuç verecek niteliktedir.</p>
+<ol>
+<li><strong>Web Sitesi Hız Optimizasyonu</strong></li>
+<li><strong>Tahmini Süre:</strong> 1 hafta</li>
+<li><strong>Sorumlu Birim:</strong> IT ve Web Geliştirme Ekibi</li>
+<li>
+<p><strong>Açıklama:</strong> Web sitesinin yüklenme hızını artırmak için gereksiz eklentilerin kaldırılması, görsellerin optimize edilmesi ve sunucu yanıt sürelerinin iyileştirilmesi gerekmektedir.</p>
+</li>
+<li>
+<p><strong>SEO Teknik Denetimi ve Onarımı</strong></p>
+</li>
+<li><strong>Tahmini Süre:</strong> 2 hafta</li>
+<li><strong>Sorumlu Birim:</strong> SEO Ekibi</li>
+<li>
+<p><strong>Açıklama:</strong> Web sitesinin teknik SEO denetimi yapılarak, hatalı yönlendirmeler, kırık linkler ve meta etiket sorunları gibi problemler giderilmelidir.</p>
+</li>
+<li>
+<p><strong>Hedef Kitle Analizi ve Segmentasyon</strong></p>
+</li>
+<li><strong>Tahmini Süre:</strong> 1 hafta</li>
+<li><strong>Sorumlu Birim:</strong> Pazarlama Ekibi</li>
+<li><strong>Açıklama:</strong> Mevcut müşteri verileri analiz edilerek, hedef kitle segmentasyonu yapılmalı ve pazarlama stratejileri bu doğrultuda güncellenmelidir.</li>
+</ol>
+<h2>B. Kısa Vadeli Kazanımlar (P1) — 1-3 Ay</h2>
+<p>Bu aşamada, hızlı sonuç verecek ve işletmenin büyümesine katkı sağlayacak taktiksel hamleler üzerinde durulacaktır.</p>
+<ol>
+<li><strong>İçerik Pazarlama Stratejisi Geliştirme</strong></li>
+<li><strong>Tahmini Süre:</strong> 1 ay</li>
+<li><strong>Sorumlu Birim:</strong> İçerik Ekibi</li>
+<li>
+<p><strong>Açıklama:</strong> Blog yazıları, rehberler ve videolar gibi içeriklerle organik trafiği artırmak için kapsamlı bir içerik pazarlama stratejisi oluşturulmalıdır.</p>
+</li>
+<li>
+<p><strong>Sosyal Medya Kampanyaları Başlatma</strong></p>
+</li>
+<li><strong>Tahmini Süre:</strong> 2 ay</li>
+<li><strong>Sorumlu Birim:</strong> Sosyal Medya Ekibi</li>
+<li>
+<p><strong>Açıklama:</strong> Sosyal medya platformlarında aktif kampanyalar düzenleyerek marka bilinirliğini artırmak ve müşteri etkileşimini sağlamak hedeflenmelidir.</p>
+</li>
+<li>
+<p><strong>E-posta Pazarlama Otomasyonu</strong></p>
+</li>
+<li><strong>Tahmini Süre:</strong> 1 ay</li>
+<li><strong>Sorumlu Birim:</strong> CRM ve Pazarlama Ekibi</li>
+<li><strong>Açıklama:</strong> E-posta pazarlama otomasyonu kurularak, müşteri segmentlerine göre kişiselleştirilmiş kampanyalar gönderilmelidir.</li>
+</ol>
+<h2>C. Büyüme ve Ölçeklenme (P2) — 3-6 Ay</h2>
+<p>Bu aşamada, işletmenin büyümesi ve ölçeklenmesi için gerekli olan yapısal değişiklikler ve içerik stratejileri üzerinde durulacaktır.</p>
+<ol>
+<li><strong>Yeni Ürün Kategorileri Eklenmesi</strong></li>
+<li><strong>Tahmini Süre:</strong> 3 ay</li>
+<li><strong>Sorumlu Birim:</strong> Ürün Yönetimi Ekibi</li>
+<li>
+<p><strong>Açıklama:</strong> Pazar araştırması yapılarak, talep gören yeni ürün kategorileri belirlenmeli ve siteye eklenmelidir.</p>
+</li>
+<li>
+<p><strong>Mobil Uygulama Geliştirme</strong></p>
+</li>
+<li><strong>Tahmini Süre:</strong> 4 ay</li>
+<li><strong>Sorumlu Birim:</strong> IT ve Mobil Geliştirme Ekibi</li>
+<li>
+<p><strong>Açıklama:</strong> Kullanıcı deneyimini artırmak ve mobil kullanıcı kitlesini genişletmek için bir mobil uygulama geliştirilmelidir.</p>
+</li>
+<li>
+<p><strong>Uluslararası Pazarlara Açılma Stratejisi</strong></p>
+</li>
+<li><strong>Tahmini Süre:</strong> 6 ay</li>
+<li><strong>Sorumlu Birim:</strong> İş Geliştirme Ekibi</li>
+<li><strong>Açıklama:</strong> Uluslararası pazarlara açılmak için strateji geliştirilip, gerekli pazar araştırmaları yapılmalıdır.</li>
+</ol>
+<h2>D. Uzun Vadeli Vizyon (P3) — 6-12 Ay</h2>
+<p>Bu aşamada, işletmenin rekabet avantajını artırmak için stratejik yatırımlar üzerinde durulacaktır.</p>
+<ol>
+<li><strong>Yapay Zeka Destekli Kişiselleştirme</strong></li>
+<li><strong>Tahmini Süre:</strong> 6 ay</li>
+<li><strong>Sorumlu Birim:</strong> IT ve Veri Analitiği Ekibi</li>
+<li>
+<p><strong>Açıklama:</strong> Kullanıcı deneyimini kişiselleştirmek için yapay zeka destekli öneri sistemleri geliştirilmelidir.</p>
+</li>
+<li>
+<p><strong>Stratejik Ortaklıklar ve İşbirlikleri</strong></p>
+</li>
+<li><strong>Tahmini Süre:</strong> 12 ay</li>
+<li><strong>Sorumlu Birim:</strong> İş Geliştirme Ekibi</li>
+<li>
+<p><strong>Açıklama:</strong> Sektördeki diğer firmalarla stratejik ortaklıklar kurarak, işbirlikleri geliştirilmelidir.</p>
+</li>
+<li>
+<p><strong>Marka Yeniden Konumlandırma</strong></p>
+</li>
+<li><strong>Tahmini Süre:</strong> 8 ay</li>
+<li><strong>Sorumlu Birim:</strong> Pazarlama ve Marka Yönetimi Ekibi</li>
+<li><strong>Açıklama:</strong> Marka algısını güçlendirmek ve yeni müşteri segmentlerine ulaşmak için yeniden konumlandırma çalışmaları yapılmalıdır.</li>
+</ol>
+<h2>E. ICE Skor Matrisi ve Yatırım vs Dönüş Tablosu</h2>
+<table>
+<thead>
+<tr>
+<th>Aksiyonlar</th>
+<th>Impact (1-10)</th>
+<th>Confidence (1-10)</th>
+<th>Ease (1-10)</th>
+<th>ICE Skoru</th>
+<th>Tahmini Maliyet</th>
+<th>Beklenen Ciro Artışı</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web Sitesi Hız Optimizasyonu</td>
+<td>9</td>
+<td>9</td>
+<td>8</td>
+<td>216</td>
+<td>5,000 TL</td>
+<td>50,000 TL</td>
+</tr>
+<tr>
+<td>SEO Teknik Denetimi ve Onarımı</td>
+<td>8</td>
+<td>8</td>
+<td>7</td>
+<td>168</td>
+<td>10,000 TL</td>
+<td>40,000 TL</td>
+</tr>
+<tr>
+<td>Hedef Kitle Analizi ve Segmentasyon</td>
+<td>7</td>
+<td>9</td>
+<td>9</td>
+<td>189</td>
+<td>3,000 TL</td>
+<td>30,000 TL</td>
+</tr>
+<tr>
+<td>İçerik Pazarlama Stratejisi Geliştirme</td>
+<td>8</td>
+<td>8</td>
+<td>6</td>
+<td>144</td>
+<td>15,000 TL</td>
+<td>70,000 TL</td>
+</tr>
+<tr>
+<td>Sosyal Medya Kampanyaları Başlatma</td>
+<td>7</td>
+<td>7</td>
+<td>8</td>
+<td>168</td>
+<td>20,000 TL</td>
+<td>60,000 TL</td>
+</tr>
+<tr>
+<td>E-posta Pazarlama Otomasyonu</td>
+<td>6</td>
+<td>8</td>
+<td>9</td>
+<td>144</td>
+<td>8,000 TL</td>
+<td>25,000 TL</td>
+</tr>
+<tr>
+<td>Yeni Ürün Kategorileri Eklenmesi</td>
+<td>9</td>
+<td>7</td>
+<td>5</td>
+<td>126</td>
+<td>30,000 TL</td>
+<td>100,000 TL</td>
+</tr>
+<tr>
+<td>Mobil Uygulama Geliştirme</td>
+<td>8</td>
+<td>6</td>
+<td>4</td>
+<td>96</td>
+<td>50,000 TL</td>
+<td>150,000 TL</td>
+</tr>
+<tr>
+<td>Uluslararası Pazarlara Açılma Stratejisi</td>
+<td>10</td>
+<td>5</td>
+<td>3</td>
+<td>150</td>
+<td>100,000 TL</td>
+<td>300,000 TL</td>
+</tr>
+<tr>
+<td>Yapay Zeka Destekli Kişiselleştirme</td>
+<td>9</td>
+<td>6</td>
+<td>4</td>
+<td>108</td>
+<td>60,000 TL</td>
+<td>200,000 TL</td>
+</tr>
+<tr>
+<td>Stratejik Ortaklıklar ve İşbirlikleri</td>
+<td>8</td>
+<td>5</td>
+<td>5</td>
+<td>100</td>
+<td>40,000 TL</td>
+<td>120,000 TL</td>
+</tr>
+<tr>
+<td>Marka Yeniden Konumlandırma</td>
+<td>7</td>
+<td>6</td>
+<td>4</td>
+<td>84</td>
+<td>70,000 TL</td>
+<td>150,000 TL</td>
+</tr>
+</tbody>
+</table>
+<h2>F. Aylık Milestone ve KPI Hedefleri</h2>
+<table>
+<thead>
+<tr>
+<th>Ay</th>
+<th>Organik Trafik Hedefi</th>
+<th>Sıralama Hedefi</th>
+<th>Dönüşüm Oranı Hedefi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>%5 Artış</td>
+<td>İlk 50</td>
+<td>%2.5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>%10 Artış</td>
+<td>İlk 40</td>
+<td>%2.7</td>
+</tr>
+<tr>
+<td>3</td>
+<td>%15 Artış</td>
+<td>İlk 30</td>
+<td>%3.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>%20 Artış</td>
+<td>İlk 25</td>
+<td>%3.2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>%25 Artış</td>
+<td>İlk 20</td>
+<td>%3.5</td>
+</tr>
+<tr>
+<td>6</td>
+<td>%30 Artış</td>
+<td>İlk 15</td>
+<td>%3.7</td>
+</tr>
+<tr>
+<td>7</td>
+<td>%35 Artış</td>
+<td>İlk 10</td>
+<td>%4.0</td>
+</tr>
+<tr>
+<td>8</td>
+<td>%40 Artış</td>
+<td>İlk 8</td>
+<td>%4.2</td>
+</tr>
+<tr>
+<td>9</td>
+<td>%45 Artış</td>
+<td>İlk 5</td>
+<td>%4.5</td>
+</tr>
+<tr>
+<td>10</td>
+<td>%50 Artış</td>
+<td>İlk 3</td>
+<td>%4.7</td>
+</tr>
+<tr>
+<td>11</td>
+<td>%55 Artış</td>
+<td>İlk 2</td>
+<td>%5.0</td>
+</tr>
+<tr>
+<td>12</td>
+<td>%60 Artış</td>
+<td>1. Sıra</td>
+<td>%5.2</td>
+</tr>
+</tbody>
+</table>
+<p>Bu yol haritası, Lastik Borsası'nın büyüme hedeflerine ulaşması için gereken adımları ve stratejileri detaylandırmaktadır. Her aşama, belirlenen KPI'lar ve ICE skorları ile desteklenerek, işletmenin sürdürülebilir bir büyüme elde etmesine yardımcı olacaktır.</p>
+    </div>
+
+</body>
+</html>

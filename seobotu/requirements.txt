@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+celery
+redis
+jinja2
+playwright
+python-dotenv
+requests
+pydantic
+openai
+markdown

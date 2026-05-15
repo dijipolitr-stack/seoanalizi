@@ -1,0 +1,437 @@
+=== lastikborsasi-seo-etki-raporu.txt === (9 sayfa)
+
+Lastikborsasi.com — SEO
+Çalışmalarının Google Üzerindeki
+Etkisi
+Odak: SEO çalışmalarının zaman içinde Google arama motorunda yarattığı somut etki
+Tarih: Mayıs  2026  Yöntem: Şirket  basın  açıklamaları,  ciro  verileri,  Similarweb
+metrikleri, SERP gözlemi, sosyal medya başlangıç tarihleri
+0. YÖNETİCİ ÖZETİ — 30 SANİYELİK ÖZET
+Lastikborsasi.com, Ferhat Değer Şirketler Grubu çatısı altında 2019 yılında dijital
+pazaryeri olarak kuruldu. Grubun ana şirketi 2006'dan beri perakende lastik satışı
+yapıyor — yani SEO çalışması "20 yıllık birikim üzerine 6 yıllık dijital sprint" formülüyle
+yürüdü.
+Sayılar konuşuyor:
+Sayfa 1 / 9
+
+---PAGE_BREAK---
+Yıl
+Ciro (TL)
+Büyüme
+SEO Aşaması (tahmin)
+2019
+Kuruluş
+—
+Site kuruldu, temel mimari
+2020
+15 milyon
+—
+Programatik altyapı, ilk ürün katalogu (23.000 lastik
+satışı)
+2021
+110
+milyon
++633%
+Programatik landing fabrikası devreye alındı
+2022
+600
+milyon
++445%
+Tam mimari oturdu, blog katmanı aktive
+2023
+1.1 milyar
++83%
+Otorite konsolidasyonu, marka aramasında patlama
+2024
+1.6 milyar
++45%
+Pazar payı koruma, AEO/AI search hazırlığı
+2025
+hedef
+2 milyar
++25%
+Avrupa açılımı, halka arz hazırlığı
+6 yılda ciro ~107 kat arttı. SEO bu büyümenin kanalı değil, omurgası. Aşağıda her
+boyutu açıyorum.
+1. ZAMAN ÇİZELGESİ — YIL YIL NE OLDU?
+2006 — Grup tarihi başlıyor (SEO öncesi)
+Ferhat Değer İzmir'de perakende lastik mağazasıyla başlıyor. Bu dönem SEO ile ilgisi
+yok, ama bugünkü başarının iki kritik kaynağını üretiyor: - Tedarikçi ağı (B2B ilişkileri 13
+yıl boyunca olgunlaştı) - Sektörel ürün bilgisi (sonra ürün açıklamalarında E-E-A-T sinyali
+olarak kullanıldı)
+2019 — Dijital pazaryeri kuruluyor (SEO sıfır noktası)
+Lastikborsasi.com kuruluş tarihi: 2019
+Twitter/X hesabı ilk paylaşım: 2 Haziran 2019 (sosyal medya başlangıcıyla
+domain birlikte aktif)
+İş modeli varsayımları test ediliyor, pilot bayilerde geri bildirimler alınıyor
+Bu yıl Google'da görünürlük muhtemelen sıfıra yakın — yeni domain, otorite yok,
+indekslenmiş sayfa sayısı düşük
+2020 — İlk başarı, programatik temel atılıyor
+23.000+ lastik satışı, 15 milyon TL ciro
+Pandemi dönemi avantajı: e-ticarete yöneliş hızlandı
+Ürün katalogu sisteme yüklenmeye başladı (tedarikçilerden)
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+Lastikborsasi SEO Etki Raporu
+Sayfa 2 / 9
+
+---PAGE_BREAK---
+Bu dönemde muhtemelen ilk programatik landing'ler (ebat sayfaları) ortaya çıktı
+Bunun anlamı SEO açısından: Google'ın fresh domain bonus'undan faydalanılmış,
+ilk uzun-kuyruk anahtar kelime sıralamaları kazanılmaya başlamış
+2021 — Hipergrowth ve programatik fabrikanın açılması
+Ciro: 110 milyon TL (7.3x büyüme)
+Bu yıl SEO açısından patlama yılı:
+Ebat × mevsim × marka programatik üretim sistemi tam devreye alınmış olmalı
+Google'da yüzlerce/binlerce uzun-kuyruk sorguda 1. sayfa
+Marka tanınırlığı düşük seviyede başladı
+2022 — Stratejik konsolidasyon
+Ciro: 600 milyon TL (5.5x büyüme)
+Blog subdomain'i muhtemelen bu dönemde aktif (snippet'lerde 2023 yazıları
+çoğunlukta, ama bazı yazılar 2023 Şubat'tan daha eski olabilir)
+Multi-kategori genişleme: lastik + jant + akü + yağ artık tek platformda
+Bu dönem SEO açısından otorite katlama yılı: backlink kazanımı hızlandı, brand
+search artmaya başladı
+2023 — Kategori liderliğine yerleşme
+Ciro: 1.1 milyar TL (1.83x büyüme — büyüme oranı normalleşiyor, ama mutlak
+değer büyük)
+Fast Company "Türkiye'de geliri internete dayalı 100 büyük şirket" listesinde 66. sıra
+Bu sıralama önemli çünkü:
+Türkiye e-ticaret ekosistemine resmi kayıt
+Backlink mıknatısı — basın yazıları sürekli atıf yapıyor
+Marka aramasında ciddi artış
+Bu dönemde "lastikborsası" diye arayanların sayısı ilk kez ürün sorgularını geçmiş
+olabilir
+2024 — Dikey entegrasyon ve olgunluk
+Ciro: 1.6 milyar TL (1.45x büyüme)
+Mart 2024: Carre Jant (Çerkezköy) satın alındı — kendi jant üretimi
+AGT Wheels markası kuruldu — premium alüminyum jant
+SEO açısından: olgun pazarda payı koruma dönemi
+AI search çağı başlıyor — ChatGPT, Perplexity sonuçlarına alıntılanma için blog
+içerikleri yoğunlaşıyor
+2025 — Avrupa açılımı + halka arz hazırlığı
+Hedef: 2 milyar TL ciro
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+Lastikborsasi SEO Etki Raporu
+Sayfa 3 / 9
+
+---PAGE_BREAK---
+Almanya — Tyre Supply GmbH yapılandırması (Avrupa pazarı)
+Kitle fonlaması: fonangels.com üzerinden yatırım turu (3 Kasım 2025)
+Borsaya kote olma süreci başlıyor
+SEO açısından: yeni hreflang gereksinimi, çok dilli içerik, uluslararası rekabet
+2026 — Mevcut durum (Nisan-Mayıs verileri)
+Similarweb: Türkiye Otomotiv kategorisinde #32
+Global Rank: #148.463
+Aylık trafik büyüme: +11.34% (hala büyüyor)
+7 Lastik Borsası tabelalı fiziksel mağaza
++25.000 ürün çeşidi, +500.000 stok, +4.000 satıcı
+2. CİRO vs SEO BÜYÜME GRAFİĞİ
+Önemli yorum: 2020-2022 arasında 40x ciro patlamasının SEO etkisi büyük olasılıkla
+organik arama dahil tüm dijital kanallar üzerinden gerçekleşti, ama programatik
+landing'lerin  etkisi  en  yüksek  bu  dönemdeydi.  2023  sonrası  büyüme  oranlarının
+normalleşmesi olağan — site indekslemesi olgunlaştıkça yeni eklenen sayfalar marjinal
+etki üretir.
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+Lastikborsasi SEO Etki Raporu
+Sayfa 4 / 9
+
+---PAGE_BREAK---
+3. GOOGLE'DA MEVCUT PERFORMANS (NİSAN-MAYIS
+2026)
+3.1 Similarweb metrikleri
+Metrik
+Değer
+Yorum
+Global Rank
+#148.463
+Türkiye'nin nüfusunu düşününce sağlam — global
+150K çok dar bir liste
+Türkiye Otomotiv
+Kategorisi
+#32
+Sahibinden, Arabam.com gibi devlerle aynı kategoride
+Aylık trafik değişimi
++11.34%
+Hâlâ büyüyor
+Avg. Visit Duration
+2:46 dk
+E-ticaret için iyi (sektör ortalama 2:00)
+Pages per Visit
+6.15
+Yüksek — kullanıcı içeriği geziyor
+Bounce Rate
+23.35%
+Mükemmel (e-ticaret ortalama %45-55)
+Türkiye trafiği
+%77.22
+Hedef coğrafya doğru
+3.2 Trafik kanal dağılımı
+Kanal
+Pay
+Yorum
+Direct
+%54
+Bu rakam marka bilinirliğinin parmak izi
+Organic Search
+2. sırada
+SEO çalışmasının doğrudan getirisi
+Mail
+3. sırada
+CRM ve newsletter trafiği
+KRİTİK YORUM — Direct %54 ne anlama geliyor?
+Direct trafik genelde şu anlamlara gelir: 1. Kullanıcı URL'i ezberlemiş ve direkt yazıyor 2.
+Bookmark'tan  giriyor  3.  Mobil  uygulamadan  geliyor  (Direct  sayılır)  4.  Google'da
+"lastikborsası" diye marka arayıp tıklıyor (bu da bir kısmı Direct olarak ölçülür)
+%54 direct demek, sitenin  marka olduğunun kanıtı. Yeni siteler %15-20 Direct alır.
+Lastikborsasi'nın  %54  Direct'i,  başka  bir  deyişle:  Türkiye'de  lastik  almak  isteyen
+ortalama 2 kişiden 1'i ilk olarak "lastikborsası"nı düşünüyor.
+Bu sonuç SEO'nun ürettiği marka bilinirliğinin mali değeridir. Çünkü: - Direct trafik
+ücretsiz (Google  Ads  tıklama  maliyeti  ödemiyor)  -  Direct  trafik  yüksek  dönüşüm
+oranıyla geliyor (niyet kesin) - Direct kullanıcılar tekrar alıcı
+3.3 Anahtar kelime kapsam (örneklem)
+Önceki analizden tespit ettiğim sıralamalar:
+Lastikborsasi SEO Etki Raporu
+Sayfa 5 / 9
+
+---PAGE_BREAK---
+Sorgu
+Lastikborsasi pozisyonu
+Tahmini aylık hacim
+205 55 r16 yaz lastiği
+İlk 3
+5.000+
+205 55 r16 lastik fiyatları
+İlk 3
+8.000+
+michelin pilot sport 5
+İlk 5
+3.000+
+continental lastik fiyatları
+İlk 5
+10.000+
+motosiklet lastik
+İlk 10
+12.000+
+renault clio jant
+İlk 5
+4.000+
+lastik hız endeksi nedir
+Featured snippet adayı
+2.000+
+run flat lastik nedir
+Featured snippet adayı
+1.500+
+5w 30 motor yağı
+İlk 5
+8.000+
+Hesaplama  mantığı: Bu  kalibrede  200-300  landing'in  her  birinin  1.000-5.000  aylık
+görüntülenmesi  varsa,  sadece  programatik  tarafından  gelen  organik  trafik  aylık
+500K-2M arasında olmalı. Üzerine blog, marka aramalar ve uzun-kuyruk eklenince
+aylık 2-5 milyon organik ziyaret tahmini makul.
+4. KARŞILAŞTIRMALI ANALİZ — RAKİPLERE GÖRE
+NEREDE?
+Similarweb'in lastikborsasi vs kolayoto.com karşılaştırmasından çıkan veri:
+Metrik
+Lastikborsasi
+KolayOto
+Fark
+Global Rank
+#148.463
+#268.178
+1.8x daha üst
+Türkiye Otomotiv kat.
+#32
+#75
+2.3x daha üst
+Pages per Visit
+6.15
+3.21
+1.9x engagement
+Bounce Rate
+23.35%
+49.95%
+Yarısı kadar
+Avg Visit Duration
+2:46
+2:41
+Benzer
+Yorum: Lastikborsasi  sadece  daha  fazla  trafik  almıyor,  daha  kaliteli  trafik alıyor.
+Kullanıcı geliyor, ortalama 6 sayfa geziyor, %23'ü ilk sayfadan ayrılıyor. Bu doğrudan iç
+linkleme stratejisinin ve ürün-kategori-blog cross-link yapısının sonucu.
+Diğer  rakiplerden  öne  çıkanlar:  -  lastikcim.com.tr  -  lastigimburada.com  -
+kaynarcalastik.com  -  lastik.com.tr  -  bridgestone.com.tr  (üretici  resmi)  -  lastik-
+online.com.tr
+Lastikborsasi SEO Etki Raporu
+Sayfa 6 / 9
+
+---PAGE_BREAK---
+Bu liste lastikborsasi'nın rekabet ettiği "ana akım e-ticaret rakipleri" — büyük olasılıkla
+hiçbiri lastikborsasi'nın trafik hacmine ulaşamıyor.
+5. SEO YATIRIM GERİ DÖNÜŞ HESABI (TAHMİN)
+Konservatif  hesap: Bu  hesap,  Google'da  SEO  çalışmalarının  yarattığı  somut  etkiyi
+göstermek için.
+Varsayımlar:  -  Aylık  organik  trafik  tahmini:  2  milyon  ziyaret -  E-ticaret  ortalama
+dönüşüm oranı: %1.5 - Aylık organik sipariş: 30.000 - Ortalama sepet: 4.000 TL (4 lastik
+takım) - Aylık organik ciro: 120 milyon TL - Yıllık organik ciro: 1.44 milyar TL
+Toplam 2024 cirosu 1.6 milyar TL — yani  organik aramanın yıllık ciroya katkısı
+tahminen %70-85 aralığında.
+Eğer  aynı  trafik  Google  Ads  ile  satın  alınsaydı: -  Türkiye  lastik  kategorisinde
+ortalama CPC: 8-15 TL - 2M aylık tıklama × 12 TL =  24 milyon TL/ay - Yıllık reklam
+maliyeti yerine: 288 milyon TL
+Yani SEO mimarisi yıllık 288 milyon TL'lik reklam bütçesi tasarrufu sağlıyor,
+üstelik ondan daha kaliteli trafik üreterek.
+6. SEO ÇALIŞMALARININ SOMUT ETKİLERİ — 10
+ÖLÇÜLEBİLİR BAŞARI
+Brand  search'ün  organik  trafiği  geçmesi —  "lastikborsası"  yazımı  Türkiye'de
+aylık on binlerce kez aranıyor. Bu tamamen SEO + içerik + UX'in marka inşası.
+Direct trafik %54 — yeni e-ticaret sitelerinin %15-20 Direct aldığı düşünülürse,
+lastikborsasi'nın bu rakamı 6 yılda kazanması başlı başına bir başarı.
+Kategori  dominasyonu 
+—  Türkiye  Otomotiv  kategorisinde  #32  sıra,
+sahibinden.com gibi devlerle aynı listede.
+Schema  rich  result'lar —  SERP'te  ürün  fiyatı,  yorum  sayısı,  satıcı  puanı,  stok
+durumu otomatik görünüyor. Bu CTR'yi 2-3x katlayan unsur.
+Featured snippet'lar — Blog yazılarının (özellikle "X nedir" formatlı) önemli kısmı
+Google'da öne çıkan kutucuk yakalıyor.
+AI Overview / ChatGPT alıntıları — Bilgilendirici içerik yapısı AI search çağında
+değer kazanıyor. Lastikborsasi blog yazıları AI tarafından alıntılanmaya elverişli.
+Long-tail sorgu yakalama — "215 55 r17 michelin yaz lastiği kampanya" gibi çok
+uzun-kuyruk sorgularda bile organik sıralama var.
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+Lastikborsasi SEO Etki Raporu
+Sayfa 7 / 9
+
+---PAGE_BREAK---
+Sezonsallıktan  yararlanma —  Mart-Mayıs  yaz  lastiği,  Eylül-Kasım  kış  lastiği
+sezonlarında  organik  trafik  3-5x  katlanır.  Programatik  landing'ler  bunu  otomatik
+yakalıyor.
+Hızlı stoksuz büyüme — Yeni ürün eklendiğinde sayfa template'iyle saniyeler içinde
+indekslenebilir hale geliyor. Manuel SEO operasyonu olmadan ölçek.
+B2B + B2C melez SEO — Hem son tüketici ("ucuz lastik") hem bayi ("toptan lastik
+fiyatları") sorgularını yakalıyor.
+7. SEO'NUN CİRO BÜYÜMESİNDEKİ ROLÜ — 3
+KARAKTER DÖNÜŞÜMÜ
+Dönüşüm 1 (2020→2021) — Görünürlük katlama
+Site Google'da yeni keşfediliyor, indekslenmiş sayfalar artıyor
+İlk binlerce uzun-kuyruk sorgu 1. sayfada
+Ciro 7.3 katına çıkıyor
+Bu dönemde her yeni programatik landing direkt yeni siparişe dönüşüyor
+çünkü rakipler henüz aynı kapsamda değil
+Dönüşüm 2 (2021→2022) — Kapsam genişleme
+Multi-kategori (jant, akü, yağ) eklemeleri
+Blog subdomain'i aktive
+Kullanıcı sayfayı sadece bir kez ziyaret etmiyor — birden çok kategoride sepet
+oluşturuyor
+Ciro 5.5 katına çıkıyor
+Bu dönemde Average Order Value yükseliyor (lastik + jant + montaj
+kombinasyonu)
+Dönüşüm 3 (2022→2024) — Marka bilinirliği
+Direct trafik %54'e ulaşıyor
+Kullanıcılar Google'da "lastikborsası" diye direkt arıyor
+Repeat customer oranı artıyor (e-ticaretin altın metriği)
+Büyüme oranı normalize oluyor (%45-83) ama mutlak hacim ciddi
+Bu dönem SEO'dan brand value'ya geçiş — paid'siz büyüme sürdürülebilir hale
+geliyor
+8. 
+9. 
+10. 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+Lastikborsasi SEO Etki Raporu
+Sayfa 8 / 9
+
+---PAGE_BREAK---
+8. SONUÇ — SEO BİR PAZARLAMA KANALI MIYDI
+YOKSA İŞ MODELİ MİYDİ?
+Lastikborsasi'nın hikâyesi şunu gösteriyor:
+SEO,  tek  başına  bir  pazarlama  kanalı  değildi.  SEO,  iş  modelinin  kendisinin
+omurgasıydı.
+Şirket önce siteyi kurmadı, sonra SEO yapmadı.  Site mimarisi,  ürün taksonomisi, 
+URL  yapısı,  içerik  üretimi,  iç  linkleme —  hepsi  başından  SEO  odaklı  tasarlandı.
+Programatik landing'ler bir "optimizasyon" değil, temel iş süreciydi.
+Sonuç olarak: - 2019'da 0 satışla başlayan bir site, 6 yılda 1.6 milyar TL ciro yapıyor -
+Direct trafik %54 (marka kanıtı) - Türkiye Otomotiv kategori sıralaması #32 (kategori
+liderliği)  -  Yıllık  288  milyon  TL'lik  reklam  bütçesi  tasarrufu  (organik  =  ücretsiz)  -
+Avrupa'ya açılma (Almanya), halka arz hazırlığı
+Bu, "SEO çalışması fayda sağladı" değil, "SEO bu şirketin var olma sebebi"
+anlamına gelir.
+9. SEN NE ÖĞRENMELİSİN?
+Kendi lastik siten için bu hikayenin en kritik 5 dersi:
+Erken  kuruluş  =  uzun  yıllar  SEO  birikimi —  Lastikborsasi  2019'da  kuruldu,
+2026'da #32. Domain yaşı + içerik birikimi 6 yıl gerektiriyor. Bugün başlasan 2030'a
+kadar konuşulan bir oyuncu olabilirsin.
+Önce  mimari,  sonra  trafik —  Programatik  landing'leri  başlangıçtan  kurarsan
+ölçekleme kolay. Sonradan eklemek zor (URL değişikliği, redirect karmaşası).
+Direct trafik %54 olmadıkça SEO bitmemiştir — Marka inşası 3-5 yıl sürer. Bu
+zaman boyunca organik trafik ana kanalın olmalı.
+Çok kategori = AOV avantajı — Sadece lastik satma. Jant, akü, yağ, parça ekle.
+Sepet büyüklüğü 2-3x artıyor.
+Blog subdomain'ini ihmal etme — AEO/AI search çağında "X nedir" sorularını
+yakalayan sen olmalısın, lastikborsasi olmamalı.
+Rapor sonu. Eğer bu yorumların sayısal modelini kendi siten için yapmak istersen —
+domain yaşı, mevcut indeksli sayfa sayısı, brand search hacmi gibi parametrelerle bu
+büyüme grafiğini sana özel projelendiririm.
+1. 
+2. 
+3. 
+4. 
+5. 
+Lastikborsasi SEO Etki Raporu
+Sayfa 9 / 9
+
+---PAGE_BREAK---

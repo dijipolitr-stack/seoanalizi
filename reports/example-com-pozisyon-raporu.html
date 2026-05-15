@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head><meta charset="UTF-8"><style>
+    @page {
+        margin: 2cm;
+        size: A4;
+        @bottom-center {
+            content: counter(page) " / " counter(pages);
+            font-size: 10px;
+            color: #666;
+        }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+        color: #1a1a2e;
+        line-height: 1.6;
+        font-size: 11pt;
+        max-width: 100%;
+    }
+
+    .cover-page {
+        text-align: center;
+        padding-top: 15vh;
+        min-height: 90vh;
+    }
+
+    .cover-logo {
+        font-size: 14pt;
+        color: #667eea;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 4em;
+    }
+
+    .cover-page h1 {
+        font-size: 28pt;
+        color: #1a1a2e;
+        margin-bottom: 0.3em;
+        border: none;
+    }
+
+    .cover-page h2 {
+        font-size: 18pt;
+        color: #667eea;
+        font-weight: 300;
+        margin-bottom: 3em;
+    }
+
+    .cover-meta {
+        color: #666;
+        font-size: 12pt;
+    }
+
+    .cover-meta p {
+        margin: 0.3em 0;
+    }
+
+    .page-break { page-break-before: always; }
+
+    h1 {
+        color: #1a1a2e;
+        font-size: 18pt;
+        border-bottom: 3px solid #667eea;
+        padding-bottom: 8px;
+        margin-top: 1.5em;
+    }
+
+    h2 {
+        color: #333;
+        font-size: 13pt;
+        margin-top: 1.2em;
+        border-left: 4px solid #667eea;
+        padding-left: 10px;
+    }
+
+    .score-panel {
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .score-card {
+        text-align: center;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        min-width: 120px;
+        border: 1px solid #e9ecef;
+    }
+
+    .score-value {
+        font-size: 36pt;
+        font-weight: 700;
+    }
+
+    .score-label {
+        font-size: 10pt;
+        color: #666;
+        margin-top: 5px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+        font-size: 10pt;
+    }
+
+    .data-table td, .data-table th {
+        padding: 8px 12px;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .data-table td:first-child {
+        font-weight: 500;
+        width: 45%;
+        color: #555;
+    }
+
+    .issues-table th, .actions-table th {
+        background: #1a1a2e;
+        color: white;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .issues-table td, .actions-table td {
+        padding: 8px 10px;
+        border-bottom: 1px solid #e9ecef;
+        vertical-align: top;
+    }
+
+    .issues-table tr:nth-child(even),
+    .actions-table tr:nth-child(even) {
+        background: #f8f9fa;
+    }
+
+    .llm-text {
+        margin: 20px 0;
+        padding: 15px 20px;
+        background: #f0f4ff;
+        border-left: 4px solid #667eea;
+        border-radius: 0 8px 8px 0;
+        font-size: 10.5pt;
+        line-height: 1.7;
+        white-space: pre-wrap;
+    }
+
+    .report-footer {
+        text-align: center;
+        color: #999;
+        font-size: 9pt;
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+    }
+
+    small { color: #777; }
+    </style></head>
+<body>
+    <div class="cover-page">
+        <h1>example.com</h1>
+        <h2>Google Pozisyon Ölçüm Raporu</h2>
+    </div>
+    <div class="page-break"></div>
+    <h1>Performans Özeti</h1>
+    <div class="score-panel">
+        <div class="score-card"><div class="score-value">0</div><div class="score-label">Top 10 Kelime</div></div>
+        <div class="score-card"><div class="score-value">#41.8</div><div class="score-label">Ort. Pozisyon</div></div>
+    </div>
+    <table class="data-table">
+        <tr><th>Anahtar Kelime</th><th>Pozisyon</th><th>Aranma Hacmi</th></tr>
+        <tr><td>oto lastik</td><td>26</td><td>191</td></tr><tr><td>yaz lastiği</td><td>20</td><td>136</td></tr><tr><td>kış lastiği</td><td>49</td><td>1900</td></tr><tr><td>lastik fiyatları</td><td>72</td><td>1035</td></tr>
+    </table>
+    <div class="llm-text">Analiz hazırlanıyor...</div>
+</body></html>

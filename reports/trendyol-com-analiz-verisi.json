@@ -1,0 +1,313 @@
+{
+  "domain": "trendyol.com",
+  "analysis_date": "2026-05-15T00:56:41.254439",
+  "crawl_summary": {
+    "pages_crawled": 10,
+    "duration": 10.63827896118164,
+    "ssl_valid": true,
+    "robots_accessible": true,
+    "sitemap_accessible": true
+  },
+  "technical_seo": {
+    "score": 98.0,
+    "issues": [
+      {
+        "severity": "INFO",
+        "category": "robots",
+        "title": "robots.txt'te sitemap referansı yok",
+        "description": "robots.txt dosyasında Sitemap: satırı bulunamadı.",
+        "affected_urls": [],
+        "recommendation": "robots.txt'e 'Sitemap: https://domain.com/sitemap.xml' satırı ekleyin."
+      },
+      {
+        "severity": "WARNING",
+        "category": "meta",
+        "title": "2 adet yinelenen (duplicate) title tespit edildi",
+        "description": "Aynı title'ı paylaşan sayfalar Google'da cannibalization yaratır.",
+        "affected_urls": [],
+        "recommendation": "Her sayfanın benzersiz bir title'ı olmalı."
+      },
+      {
+        "severity": "WARNING",
+        "category": "heading",
+        "title": "7 sayfada H1 etiketi eksik",
+        "description": "H1 etiketi sayfanın ana konusunu belirler, SEO için kritiktir.",
+        "affected_urls": [
+          "https://trendyol.com",
+          "https://trendyol.com/hesabim/indirim-kuponlari",
+          "https://trendyol.com/s/meet-us",
+          "https://trendyol.com/hesabim/favoriler",
+          "https://trendyol.com/sepetim"
+        ],
+        "recommendation": "Her sayfaya tek bir, açıklayıcı H1 etiketi ekleyin."
+      }
+    ],
+    "ssl_status": {
+      "valid": true,
+      "issuer": "GlobalSign nv-sa",
+      "expiry": "Nov 10 10:44:30 2026 GMT"
+    },
+    "robots_status": {
+      "accessible": true,
+      "content_length": 5000,
+      "has_sitemap_ref": false,
+      "has_disallow": true
+    },
+    "sitemap_status": {
+      "accessible": true,
+      "url": "https://trendyol.com/sitemap_index.xml",
+      "url_count": 100
+    },
+    "url_analysis": {
+      "total_urls": 10,
+      "long_urls": 0,
+      "param_urls": 0,
+      "uppercase_urls": 0,
+      "underscore_urls": 0,
+      "deep_urls": 0
+    },
+    "meta_analysis": {
+      "missing_title": 0,
+      "long_title": 2,
+      "short_title": 1,
+      "duplicate_titles": 2,
+      "missing_description": 0,
+      "long_description": 0,
+      "short_description": 0,
+      "missing_canonical": 4
+    },
+    "heading_analysis": {
+      "missing_h1": 7,
+      "multiple_h1": 0,
+      "empty_h1": 0
+    },
+    "schema_analysis": {
+      "total_pages": 9,
+      "pages_with_schema": 3,
+      "coverage_percent": 33.3,
+      "schema_types": {
+        "WebSite": 3,
+        "Organization": 1,
+        "MemberProgram": 1
+      },
+      "pages_without_schema": 6
+    },
+    "speed_analysis": {
+      "avg_load_time": 0.36,
+      "min_load_time": 0.21,
+      "max_load_time": 0.65,
+      "slow_pages": 0
+    },
+    "mobile_analysis": {
+      "viewport_coverage": 100.0,
+      "pages_without_viewport": 0
+    },
+    "redirect_analysis": {
+      "https_redirect": true,
+      "www_redirect": true
+    }
+  },
+  "onpage_seo": {
+    "score": 89.0,
+    "issues": [
+      {
+        "severity": "WARNING",
+        "category": "content",
+        "title": "5 sayfada thin content var (<300 kelime)",
+        "description": "Az içerikli sayfalar Google'ın 'Helpful Content' filtresine takılabilir. Ortalama kelime sayısı: 1006",
+        "affected_urls": [
+          "https://trendyol.com/hesabim/indirim-kuponlari",
+          "https://trendyol.com/yardim",
+          "https://trendyol.com/giris",
+          "https://trendyol.com/hesabim/favoriler",
+          "https://trendyol.com/sepetim"
+        ],
+        "recommendation": "Thin content sayfalarını en az 500 kelimeye çıkarın, veya ilgili sayfalarla birleştirin."
+      },
+      {
+        "severity": "WARNING",
+        "category": "images",
+        "title": "Görsel alt text kapsamı düşük (%38)",
+        "description": "972 görselden 604'inde alt text yok. Alt text hem erişilebilirlik hem Google Görseller SEO'su için önemli.",
+        "affected_urls": [],
+        "recommendation": "Tüm görsellere açıklayıcı alt text ekleyin. Format: '{Ürün adı} {özellik}' (örn: '205/55R16 Michelin lastik')"
+      }
+    ],
+    "content_stats": {
+      "total_pages": 9,
+      "avg_word_count": 1005.8888888888889,
+      "min_word_count": 78,
+      "max_word_count": 3552,
+      "thin_content_pages": [
+        "https://trendyol.com/hesabim/indirim-kuponlari",
+        "https://trendyol.com/yardim",
+        "https://trendyol.com/giris",
+        "https://trendyol.com/hesabim/favoriler",
+        "https://trendyol.com/sepetim"
+      ],
+      "pages_without_images": [],
+      "images_without_alt": 604,
+      "total_images": 972,
+      "alt_coverage": 37.86008230452675
+    },
+    "link_stats": {
+      "avg_internal_links": 59.666666666666664,
+      "avg_external_links": 18.22222222222222,
+      "orphan_pages": [],
+      "pages_without_internal_links": [],
+      "total_unique_internal": 235,
+      "total_unique_external": 29,
+      "external_domains": {
+        "akademi.trendyol.com": 27,
+        "partner.trendyol.com": 17,
+        "careers.trendyol.com": 10,
+        "etbis.ticaret.gov.tr": 9,
+        "www.guvendamgasi.org.tr": 9,
+        "www.instagram.com": 9,
+        "www.tiktok.com": 9,
+        "www.youtube.com": 9,
+        "www.facebook.com": 9,
+        "x.com": 9,
+        "itunes.apple.com": 9,
+        "play.google.com": 9,
+        "appgallery.huawei.com": 9,
+        "www.dsmgrup.com": 9,
+        "www.google.com": 6,
+        "maps.app.goo.gl": 5
+      }
+    },
+    "eeat_signals": {
+      "signals": {
+        "about": false,
+        "contact": true,
+        "privacy": false,
+        "terms": false,
+        "return": false,
+        "faq": true,
+        "blog": false,
+        "ssl": true,
+        "social_media": true,
+        "phone_number": true,
+        "email": false,
+        "reviews": true
+      },
+      "score": 5.0,
+      "details": {}
+    },
+    "title_analysis": {
+      "total_with_title": 9,
+      "avg_length": 51.666666666666664,
+      "too_long": 2,
+      "too_short": 1,
+      "with_year": 0,
+      "with_brand_suffix": 9,
+      "brand_suffix": "Trendyol"
+    },
+    "keyword_patterns": {
+      "trust_keywords": {
+        "güvenli": 24,
+        "kampanya": 21,
+        "indirim": 1,
+        "avantajlı": 6,
+        "destek": 20,
+        "güvenlik": 14
+      },
+      "total_trust_mentions": 86,
+      "cta_count": 3,
+      "has_pricing_language": true,
+      "has_urgency_language": true
+    }
+  },
+  "actions": [
+    {
+      "id": 1,
+      "title": "On-Page SEO: 2 adet yinelenen (duplicate) title tespit edildi",
+      "category": "On-Page SEO",
+      "impact": 8,
+      "confidence": 9,
+      "ease": 8,
+      "ice_score": 57.6,
+      "priority": "P1",
+      "description": "Aynı title'ı paylaşan sayfalar Google'da cannibalization yaratır.",
+      "recommendation": "Her sayfanın benzersiz bir title'ı olmalı.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "2 adet yinelenen (duplicate) title tespit edildi"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "On-Page SEO: 7 sayfada H1 etiketi eksik",
+      "category": "On-Page SEO",
+      "impact": 6,
+      "confidence": 8,
+      "ease": 9,
+      "ice_score": 43.2,
+      "priority": "P2",
+      "description": "H1 etiketi sayfanın ana konusunu belirler, SEO için kritiktir.",
+      "recommendation": "Her sayfaya tek bir, açıklayıcı H1 etiketi ekleyin.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "7 sayfada H1 etiketi eksik"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Görsel SEO: Görsel alt text kapsamı düşük (%38)",
+      "category": "Görsel SEO",
+      "impact": 5,
+      "confidence": 9,
+      "ease": 8,
+      "ice_score": 36.0,
+      "priority": "P2",
+      "description": "972 görselden 604'inde alt text yok. Alt text hem erişilebilirlik hem Google Görseller SEO'su için önemli.",
+      "recommendation": "Tüm görsellere açıklayıcı alt text ekleyin. Format: '{Ürün adı} {özellik}' (örn: '205/55R16 Michelin lastik')",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "Görsel alt text kapsamı düşük (%38)"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "İçerik: 5 sayfada thin content var (<300 kelime)",
+      "category": "İçerik",
+      "impact": 7,
+      "confidence": 8,
+      "ease": 6,
+      "ice_score": 33.6,
+      "priority": "P2",
+      "description": "Az içerikli sayfalar Google'ın 'Helpful Content' filtresine takılabilir. Ortalama kelime sayısı: 1006",
+      "recommendation": "Thin content sayfalarını en az 500 kelimeye çıkarın, veya ilgili sayfalarla birleştirin.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "5 sayfada thin content var (<300 kelime)"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Teknik SEO: robots.txt'te sitemap referansı yok",
+      "category": "Teknik SEO",
+      "impact": 4,
+      "confidence": 8,
+      "ease": 10,
+      "ice_score": 32.0,
+      "priority": "P2",
+      "description": "robots.txt dosyasında Sitemap: satırı bulunamadı.",
+      "recommendation": "robots.txt'e 'Sitemap: https://domain.com/sitemap.xml' satırı ekleyin.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "robots.txt'te sitemap referansı yok"
+      ]
+    }
+  ]
+}

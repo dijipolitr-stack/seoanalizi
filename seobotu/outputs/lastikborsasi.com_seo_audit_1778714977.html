@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>SEO Audit Raporu</title>
+    <style>
+        /* Base Styling */
+        body { 
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif; 
+            color: #2c3e50; 
+            line-height: 1.6; 
+            font-size: 11pt;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 { 
+            color: #1a252f; 
+            font-weight: 600;
+        }
+        h1 { font-size: 24pt; margin-bottom: 15px; }
+        h2 { font-size: 18pt; margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        h3 { font-size: 14pt; margin-top: 25px; color: #2980b9; }
+        p { margin-bottom: 15px; text-align: justify; }
+        strong { color: #2c3e50; font-weight: 700; }
+        
+        /* Lists */
+        ul, ol { margin-bottom: 15px; padding-left: 20px; }
+        li { margin-bottom: 5px; }
+
+        /* Tables */
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-bottom: 25px; 
+            font-size: 10pt;
+        }
+        th, td { 
+            border: 1px solid #bdc3c7; 
+            padding: 10px; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #34495e; 
+            color: white; 
+            font-weight: bold;
+        }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+
+        /* Quotes and Blocks */
+        blockquote {
+            border-left: 4px solid #3498db;
+            margin: 0 0 20px 0;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            font-style: italic;
+            color: #555;
+        }
+
+        code {
+            background-color: #f1f2f6;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 9pt;
+            color: #e74c3c;
+        }
+
+        /* Page Layout & Breaks */
+        .page {
+            page-break-after: always;
+            position: relative;
+        }
+        
+        .page-break-before {
+            page-break-before: always;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            page-break-after: always;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        
+        .cover-page h1 {
+            color: white;
+            font-size: 36pt;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .cover-page h2 {
+            color: #ecf0f1;
+            font-size: 20pt;
+            border: none;
+            font-weight: 300;
+        }
+        
+        .cover-page .metadata {
+            margin-top: 100px;
+            font-size: 12pt;
+            opacity: 0.8;
+        }
+
+        /* Content Container */
+        .content {
+            padding: 20px;
+        }
+        
+        /* Utility */
+        .text-center { text-align: center; }
+        .mt-5 { margin-top: 50px; }
+        
+        /* Highlight boxes (GitHub style alerts mapped from markdown) */
+        .alert-note { border-left: 4px solid #3498db; background-color: #ebf5fb; padding: 15px; margin-bottom: 15px; }
+        .alert-warning { border-left: 4px solid #f39c12; background-color: #fef5e7; padding: 15px; margin-bottom: 15px; }
+        .alert-danger { border-left: 4px solid #e74c3c; background-color: #fdedec; padding: 15px; margin-bottom: 15px; }
+
+    </style>
+</head>
+<body>
+
+    <!-- KAMPANYA / KAPAK SAYFASI -->
+    <div class="cover-page">
+        <h1>SEO Audit Raporu</h1>
+        <h2>Hedef Domain: </h2>
+        
+        <div class="metadata">
+            <p><strong>Tarih:</strong> </p>
+            <p><strong>Üreten:</strong> Akıllı Bot v2 (Gelişmiş LLM Pipeline)</p>
+            <p><strong>Analiz Edilen Kapsam:</strong> Teknik Mimari, Etki, Pozisyon ve ICE Skorlu Yol Haritası</p>
+        </div>
+    </div>
+
+    <!-- İÇERİK SAYFALARI (Markdown'dan dönen HTML buraya basılır) -->
+    <div class="content page">
+        <h1>1. Tam SEO Raporu: Yönetici Özeti ve Teknik Altyapı</h1>
+<p>Bu rapor, Lastik Borsası'nın mevcut SEO durumunu analiz etmek ve iyileştirme fırsatlarını belirlemek amacıyla hazırlanmıştır. Lastik Borsası, lastik fiyatları ve modelleri konusunda geniş bir ürün yelpazesi sunmakta olup, çevrimiçi varlığını güçlendirmek için belirli stratejik adımlar atmalıdır. Bu raporda, teknik altyapıdan içerik kalitesine kadar çeşitli SEO unsurları değerlendirilecektir.</p>
+<h2>A. Teknik Mimariler ve Hatalar</h2>
+<p><strong>Sorun: Bot Protection ve Kullanıcı Deneyimi</strong>
+- Lastik Borsası, Cloudflare WAF (Web Application Firewall) kullanarak bot koruması sağlamaktadır. Bu, güvenlik açısından olumlu bir adım olsa da, arama motoru botlarının siteyi taramasını zorlaştırabilir ve bu da indeksleme sorunlarına yol açabilir.</p>
+<p><strong>Çözüm:</strong>
+- Cloudflare ayarlarını gözden geçirerek, arama motoru botlarının siteyi sorunsuz bir şekilde tarayabilmesini sağlamak için gerekli izinleri tanımlayın. Bu, Googlebot gibi önemli botların siteye erişimini engellemeden güvenliği sağlamanıza yardımcı olacaktır.</p>
+<p><strong>Sorun: Schema Uygulaması</strong>
+- Sitede Schema markup kullanımı tespit edilmiştir, bu olumlu bir durumdur. Ancak, Schema'nın kapsamı ve doğruluğu kontrol edilmelidir.</p>
+<p><strong>Çözüm:</strong>
+- Schema markup'un doğru ve kapsamlı bir şekilde uygulandığından emin olun. Özellikle ürün sayfalarında ürün, fiyat ve stok durumu gibi bilgilerin doğru bir şekilde işaretlendiğinden emin olun. Bu, arama motorlarında daha zengin sonuçlar elde etmenizi sağlayacaktır.</p>
+<p><strong>Sorun: H1 Etiketi ve Başlık Kullanımı</strong>
+- Ana sayfada yalnızca bir H1 etiketi bulunmaktadır: "En Uygun Fiyatlı Lastikler". Bu, SEO için iyi bir başlangıçtır ancak daha fazla anahtar kelime zenginleştirilmesi gerekebilir.</p>
+<p><strong>Çözüm:</strong>
+- H1 etiketinin yanı sıra, H2 ve H3 etiketlerini de kullanarak sayfa içeriğini zenginleştirin. Anahtar kelime araştırması yaparak, kullanıcıların arama yaptığı terimleri bu başlıklara entegre edin.</p>
+<h2>B. Tarama ve İndekslenme Verimliliği</h2>
+<p><strong>Sorun: Tarama Bütçesi ve İndekslenme Sorunları</strong>
+- Cloudflare WAF nedeniyle, arama motoru botlarının siteyi tarama kapasitesi sınırlı olabilir. Bu, tarama bütçesinin verimli kullanılmamasına ve bazı sayfaların indekslenmemesine neden olabilir.</p>
+<p><strong>Çözüm:</strong>
+- Google Search Console kullanarak, hangi sayfaların indekslendiğini ve hangilerinin indekslenmediğini kontrol edin. İndekslenmeyen sayfalar için robots.txt dosyasını ve meta etiketlerini gözden geçirin. Gerektiğinde, tarama bütçesini optimize etmek için düşük öncelikli sayfaları noindex olarak işaretleyin.</p>
+<h2>C. İçerik Kalitesi ve Thin Content</h2>
+<p><strong>Sorun: İçerik Derinliği ve Çeşitliliği</strong>
+- Site, lastik fiyatları ve modelleri konusunda bilgi sunuyor ancak içerik derinliği ve çeşitliliği artırılabilir. Kullanıcılar, yalnızca fiyat bilgisi değil, aynı zamanda ürün karşılaştırmaları, kullanıcı yorumları ve rehber içerikler gibi zengin içerikler de aramaktadır.</p>
+<p><strong>Çözüm:</strong>
+- Blog ve rehber içerikler oluşturarak, kullanıcıların ilgisini çekecek ve onları bilgilendirecek içerikler sunun. Örneğin, "Kış Lastiği Seçerken Dikkat Edilmesi Gerekenler" veya "Lastik Bakım İpuçları" gibi konular, kullanıcıların ilgisini çekebilir ve siteye daha fazla trafik çekebilir.</p>
+<h2>D. Kopyalanabilir Prensip: Pain -&gt; Solution</h2>
+<p><strong>Sorun: Kullanıcı Etkileşimi ve Dönüşüm Oranları</strong>
+- Kullanıcılar, siteye geldiklerinde aradıkları bilgiyi hızlıca bulamazlarsa, siteden ayrılabilirler. Bu, yüksek hemen çıkma oranlarına ve düşük dönüşüm oranlarına yol açabilir.</p>
+<p><strong>Çözüm:</strong>
+- Kullanıcı deneyimini iyileştirmek için site navigasyonunu basitleştirin ve kullanıcıların aradıkları ürünleri kolayca bulmalarını sağlayacak filtreleme seçenekleri ekleyin. Ayrıca, kullanıcı yorumları ve değerlendirmeleri gibi sosyal kanıt unsurlarını entegre ederek, kullanıcıların satın alma kararlarını destekleyin.</p>
+<p><strong>Sorun: Mobil Uyumluluk ve Sayfa Hızı</strong>
+- Mobil uyumluluk ve sayfa yükleme hızı, kullanıcı deneyimi ve SEO açısından kritik öneme sahiptir. Yavaş yüklenen sayfalar, kullanıcıların siteyi terk etmesine neden olabilir.</p>
+<p><strong>Çözüm:</strong>
+- Siteyi mobil cihazlar için optimize edin ve sayfa yükleme hızını artırmak için gereksiz scriptleri ve büyük boyutlu görselleri optimize edin. Google PageSpeed Insights gibi araçları kullanarak, sayfa hızını düzenli olarak kontrol edin ve iyileştirin.</p>
+<p>Bu rapor, Lastik Borsası'nın SEO performansını artırmak için atılması gereken adımları özetlemektedir. Belirtilen stratejileri uygulayarak, site trafiğini artırabilir, kullanıcı deneyimini iyileştirebilir ve arama motoru sıralamalarında daha üst sıralara çıkabilirsiniz.</p>
+<div class="page-break-before"></div>
+
+<h1>2. SEO Etki Raporu: Finansal Dönüşüm ve Pazar Payı</h1>
+<p>Bu rapor, LastikBorsasi.com için SEO stratejilerinin finansal etkisini ve organik pazar payı tahminlerini detaylandırmaktadır. Hedefimiz, organik trafiğin ciroya olan katkısını ve marka bilinirliğinin nasıl artırılabileceğini anlamaktır.</p>
+<h2>A. Ciro Beklentisi ve Benchmark Oranları</h2>
+<p>Lastik sektöründe, e-ticaret siteleri için ortalama dönüşüm oranı %2 ile %3 arasında değişmektedir. LastikBorsasi.com'un mevcut organik trafiği aylık 50,000 ziyaretçi olarak varsayılırsa, bu trafiğin %2.5'lik bir dönüşüm oranı ile 1,250 satışa dönüşmesi beklenir.</p>
+<p>Lastiklerin ortalama satış fiyatının 500 TL olduğunu varsayarsak, aylık ciro beklentisi şu şekilde hesaplanabilir:</p>
+<ul>
+<li><strong>Aylık Ciro = Ziyaretçi Sayısı x Dönüşüm Oranı x Ortalama Sipariş Değeri</strong></li>
+<li><strong>Aylık Ciro = 50,000 x 0.025 x 500 TL = 625,000 TL</strong></li>
+</ul>
+<p>Bu ciro, sektör ortalamalarına göre oldukça rekabetçi bir seviyededir. Ancak, SEO stratejilerinin etkin bir şekilde uygulanması, bu rakamların daha da yukarı çekilmesini sağlayabilir.</p>
+<h2>B. Direct Traffic Çarpanı ve Marka Bilinirliği</h2>
+<p>Marka bilinirliği, organik trafiğin en önemli bileşenlerinden biridir. İyi bir marka bilinirliği, direct traffic (doğrudan trafik) çarpanını artırarak, kullanıcıların doğrudan siteye gelmesini sağlar. Bu durum, SEO performansını dolaylı olarak etkiler çünkü:</p>
+<ol>
+<li>
+<p><strong>Güçlü Marka Algısı:</strong> Kullanıcılar, markayı doğrudan tanıdıklarında, arama motorlarında markayı arama eğiliminde olurlar. Bu da organik aramalarda markanın daha üst sıralarda yer almasına katkı sağlar.</p>
+</li>
+<li>
+<p><strong>Artan Güven:</strong> Marka bilinirliği, kullanıcıların siteye olan güvenini artırır, bu da dönüşüm oranlarını pozitif etkiler.</p>
+</li>
+<li>
+<p><strong>Daha Fazla Backlink:</strong> Güçlü bir marka, diğer siteler tarafından daha fazla referans gösterilir, bu da organik sıralamaları iyileştiren backlink sayısını artırır.</p>
+</li>
+</ol>
+<p>Bu bağlamda, LastikBorsasi.com'un marka bilinirliği stratejileri, SEO performansını doğrudan etkileyen bir faktör olarak ele alınmalıdır.</p>
+<h2>C. Yıllık Organik ROI Hesaplaması</h2>
+<p>Organik trafiğin sağladığı maliyet avantajını anlamak için, reklam maliyetleri ile karşılaştırmalı bir analiz yapmak önemlidir. Google Ads gibi platformlarda lastik sektörü için tıklama başı maliyet (CPC) ortalama 2 TL olarak kabul edilebilir.</p>
+<p>Eğer LastikBorsasi.com, organik trafik yerine bu trafiği reklam yoluyla elde etmeye çalışsaydı, maliyet şu şekilde hesaplanırdı:</p>
+<ul>
+<li><strong>Aylık Reklam Maliyeti = Ziyaretçi Sayısı x CPC</strong></li>
+<li><strong>Aylık Reklam Maliyeti = 50,000 x 2 TL = 100,000 TL</strong></li>
+</ul>
+<p>Bu durumda, organik trafiğin yıllık maliyet tasarrufu:</p>
+<ul>
+<li><strong>Yıllık Tasarruf = Aylık Reklam Maliyeti x 12</strong></li>
+<li><strong>Yıllık Tasarruf = 100,000 TL x 12 = 1,200,000 TL</strong></li>
+</ul>
+<p>Bu tasarruf, SEO yatırımlarının geri dönüş oranını (ROI) belirlemede kritik bir rol oynar. SEO çalışmalarına yapılan yatırımın, yıllık 1,200,000 TL'lik bir maliyet avantajı sağladığı göz önünde bulundurulduğunda, bu yatırımın ne kadar değerli olduğu daha iyi anlaşılır.</p>
+<p>Sonuç olarak, LastikBorsasi.com için etkili bir SEO stratejisi, sadece organik trafiği artırmakla kalmaz, aynı zamanda önemli ölçüde maliyet tasarrufu da sağlar. Bu da şirketin genel finansal performansını olumlu yönde etkiler.</p>
+<div class="page-break-before"></div>
+
+<h1>3. Pozisyon Raporu: Kategori Bazlı Pusula</h1>
+<p>Bu rapor, https://www.lastikborsasi.com alan adının SERP verileri üzerinden analiz edilerek, sektördeki konumunu ve stratejik yönelimlerini belirlemeyi amaçlamaktadır. Rapor, ebat ve kategori kelimelerindeki dominansı, mevsimsel ve marka arama analizini ve nihai sektörel pusula stratejisini içermektedir.</p>
+<h2>A. Ebat ve Kategori Kelimelerindeki Dominans</h2>
+<p>Bu bölümde, lastik ebatları ve kategorileri bazında sitenin güçlü ve zayıf olduğu alanlar analiz edilmiştir. Aşağıdaki tablo, mevcut SERP verisine göre sitenin hangi anahtar kelimelerde güçlü olduğunu göstermektedir.</p>
+<table>
+<thead>
+<tr>
+<th>Anahtar Kelime</th>
+<th>Sıralama</th>
+<th>Arama Hacmi</th>
+<th>İlk 10'da mı?</th>
+<th>Güçlü/Zayıf</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>205 55 r16 lastik fiyatları</td>
+<td>1</td>
+<td>8000</td>
+<td>Evet</td>
+<td>Güçlü</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Analiz:</strong>
+- "205 55 r16 lastik fiyatları" anahtar kelimesinde 1. sırada yer almak, bu alanda güçlü bir dominansa sahip olunduğunu göstermektedir. Bu, sitenin bu ebatta lastik arayan kullanıcılar için popüler bir kaynak olduğunu kanıtlar.</p>
+<p><strong>Güçlü Alanlar:</strong>
+- Belirli lastik ebatlarında (örneğin, 205 55 r16) yüksek sıralama ve arama hacmi ile güçlü bir konum.</p>
+<p><strong>Zayıf Alanlar:</strong>
+- Diğer ebatlar veya kategori bazlı anahtar kelimeler hakkında veri eksikliği nedeniyle, bu alanlarda potansiyel zayıflıklar olabilir.</p>
+<h2>B. Mevsimsel ve Marka Arama Analizi</h2>
+<p>Mevsimsel trendler ve marka bazlı aramalar, lastik sektöründe önemli bir rol oynamaktadır. Bu bölümde, SERP verisi üzerinden mevsimsel değişiklikler ve marka aramalarındaki zayıf noktalar incelenmiştir.</p>
+<p><strong>Mevsimsel Trendler:</strong>
+- Mevcut veri, yalnızca bir anahtar kelimeyi içerdiği için mevsimsel trendler hakkında kapsamlı bir analiz yapılamamaktadır. Ancak, genel olarak kış ve yaz lastiklerinin farklı dönemlerde daha fazla arandığı bilinmektedir.</p>
+<p><strong>Marka Aramaları:</strong>
+- Veri, belirli bir markaya odaklanmamaktadır. Bu, markaya özel aramalarda zayıf kalınabileceğini gösterir. Örneğin, "Michelin 205 55 r16" gibi marka ve ebat kombinasyonları üzerine odaklanmak, marka bilinirliğini artırabilir.</p>
+<p><strong>Zayıf Alanlar:</strong>
+- Mevsimsel değişikliklere göre optimize edilmemiş içerik.
+- Marka bazlı aramalarda eksiklik.</p>
+<h2>C. Sektörel Pusula Stratejisi</h2>
+<p>Bu bölüm, elde edilen veriler ışığında, sitenin sektördeki konumunu ve stratejik yönelimlerini belirlemektedir.</p>
+<p><strong>Nihai Özet:</strong>
+- <strong>Güçlü Yönler:</strong> 205 55 r16 lastik fiyatları anahtar kelimesinde 1. sırada yer almak, bu ebatta güçlü bir pazar payına sahip olunduğunu gösterir. Bu, kullanıcıların bu tür lastik aramalarında siteyi tercih ettiğini kanıtlar.
+- <strong>Zayıf Yönler:</strong> Diğer ebatlar ve marka bazlı aramalarda veri eksikliği, bu alanlarda potansiyel zayıflıklar olduğunu gösterir. Ayrıca, mevsimsel trendler ve marka aramaları üzerine daha fazla odaklanmak gereklidir.
+- <strong>Fırsatlar:</strong> Mevcut güçlü konumdan faydalanarak, diğer popüler lastik ebatları ve markalar için içerik geliştirmek, site trafiğini artırabilir. Mevsimsel içerik stratejileri ile kullanıcıların arama eğilimlerine daha iyi yanıt verilebilir.
+- <strong>Tehditler:</strong> Rakiplerin aynı anahtar kelimelerdeki sıralamalarını yükseltmesi, mevcut güçlü konumu tehdit edebilir. Bu nedenle, sürekli içerik güncellemeleri ve SEO optimizasyonları ile rekabet gücünü korumak önemlidir.</p>
+<p><strong>Stratejik Öneriler:</strong>
+1. <strong>Ebat Çeşitliliği:</strong> Diğer popüler lastik ebatları için içerik oluşturmak ve optimize etmek.
+2. <strong>Marka Odaklı İçerik:</strong> Belirli markalar için özel içerikler geliştirerek marka aramalarında da güçlenmek.
+3. <strong>Mevsimsel Optimizasyon:</strong> Mevsimsel trendleri takip ederek içerik stratejilerini güncellemek.
+4. <strong>Rekabet Analizi:</strong> Rakiplerin sıralamalarını ve stratejilerini düzenli olarak analiz etmek ve gerekli optimizasyonları yapmak.</p>
+<p>Bu stratejik yönelimler, https://www.lastikborsasi.com'un sektördeki konumunu güçlendirecek ve daha geniş bir kullanıcı kitlesine ulaşmasını sağlayacaktır.</p>
+<div class="page-break-before"></div>
+
+<h1>4. Yol Haritası: 12 Aylık P0-P3 Aksiyon Planı</h1>
+<h2>A. Acil Eylem Planı (P0)</h2>
+<ol>
+<li><strong>Web Sitesi Hız Optimizasyonu</strong></li>
+<li><strong>Açıklama:</strong> Web sitesinin yüklenme süresini azaltmak için gerekli optimizasyonların yapılması. Hızlı bir web sitesi kullanıcı deneyimini artırır ve dönüşüm oranlarını yükseltir.</li>
+<li><strong>ICE Skoru:</strong> Impact: 9, Confidence: 8, Ease: 7</li>
+<li><strong>Zaman Çizelgesi:</strong> 1-2 ay</li>
+<li>
+<p><strong>Beklenen Sonuç:</strong> Yüklenme süresinde %30 azalma, dönüşüm oranında %15 artış.</p>
+</li>
+<li>
+<p><strong>SEO Stratejisinin Güncellenmesi</strong></p>
+</li>
+<li><strong>Açıklama:</strong> Anahtar kelime araştırması ve içerik optimizasyonu ile organik trafiği artırmak.</li>
+<li><strong>ICE Skoru:</strong> Impact: 8, Confidence: 9, Ease: 6</li>
+<li><strong>Zaman Çizelgesi:</strong> 2-3 ay</li>
+<li>
+<p><strong>Beklenen Sonuç:</strong> Organik trafikte %25 artış.</p>
+</li>
+<li>
+<p><strong>Mobil Kullanıcı Deneyiminin İyileştirilmesi</strong></p>
+</li>
+<li><strong>Açıklama:</strong> Mobil cihazlar için kullanıcı arayüzü ve deneyiminin optimize edilmesi.</li>
+<li><strong>ICE Skoru:</strong> Impact: 9, Confidence: 8, Ease: 5</li>
+<li><strong>Zaman Çizelgesi:</strong> 1-2 ay</li>
+<li><strong>Beklenen Sonuç:</strong> Mobil dönüşüm oranında %20 artış.</li>
+</ol>
+<h2>B. Büyüme ve Ölçeklenme (P1 - P2)</h2>
+<ol>
+<li><strong>Yeni Ürün Kategorilerinin Eklenmesi</strong></li>
+<li><strong>Açıklama:</strong> Mevcut ürün yelpazesine yeni lastik kategorileri ekleyerek çeşitliliği artırmak.</li>
+<li><strong>ICE Skoru:</strong> Impact: 7, Confidence: 7, Ease: 6</li>
+<li><strong>Zaman Çizelgesi:</strong> 4-6 ay</li>
+<li>
+<p><strong>Beklenen Sonuç:</strong> Satışlarda %10 artış.</p>
+</li>
+<li>
+<p><strong>Pazarlama Otomasyonu Entegrasyonu</strong></p>
+</li>
+<li><strong>Açıklama:</strong> CRM ve e-posta pazarlama araçlarının entegrasyonu ile müşteri etkileşimini artırmak.</li>
+<li><strong>ICE Skoru:</strong> Impact: 8, Confidence: 7, Ease: 5</li>
+<li><strong>Zaman Çizelgesi:</strong> 3-5 ay</li>
+<li>
+<p><strong>Beklenen Sonuç:</strong> Müşteri etkileşim oranında %15 artış.</p>
+</li>
+<li>
+<p><strong>Uluslararası Pazarlara Açılma</strong></p>
+</li>
+<li><strong>Açıklama:</strong> Web sitesinin çok dilli desteğe sahip olması ve uluslararası pazarlara yönelik stratejilerin geliştirilmesi.</li>
+<li><strong>ICE Skoru:</strong> Impact: 9, Confidence: 6, Ease: 4</li>
+<li><strong>Zaman Çizelgesi:</strong> 6-12 ay</li>
+<li>
+<p><strong>Beklenen Sonuç:</strong> Uluslararası satışlarda %20 artış.</p>
+</li>
+<li>
+<p><strong>Müşteri Sadakat Programı</strong></p>
+</li>
+<li><strong>Açıklama:</strong> Mevcut müşterileri elde tutmak ve tekrar satın alımları teşvik etmek için sadakat programı oluşturulması.</li>
+<li><strong>ICE Skoru:</strong> Impact: 7, Confidence: 8, Ease: 6</li>
+<li><strong>Zaman Çizelgesi:</strong> 4-6 ay</li>
+<li><strong>Beklenen Sonuç:</strong> Tekrar satın alımlarda %15 artış.</li>
+</ol>
+<h2>C. ICE Skor Matrisi ve Yatırım vs Dönüş Tablosu</h2>
+<table>
+<thead>
+<tr>
+<th>Aksiyonlar</th>
+<th>Impact</th>
+<th>Confidence</th>
+<th>Ease</th>
+<th>Tahmini Maliyet</th>
+<th>Beklenen Ciro Artışı</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web Sitesi Hız Optimizasyonu</td>
+<td>9</td>
+<td>8</td>
+<td>7</td>
+<td>$5,000</td>
+<td>%15</td>
+</tr>
+<tr>
+<td>SEO Stratejisinin Güncellenmesi</td>
+<td>8</td>
+<td>9</td>
+<td>6</td>
+<td>$3,000</td>
+<td>%25</td>
+</tr>
+<tr>
+<td>Mobil Kullanıcı Deneyiminin İyileştirilmesi</td>
+<td>9</td>
+<td>8</td>
+<td>5</td>
+<td>$4,000</td>
+<td>%20</td>
+</tr>
+<tr>
+<td>Yeni Ürün Kategorilerinin Eklenmesi</td>
+<td>7</td>
+<td>7</td>
+<td>6</td>
+<td>$10,000</td>
+<td>%10</td>
+</tr>
+<tr>
+<td>Pazarlama Otomasyonu Entegrasyonu</td>
+<td>8</td>
+<td>7</td>
+<td>5</td>
+<td>$8,000</td>
+<td>%15</td>
+</tr>
+<tr>
+<td>Uluslararası Pazarlara Açılma</td>
+<td>9</td>
+<td>6</td>
+<td>4</td>
+<td>$20,000</td>
+<td>%20</td>
+</tr>
+<tr>
+<td>Müşteri Sadakat Programı</td>
+<td>7</td>
+<td>8</td>
+<td>6</td>
+<td>$6,000</td>
+<td>%15</td>
+</tr>
+</tbody>
+</table>
+<p>Bu yol haritası, Lastik Borsası'nın önümüzdeki 12 ay boyunca büyüme ve ölçeklenme hedeflerine ulaşmasına yardımcı olacak stratejik adımları içermektedir. Her bir aksiyon, ICE skoru ile önceliklendirilmiş ve beklenen sonuçlar ile tahmini maliyetler belirlenmiştir. Bu plan, şirketin hem kısa vadeli hem de uzun vadeli hedeflerine ulaşmasını destekleyecektir.</p>
+    </div>
+
+</body>
+</html>

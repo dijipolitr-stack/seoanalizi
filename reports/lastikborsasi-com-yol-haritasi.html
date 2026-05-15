@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>lastikborsasi.com — 12 Aylık SEO Yol Haritası</title>
+<style>
+
+    @page {
+        margin: 2cm 1.5cm;
+        size: A4;
+        @top-right {
+            content: "Lastikborsasi.com SEO Audit"; /* TODO: Dinamik yapılabilir, ama sağ üst gri başlık */
+            font-size: 9pt;
+            color: #999;
+        }
+        @bottom-center {
+            content: "Sayfa " counter(page) " / " counter(pages);
+            font-size: 10pt;
+            color: #999;
+        }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+        color: #2c3e50;
+        line-height: 1.6;
+        font-size: 11pt;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ana Başlık */
+    .main-title {
+        text-align: center;
+        font-size: 26pt;
+        font-weight: bold;
+        color: #0d2040;
+        margin-top: 1cm;
+        margin-bottom: 0.3cm;
+    }
+
+    .main-title-divider {
+        border-bottom: 3px solid #d4af37;
+        margin: 0 auto 1cm auto;
+        width: 100%;
+    }
+
+    /* Meta kutusu (Hazırlayan vs) */
+    .meta-box {
+        background-color: #fcf9f2;
+        border-left: 6px solid #d4af37;
+        padding: 15px 20px;
+        margin-bottom: 30px;
+        font-size: 10.5pt;
+        color: #555;
+        font-style: italic;
+    }
+    
+    .meta-box strong {
+        font-style: normal;
+        color: #333;
+    }
+
+    /* Başlık 1 (H1) - Sarı sol çizgili bej kutu */
+    h1 {
+        background-color: #fcf9f2;
+        border-left: 8px solid #d4af37;
+        color: #0d2040;
+        font-size: 16pt;
+        font-weight: bold;
+        padding: 12px 15px;
+        margin-top: 2em;
+        margin-bottom: 1em;
+        text-transform: uppercase;
+        page-break-after: avoid;
+    }
+
+    /* Başlık 2 (H2) - Lacivert metin */
+    h2 {
+        color: #0d2040;
+        font-size: 14pt;
+        font-weight: bold;
+        margin-top: 1.5em;
+        margin-bottom: 0.8em;
+        page-break-after: avoid;
+    }
+
+    /* Başlık 3 (H3) */
+    h3 {
+        color: #2c3e50;
+        font-size: 12pt;
+        margin-top: 1.2em;
+        margin-bottom: 0.5em;
+        page-break-after: avoid;
+    }
+
+    /* Satır içi kod (inline code) - Kırmızımsı arka plan */
+    code {
+        background-color: #faebeb;
+        color: #c0392b;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: Consolas, monospace;
+        font-size: 10pt;
+    }
+    
+    pre code {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+    }
+
+    pre {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #e9ecef;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 10.5pt;
+        page-break-inside: avoid;
+    }
+
+    td, th {
+        padding: 10px 14px;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+    }
+    
+    th {
+        background: #fcf9f2;
+        color: #0d2040;
+        font-weight: bold;
+        border-bottom: 2px solid #d4af37;
+    }
+
+    tr:nth-child(even) {
+        background: #fafafa;
+    }
+
+    p {
+        margin-bottom: 1.2em;
+        orphans: 3;
+        widows: 3;
+    }
+    
+    ul, ol {
+        margin-bottom: 1.2em;
+        padding-left: 25px;
+    }
+    
+    li {
+        margin-bottom: 6px;
+    }
+
+    strong {
+        color: #0d2040;
+    }
+    
+/* Header sağ üst metni PDF motoru için */
+@page {
+    @top-right {
+        content: "lastikborsasi.com SEO Audit";
+        font-size: 9pt;
+        color: #aaa;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="main-title">
+    lastikborsasi.com — 12 Aylık SEO Yol Haritası
+</div>
+<div class="main-title-divider"></div>
+
+<div class="meta-box">
+    <strong>Hazırlayan:</strong> Akıllı Watchdog SEO Uzman Analizi &nbsp;&nbsp;&nbsp; 
+    <strong>Tarih:</strong> 15 May 2026 &nbsp;&nbsp;&nbsp; 
+    <strong>Yöntem:</strong> Akıllı Watchdog Bot Crawler, OpenAI (GPT-4o) ve SERP Analizi Entegrasyonu üzerinden üretilmiştir.
+</div>
+
+<h1>0. YÖNETİCİ ÖZETİ</h1>
+<p>LastikBorsasi.com'un mevcut SEO durumu, sitenin arama motoru sıralamalarında daha üst sıralara çıkabilmesi için önemli fırsatlar sunmaktadır. Şu anki durum, çeşitli teknik ve on-page SEO sorunları içermekte olup, bu sorunlar sitenin organik trafiğini ve görünürlüğünü olumsuz etkilemektedir. Örneğin, URL'lerde büyük harf kullanımı, yinelenen başlık etiketleri ve eksik H1 etiketleri gibi teknik sorunlar, arama motorlarının siteyi doğru bir şekilde indekslemesini zorlaştırmakta ve potansiyel olarak duplicate content sorunlarına yol açmaktadır. Bu durum, sitenin arama motorlarındaki performansını düşürmekte ve kullanıcı deneyimini olumsuz etkilemektedir.</p>
+<p>Aksiyon alınması gereken bir diğer önemli alan ise E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) skorunun düşük olmasıdır. Google, sitelerin güvenilirliğini ve otoritesini değerlendirirken E-E-A-T kriterlerini dikkate alır. LastikBorsasi.com'un bu alandaki düşük skoru, sitenin güvenilirlik sinyallerini yeterince iletemediğini göstermektedir. Bu durum, potansiyel müşterilerin siteye olan güvenini azaltabilir ve dolayısıyla dönüşüm oranlarını olumsuz etkileyebilir. Hakkımızda, İletişim ve Gizlilik Politikası sayfalarının eksikliği, sosyal medya entegrasyonunun yetersizliği ve müşteri yorumları gibi kullanıcı güvenini artıracak unsurların eksikliği bu skoru düşüren başlıca etmenlerdir.</p>
+<p>Bu sorunların çözülmesi, LastikBorsasi.com'un arama motorlarındaki görünürlüğünü artıracak, kullanıcı deneyimini iyileştirecek ve dolayısıyla dönüşüm oranlarını yükseltecektir. 12 aylık SEO yol haritası, bu sorunları önceliklendirerek ve sistematik bir şekilde ele alarak, sitenin organik performansını optimize etmeyi hedeflemektedir. Bu süreçte, teknik ve on-page SEO sorunlarının çözülmesi, E-E-A-T skorunun artırılması ve kullanıcı deneyiminin iyileştirilmesi için stratejik adımlar atılacaktır.</p>
+<h1>1. METODOLOJİ — AKSİYONLAR NASIL SIRALANDI?</h1>
+<p>SEO stratejimizin temelini oluşturan metodoloji, sorunların önceliklendirilmesi ve çözüm süreçlerinin etkin bir şekilde yönetilmesi için ICE (Impact, Confidence, Ease) skorlamasını kullanmaktadır. ICE skoru, her bir SEO probleminin çözümünün site üzerindeki potansiyel etkisini (Impact), çözümün başarıyla uygulanma olasılığını (Confidence) ve çözümün uygulanabilirliğini (Ease) değerlendirmemize olanak tanır. Bu üç faktörün birleşimi, hangi sorunların öncelikli olarak ele alınması gerektiğini belirlememize yardımcı olur.</p>
+<p>Impact (Etkisi), bir problemin çözülmesinin siteye getireceği potansiyel faydayı ifade eder. Örneğin, URL'lerdeki büyük harf kullanımının düzeltilmesi, duplicate content riskini ortadan kaldırarak sitenin arama motorlarındaki görünürlüğünü artırabilir. Confidence (Güven), önerilen çözümün başarıyla uygulanma olasılığını ifade eder. Teknik bilgi ve kaynakların yeterliliği, bu faktörü etkileyen başlıca unsurlardır. Ease (Kolaylık), çözümün ne kadar kolay uygulanabilir olduğunu değerlendirir. Örneğin, bir URL değişikliği ve 301 yönlendirmesi, genellikle daha kolay uygulanabilir bir çözümdür.</p>
+<p>Önceliklendirme sürecinde, sorunlar P0, P1 ve P2 olarak sınıflandırılır. P0 önceliği, en yüksek etkiye sahip ve en acil çözülmesi gereken sorunları ifade eder. Bu sorunlar, genellikle sitenin genel performansını ciddi şekilde etkileyen ve hızlı bir çözüm gerektiren problemlerdir. P1 önceliği, önemli ancak aciliyeti P0 kadar yüksek olmayan sorunları kapsar. Bu sorunlar, stratejik planlama ve kaynak tahsisi gerektirir. P2 önceliği ise, çözülmesi faydalı ancak diğer sorunlara kıyasla daha düşük önceliğe sahip olan problemleri ifade eder.</p>
+<p>Bu metodoloji, LastikBorsasi.com'un SEO sorunlarını sistematik bir şekilde ele alarak, yatırım getirisini (ROI) maksimize etmeyi hedefler. Her bir aksiyonun potansiyel etkisi ve uygulanabilirliği dikkate alınarak, sitenin organik performansını artıracak en etkili stratejiler belirlenmiştir. Bu süreç, sitenin arama motorlarındaki sıralamasını iyileştirecek ve kullanıcı deneyimini optimize ederek, uzun vadede sürdürülebilir bir büyüme sağlayacaktır.</p>
+<h3>Aksiyon 1: On-Page SEO: 1 adet yinelenen (duplicate) title tespit edildi (ICE: 57.6)</h3>
+<p><strong>I:8 — C:9 — E:8</strong></p>
+<ul>
+<li>
+<p><strong>Sorun:</strong> Yinelenen title etiketi, Google'ın sayfalarınızı doğru bir şekilde anlamasını ve sıralamasını zorlaştırır. Bu durum, arama motoru sonuç sayfalarında (SERP) cannibalization'a neden olabilir, yani aynı anahtar kelime için birden fazla sayfanızın rekabet etmesi durumu. Bu, organik trafiğinizi ve dolayısıyla potansiyel gelirinizi olumsuz etkiler. Ayrıca, kullanıcı deneyimini de etkileyebilir, çünkü kullanıcılar aynı başlığa sahip farklı sayfalar arasında gezinirken kafa karışıklığı yaşayabilir.</p>
+</li>
+<li>
+<p><strong>Aksiyon:</strong> Her sayfanın benzersiz bir title etiketine sahip olması sağlanacak. Bu, içerik ekibinin her sayfanın anahtar kelime stratejisine uygun, açıklayıcı ve çekici bir başlık oluşturması anlamına gelir. Geliştirici, CMS üzerinde bu değişiklikleri uygulayacak ve gerekli kontrolleri yapacaktır.</p>
+</li>
+<li>
+<p><strong>Maliyet:</strong> Tahmini olarak 1 adam-gün. Geliştirici maliyeti günlük 1,500 TL olarak hesaplanırsa, toplam maliyet 1,500 TL olacaktır.</p>
+</li>
+<li>
+<p><strong>Beklenen Fayda:</strong> Benzersiz başlıklar, sayfalarınızın daha iyi sıralanmasını sağlayarak organik trafiği artırabilir. Bu da, %10'luk bir trafik artışı ile aylık 5,000 TL ek gelir sağlayabilir. ROI, 5,000 TL / 1,500 TL = 3.33 olacaktır.</p>
+</li>
+<li>
+<p><strong>Süre:</strong> Bu değişikliklerin yapılması ve canlıya alınması 2 gün sürecektir. Google'ın bu değişiklikleri indekslemesi ise 1-2 hafta alabilir.</p>
+</li>
+</ul>
+<h3>Aksiyon 2: E-E-A-T: E-E-A-T skoru düşük (2.5/10) (ICE: 50.4)</h3>
+<p><strong>I:8 — C:9 — E:7</strong></p>
+<ul>
+<li>
+<p><strong>Sorun:</strong> E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) skoru düşük olan bir web sitesi, Google tarafından daha az güvenilir olarak algılanabilir. Bu durum, sıralamalarda geriye düşmenize ve dolayısıyla organik trafiğinizin azalmasına neden olabilir. Ayrıca, kullanıcılar da siteyi güvenilir bulmayabilir, bu da dönüşüm oranlarını olumsuz etkileyebilir.</p>
+</li>
+<li>
+<p><strong>Aksiyon:</strong> Hakkımızda, İletişim ve Gizlilik Politikası sayfaları oluşturulacak. Sosyal medya hesaplarına ait bağlantılar footer'a eklenecek ve müşteri yorumları/puanlama sistemi entegre edilecek. Bu, hem kullanıcıların hem de Google'ın siteyi daha güvenilir olarak algılamasına yardımcı olacaktır.</p>
+</li>
+<li>
+<p><strong>Maliyet:</strong> Tahmini olarak 5 adam-gün. Geliştirici ve içerik ekibi maliyeti günlük 1,500 TL olarak hesaplanırsa, toplam maliyet 7,500 TL olacaktır.</p>
+</li>
+<li>
+<p><strong>Beklenen Fayda:</strong> E-E-A-T skorunun artırılması, organik sıralamalarda iyileşme sağlayabilir. %15'lik bir trafik artışı ile aylık 7,500 TL ek gelir beklenebilir. ROI, 7,500 TL / 7,500 TL = 1 olacaktır.</p>
+</li>
+<li>
+<p><strong>Süre:</strong> Bu değişikliklerin yapılması ve canlıya alınması 10 gün sürecektir. Google'ın bu değişiklikleri indekslemesi ise 2-4 hafta alabilir.</p>
+</li>
+</ul>
+<h3>Aksiyon 3: On-Page SEO: 2 sayfada H1 etiketi eksik (ICE: 28.8)</h3>
+<p><strong>I:4 — C:8 — E:9</strong></p>
+<ul>
+<li>
+<p><strong>Sorun:</strong> H1 etiketi, bir sayfanın ana konusunu belirler ve SEO için kritik öneme sahiptir. H1 etiketi eksik olan sayfalar, Google'ın sayfanın içeriğini anlamasını zorlaştırabilir ve bu da sıralamalarda düşüşe neden olabilir.</p>
+</li>
+<li>
+<p><strong>Aksiyon:</strong> Her sayfaya tek bir, açıklayıcı H1 etiketi eklenecek. Geliştirici, mevcut sayfa yapısını inceleyerek uygun H1 etiketlerini ekleyecek ve birden fazla H1 etiketi olan sayfaları düzeltecektir.</p>
+</li>
+<li>
+<p><strong>Maliyet:</strong> Tahmini olarak 1 adam-gün. Geliştirici maliyeti günlük 1,500 TL olarak hesaplanırsa, toplam maliyet 1,500 TL olacaktır.</p>
+</li>
+<li>
+<p><strong>Beklenen Fayda:</strong> H1 etiketlerinin düzeltilmesi, sayfaların daha iyi sıralanmasını sağlayabilir. %5'lik bir trafik artışı ile aylık 2,500 TL ek gelir beklenebilir. ROI, 2,500 TL / 1,500 TL = 1.67 olacaktır.</p>
+</li>
+<li>
+<p><strong>Süre:</strong> Bu değişikliklerin yapılması ve canlıya alınması 2 gün sürecektir. Google'ın bu değişiklikleri indekslemesi ise 1-2 hafta alabilir.</p>
+</li>
+</ul>
+<h3>Aksiyon 4: Teknik SEO: 1 URL'de büyük harf var (ICE: 21.0)</h3>
+<p><strong>I:5 — C:7 — E:6</strong></p>
+<ul>
+<li>
+<p><strong>Sorun:</strong> Büyük harf içeren URL'ler, duplicate content riski oluşturur. Bu durum, Google'ın sayfalarınızı doğru bir şekilde anlamasını ve sıralamasını zorlaştırabilir. Ayrıca, kullanıcı deneyimini de etkileyebilir, çünkü kullanıcılar URL'lerde tutarlılık bekler.</p>
+</li>
+<li>
+<p><strong>Aksiyon:</strong> Tüm URL'ler küçük harfe çevrilecek ve 301 redirect kurularak eski URL'ler yeni URL'lere yönlendirilecektir. Bu, hem kullanıcıların hem de arama motorlarının siteyi daha iyi anlamasına yardımcı olacaktır.</p>
+</li>
+<li>
+<p><strong>Maliyet:</strong> Tahmini olarak 2 adam-gün. Geliştirici maliyeti günlük 1,500 TL olarak hesaplanırsa, toplam maliyet 3,000 TL olacaktır.</p>
+</li>
+<li>
+<p><strong>Beklenen Fayda:</strong> URL'lerin düzeltilmesi, sayfaların daha iyi sıralanmasını sağlayabilir. %3'lük bir trafik artışı ile aylık 1,500 TL ek gelir beklenebilir. ROI, 1,500 TL / 3,000 TL = 0.5 olacaktır.</p>
+</li>
+<li>
+<p><strong>Süre:</strong> Bu değişikliklerin yapılması ve canlıya alınması 4 gün sürecektir. Google'ın bu değişiklikleri indekslemesi ise 1-2 hafta alabilir.</p>
+</li>
+</ul>
+<hr />
+<h3>3. ZAMAN ÇİZELGESİ — 12 AY HARİTASI</h3>
+<table>
+<thead>
+<tr>
+<th>Ay</th>
+<th>Aksiyonlar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Aksiyon 1, Aksiyon 2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Aksiyon 3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Aksiyon 4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>İzleme ve Analiz</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Optimizasyon ve Güncellemeler</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Yeni SEO Stratejileri Geliştirme</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Aksiyon 1, Aksiyon 2 (Gözden Geçirme)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Aksiyon 3 (Gözden Geçirme)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Aksiyon 4 (Gözden Geçirme)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>İzleme ve Analiz</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Optimizasyon ve Güncellemeler</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Yıllık Performans Değerlendirmesi</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>4. FİNANSAL ÖZET</h3>
+<p>Bu eylem planı, toplamda 13,500 TL'lik bir yatırım gerektirmektedir. Bu yatırımın karşılığında, aylık toplamda 16,500 TL ek gelir elde edilmesi beklenmektedir. Bu da yıllık bazda 198,000 TL ek gelir anlamına gelir. Yatırımın geri dönüşü (ROI) hesaplandığında, toplamda 16,500 TL / 13,500 TL = 1.22 oranında bir geri dönüş sağlanacaktır. Bu, yapılan yatırımların kısa sürede karşılığını alacağı ve uzun vadede sürdürülebilir bir büyüme sağlayacağı anlamına gelir.</p>
+<p>Eylem planının başarılı bir şekilde uygulanması, organik trafiğin artırılması ve kullanıcı deneyiminin iyileştirilmesi ile doğrudan ilişkilidir. Her bir aksiyon, belirlenen zaman çizelgesine uygun olarak gerçekleştirilecek ve düzenli olarak izlenecektir. Bu süreçte, elde edilen veriler analiz edilerek, stratejiler gerektiğinde güncellenecektir. Böylece, SEO performansının sürekli olarak optimize edilmesi sağlanacaktır.</p>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Akıllı Watchdog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="dashboard-body">
+
+    <nav class="glass-navbar">
+        <div class="nav-logo">
+            <span class="logo-icon">👁️</span>
+            <h2>Akıllı <strong>Watchdog</strong></h2>
+        </div>
+        <div class="nav-user">
+            <span>Hoş geldin, {{ session['user'] }}</span>
+            <a href="/logout" class="btn-logout">Çıkış Yap</a>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <!-- Analiz Başlatma Paneli -->
+        <section class="glass-panel analyze-panel">
+            <h3>Yeni SEO Analizi Başlat</h3>
+            <p>Hedef domain'i girerek 15+ sayfalık yapay zeka destekli tam denetim (audit) raporu oluşturun.</p>
+            
+            <form action="/dashboard" method="POST" class="analyze-form">
+                <div class="input-inline">
+                    <input type="text" name="domain" placeholder="ornek.com" required>
+                    <button type="submit" class="btn-primary">
+                        <span class="btn-icon">🚀</span> Analizi Başlat
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Canlı Görev Durumları -->
+            {% if tasks %}
+            <div class="tasks-container">
+                <h4>Aktif Görevler</h4>
+                <ul class="task-list">
+                    {% for domain, status in tasks.items() %}
+                        {% if status == 'running' %}
+                            <li class="task-item running">
+                                <div class="loader"></div>
+                                <span><strong>{{ domain }}</strong> analiz ediliyor... (Crawl & OpenAI)</span>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </section>
+
+        <!-- Mevcut Raporlar -->
+        <section class="glass-panel reports-panel">
+            <h3>Üretilmiş PDF Raporları</h3>
+            
+            {% if reports %}
+            <div class="reports-grid">
+                {% for report in reports %}
+                <div class="report-card">
+                    <div class="report-icon">📄</div>
+                    <div class="report-info">
+                        <h4>{{ report }}</h4>
+                        <a href="/download/{{ report }}" class="btn-download">İndir</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="empty-state">Henüz üretilmiş bir rapor bulunmuyor.</p>
+            {% endif %}
+        </section>
+
+    </main>
+
+    <script>
+        // Sadece 'running' olan task varsa sayfayı periyodik yenile
+        const hasRunningTask = document.querySelector('.task-item.running');
+        if (hasRunningTask) {
+            setTimeout(() => {
+                window.location.reload();
+            }, 10000); // 10 saniyede bir sayfayı yeniler
+        }
+    </script>
+</body>
+</html>

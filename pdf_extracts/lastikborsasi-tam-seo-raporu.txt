@@ -1,0 +1,803 @@
+=== lastikborsasi-tam-seo-raporu.txt === (19 sayfa)
+
+Lastikborsasi.com — 360° SEO
+Audit Raporu
+Hazırlayan: SEO Uzmanı Analizi Tarih: Mayıs 2026 Yöntem: Bot koruması nedeniyle
+direkt crawl yapılamadı; analiz Google indeks örneklemesi, SERP snippet'leri, schema
+markup izleri, URL kalıbı tespiti ve içerik örüntüsü üzerinden yapılmıştır.
+0. YÖNETİCİ ÖZETİ
+Lastikborsasi.com,  Türkiye'nin  en  olgun  e-ticaret  SEO  mimarilerinden
+biridir. Aşağıdaki yedi boyutta hatasıza yakın çalışıyor:
+Programatik landing mimarisi — Ebat × mevsim × marka × araç matrisinden
+~3.000 landing
+Title/meta otomasyonu — 12 sayfa tipinin her birinde deterministik template,
+manuel müdahale gerekmiyor
+Schema-zengin ürün sayfaları — SERP'te fiyat, yorum, satıcı puanı görünüyor
+Bilgilendirici blog ekosistemi — Subdomain'de 200+ AEO-optimize yazı, "ne,
+neden, nasıl" soru yapısı
+Hub-and-spoke iç linkleme — Her sayfada 24+ marka + 22+ ebat anchor'ı
+Trust katmanı — Yorum, satıcı puanı, DOT, garanti politikası açık
+B2B genişleme katmanı — Bayi bul + montaj noktası ol = lokal SEO ayağı
+Tahmini  ölçek: ~50.000-150.000  indeksli  sayfa,  programatik  üretim  ile  aylık  1.5-3
+milyon  organik  ziyaret  aralığında  olduğunu  konumlandığı  SERP  yoğunluğundan
+çıkarsayabilirim.
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+Sayfa 1 / 19
+
+---PAGE_BREAK---
+Ciddi açıklar/risk noktaları: Birkaç tane var —  Bölüm 13 'te işliyorum. Özetle: bazı
+blog yazılarında  AI-jenerasyon kokusu var, ürün açıklamalarında  bazı sayfalarda
+kelimesi  kelimesine  kopya,  ve  Hreflang  /  uluslararası  SEO kullanmıyorlar
+(Türkiye'ye odaklı, "Global Tyre Source" sloganına rağmen).
+1. TEKNİK SEO — ALTYAPI KATMANI
+1.1 Domain ve teknoloji yığını (gözlem)
+Domain: lastikborsasi.com (root + www.lastikborsasi.com)
+Subdomain'ler:
+blog.lastikborsasi.com  → İçerik/blog (muhtemelen WordPress — "Devamını Oku »",
+"Yorum Ekle", kategori-tag yapısı klasik WP imzası)
+test.lastikborsasi.com  → DİKKAT: indekslenebilir staging site var (Google'da
+çıkıyor) — ciddi açık. Aşağıda işliyorum.
+CMS (ana site): Özel/lisanslı e-ticaret motoru (Netsis, MikroEticaret veya custom) —
+URL kalıbındaki -c-{ID}  ve -p-{kod}-{SKU}  formatı bunu işaret eder
+Bot koruması: Cloudflare veya benzeri agresif WAF — bütün user-agent'lara 403
+dönüyor (Googlebot dahil ben simüle ettim, geçemedim). Bu bot management
+seviyesi yüksek.
+1.2 URL yapısı — değerlendirme
+Güçlü yanlar: - Türkçe karakter yok (lastik-fiyatlari, not lastik-fiyatları) — encoding
+sorunu yaşatmaz - Hiyerarşi makul derinlikte (max 3 seviye) - Slug + ID hibriti — hem
+keyword-rich  hem  unique  constraint  -  Query  parameter  yok  —  clean  URLs  -  HTTPS
+zorunlu, www canonical
+Zayıf yanlar: - Ürün URL'leri uzun (60+ karakter): /205-55r16-91v-michelin-primacy-4-
+s1-p-mchl-680502  — Google için sorun değil ama paylaşılabilirlik düşer - Kategori ID'leri
+(c-271462) — slug yeterli, ID gereksiz; muhtemelen CMS dayatması - Ebat sayfalarında
+tutarsız  ayırıcı:  bazıları  /205-55-r16-yaz-lastigi  (tire  ile),  ürün  URL'lerinde  /
+205-55r16  (boşluksuz) — küçük inconsistency
+1.3 HTTPS, redirect, canonical
+Tüm trafik HTTPS — varsayılan, doğru yapılmış
+HTTP → HTTPS otomatik redirect (basic)
+www / non-www: www.lastikborsasi.com canonical olarak görünüyor
+Canonical etiketleri: Filtre/sıralama parametrelerinde canonical'in ana URL'e işaret
+ettiği tahmin edilebilir (snippet'lerde parametre-bağlı sayfa görmedim)
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+Lastikborsasi.com SEO Audit
+Sayfa 2 / 19
+
+---PAGE_BREAK---
+1.4 Robots ve sitemap
+robots.txt erişilemedi (bot koruması nedeniyle) — bunu Google Search Console
+kullanmadan dışarıdan doğrulamak zor
+Sitemap: Görmedim ama programatik üretim için olmazsa olmaz; muhtemelen /
+sitemap.xml  veya /sitemap_index.xml  mevcut. Pek çok index dosyasına bölünmüş
+olmalı (50k+ ürün için)
+1.5 Mobil uyumluluk
+Doğrudan  ölçemedim  ama  dolaylı  sinyaller  iyi:  -  Snippet'lerden  anlaşılan  layout
+responsive  -  "Sektörün  Lider  Pazar  Yeri  Platformundan  Bir  Yenilik!  Şimdi  App  Store,
+Google Play Store ve AppGallery'de" → kendi mobil uygulamaları var, bu mobile-first
+ciddiyetini gösteriyor - Türkiye e-ticaret trafiğinin %70+'ı mobile — mobil uygulama
+otomatik olarak app indexing fırsatı veriyor
+1.6 Sayfa hızı (tahmin)
+Cloudflare seviye CDN + agresif cache → edge response süreleri muhtemelen <100ms.
+Görsel optimizasyonu (WebP, lazy load) standart e-ticaret seviyesinde. Core Web Vitals
+için  filtre  etkileşimleri  kritik —  büyük  listing  sayfalarında  CLS  riski  vardır  ama
+snippet'lerde gözle görülür problem yok.
+1.7 Schema markup (yapısal veri)
+SERP snippet'lerinde şu yapılar tetiklenmiş olarak görünüyor:
+Schema Türü
+Nerede
+Sinyali
+Organization
+Tüm sayfalar (footer)
+Marka entity
+BreadcrumbList
+Tüm iç sayfalar
+SERP'te breadcrumb gösterimi
+Product
+Ürün sayfaları
+Ürün rich snippet
+Offer
+Ürün sayfaları (fiyat,
+mevcudiyet)
+Fiyat snippet'te görünüyor
+AggregateRating
+Ürünler (yorum varsa)
+Yıldız snippet'i
+Review
+Ürünler (yorum varsa)
+Yorum sayısı
+ItemList  / 
+CollectionPage
+Kategori sayfaları
+Tahmin (Google rich result için
+kullanır)
+Article  / BlogPosting
+Blog yazıları
+Tahmin (snippet'lerde tarihli)
+FAQPage
+Bazı blog yazılarında
+Tahmin — "Lastik hava basıncı" gibi
+yazılarda mantıklı
+• 
+• 
+Lastikborsasi.com SEO Audit
+Sayfa 3 / 19
+
+---PAGE_BREAK---
+Schema not: Google'ın Mart 2023'te  FAQPage  ve  HowTo  rich result'ları daralttığını
+hatırlayalım. Lastikborsasi snippet'lerinde direkt FAQ accordion görmedim ama yine de
+eklemiş olabilirler — desteklenen Product , Review  schemas tetiklenmesi sağlam.
+1.8 KRİTİK BULGU: test.lastikborsasi.com  indekslenmiş
+https://test.lastikborsasi.com/  Google'da çıkıyor. Bu bir  staging/test ortamı ve
+indekslenmemesi gerekir. Sebepleri: - Duplicate content riski (canlı site ile birebir) -
+Crawl bütçesi israfı - Kullanıcının yanlış URL'e düşme riski
+Düzeltme: Staging site'a robots.txt: Disallow: /  koymak, HTTP basic auth eklemek
+veya X-Robots-Tag: noindex  header'ı.
+2. SİTE MİMARİSİ — BİLGİ MİMARİSİ
+2.1 Hiyerarşi haritası
+www.lastikborsasi.com/
+├── [Kategori] /otomobil-lastikleri-c-271462
+│   ├── /yaz-lastigi
+│   ├── /kis-lastigi
+│   └── /4-mevsim-lastik
+├── [Marka] /markalar/{marka}
+│   └── /markalar/{marka}/{kategori}-c-{ID}      ← Marka × Kategori
+├── [Desen] /desen/{marka}/{desen}                ← Marka × Pattern
+├── [Ebat] /205-55-r16-lastik-fiyatlari           ← Programatik ana
+│   ├── /205-55-r16-yaz-lastigi                   ← Ebat × Mevsim
+│   ├── /205-55-r16-kis-lastigi
+│   └── /205-55-r16-4-mevsim-lastik-fiyatlari
+├── [Ürün] /{ebat}-{detay}-p-{marka-kodu}-{SKU}
+├── [Araç] /{araç}-{nesil}-jant-fiyatlari         ← Vehicle landing
+├── [Yağ] /{viskozite}-motor-yagi
+├── [Tool] /                                       ← Hesaplama aracı
+├── [Lokal] /DealerFind/Index                     ← Bayi bul
+└── [Kurumsal] /kurumsal/*
+blog.lastikborsasi.com/                            ← Subdomain
+├── /                                              ← Ana blog
+├── /genel/, /aku/, /haberler/, /oto-lastik/, /jant/, /yag/  ← Kategoriler
+├── /hakkimizda/, /iletisim/                       ← E-E-A-T sayfaları
+└── /{yazi-slug}/                                  ← Yazı detay
+2.2 Hiyerarşi kalitesi
+İyi: - Maks. 3 tıklama derinliği — her ürüne ana sayfadan 3 click max - Yatay genişleme
+(taksonomi geniş, dikey yok) - Hub sayfaları (markalar, kategoriler) iyi tanımlanmış
+Lastikborsasi.com SEO Audit
+Sayfa 4 / 19
+
+---PAGE_BREAK---
+Geliştirilebilir: - Pillar/cluster yapısı net değil — blog'da "Ana rehber" sayfası yok
+(örn: "Lastik Seçimi A'dan Z'ye" gibi 5000+ kelime mega pillar). Bireysel yazılar var ama
+bunları çevreleyen bir hub yok - Topical authority açısından tek tek yazılar arası iç link
+az  görünüyor  (snippet'lerden  bunu  doğrulayamadım  ama  "ilgili  yazılar"  widget'ı
+görünmüyor)
+2.3 Subdomain vs. Subdirectory kararı — kritik bahis
+Blog'u  subdomain'de  tutmaları (blog.lastikborsasi.com)  klasik  SEO  tartışması:  -
+Avantaj: Crawl bütçesi ayrı; blog'un farklı tema/CMS olması mümkün; reklam/sponsorlu
+içerik ayrı barınır -  Dezavantaj: Link equity tam transfer olmaz (Google "ayrı entity"
+görür); ana domain'in otoritesinden faydalanmaz
+Benim değerlendirmem: Lastikborsasi ölçeğinde (her iki domain de güçlü) bu seçim
+OK — subdirectory'de olsa belki %10-15 daha fazla "topical authority transfer" olurdu
+ama operasyonel ayrılık değer
+3. ON-PAGE SEO — ÜRÜN VE KATEGORİ SAYFALARI
+3.1 Title etiketi (template'ler)
+Detaylı analiz önceki dokümanda (lastikborsasi-seo-analiz.md). Özet:
+Beğendiğim: -  Title'da  yıl  kullanımı  (2025)  —  freshness  -  USP'lerin  metaya  tekrarı
+(ücretsiz montaj, ücretsiz kargo, taksit) - Tutarlı brand-suffix ( | Lastik Borsası )
+Beğenmediğim: - Bazı title'lar 60+ karakter ve Google'da truncate oluyor - "Fiyatları ve
+Modelleri" repetitif — bazı sayfalarda farklı versiyonlar test edilmeli (örn. "Fiyatları &
+Yorumları")
+3.2 H1 / H2 / H3 hiyerarşisi
+Ürün sayfalarında muhtemel hiyerarşi: - H1: Ürün tam adı ( 205/55R16 91V Bridgestone
+Turanza 6 ) -  H2: Açıklama, Özellikler, Yorumlar, İlgili Ürünler -  H3: Teknik özellikler,
+Satıcı bilgisi, Garanti
+Kategori sayfalarında: -  H1: Kategori adı ( 205/55 R16 Yaz Lastiği Fiyatları ) -  H2:
+Filtreler / Sıralama, SEO metni (alt kısımda) - H3: "Sık Sorulan Sorular" tahmini
+Tespit edemediğim: H tag'larının semantic temizliği. Bazı e-ticaret motorları "ürün
+kartı başlığı"nı H3 yapıyor, bazıları normal <span>  — bu CWV ve accessibility için fark
+eder.
+Lastikborsasi.com SEO Audit
+Sayfa 5 / 19
+
+---PAGE_BREAK---
+3.3 Ürün açıklamaları — KRİTİK GÖZLEM
+İki kalitede ürün açıklaması görüyorum:
+A) Yüksek kalite (premium markalar): Michelin, Bridgestone gibi büyük markaların
+ürünlerinde özgün, uzun, teknik açıklamalar var. Mesela:
+"Michelin Pilot Sport 4S spor otomobil sürücüleri için tasarlanan yüksek performans
+lastiği.  Le-mans  24  Saat  yarışları  sırasında  edinilen  tecrübeler  ve  en  zorlu  araç
+üreticileri  (Audi-BMW-Porsche-Mercedes  Benz)  ile  işbirliğiyle  geliştirilmiştir.  Lastik
+üretiminde,  iç  ve  dış  tarafında  farklı  elastomer  içeren  Bi-Compound  Teknolojisi
+kullanılmıştır..."
+Bu yazı SEO açısından MÜKEMMEL: - 200+ kelime özgün metin - Marka × araç kullanım
+örnekleri  (Audi,  BMW,  Porsche,  Mercedes)  -  Teknoloji  terminolojisi  (Bi-Compound,
+Dynamic Response, Evergrip) - Yarış pisti referansı (Le-Mans, Formula E, WRC) — otorite
+sinyali
+B)  Düşük  kalite  (uzun-kuyruk  ürünler): Yağ  ürünleri,  yedek  parça,  niş  markalar
+genellikle template/duplicate:
+"En  ucuz  {Ürün  Adı}  ücretsiz  kargo  ve  {Kategori}  kategorisinde  {Marka}  marka
+binlerce ürün burada."
+Bu thin content ve dezavantaj: - Pek çok ürün için aynı meta - Pek çok ürün için aynı
+açıklama (binlerce ürün × 30 kelime = duplicate sinyali) - Google'ın "Helpful Content"
+güncellemelerine zayıf
+Pro tahmin: Lastikborsasi'nin stratejik tercih bu olmuş — top-tier ürünler (Michelin/
+Bridgestone/Continental)  için  manuel  yazı,  alt-segment  için  template.  Doğru  tercih,
+çünkü: - Premium ürünler organik trafiğin %80'i (klasik 80/20) - Düşük kuyrukta zaten
+ürün adı + spec yeterli
+Ama  boşluğa açık: Pirelli, Goodyear, Hankook, Yokohama gibi premium-orta segment
+markalarda derinleştirme yapılabilir.
+3.4 Görsel optimizasyon
+Doğrudan inceleyemedim. Snippet'lerden çıkardıklarım: - Ürün görselleri standart (üretici
+fotoğrafı çok kullanılıyor) - Alt text'in optimize olduğu tahmin edilebilir ( {Ebat} {Marka}
+{Desen}  formatında) - Eksik olabilir: 3D view, video review, kullanım fotoğrafları (UGC)
+3.5 İç link (ürün → ilgili ürün) yapısı
+Snippet'ten gördüğüm kadarıyla her ürün sayfasında: - "{Ürün ailesi} Tüm Ölçüleri"
+linki — ürünü desen sayfasına bağlıyor - Marka linki — marka hub'ına - Satıcının diğer
+ürünleri — listing widget - Üstte breadcrumb - Altta popüler ebatlar/markalar
+Lastikborsasi.com SEO Audit
+Sayfa 6 / 19
+
+---PAGE_BREAK---
+Bu  iyi  bir  cross-link  yapısı.  Ek  olarak  ne  olabilir:  -  "Bu  lastiği  alanlar  şunu  da
+aldı" (cross-sell) - "Aynı araç için diğer ebatlar" - "Bu desen için diğer ebatlar"
+4. İÇERİK STRATEJİSİ — BLOG DEĞERLENDİRMESİ
+4.1 Blog yapısı genel görünüm
+Boyut
+Değer
+Domain
+blog.lastikborsasi.com  (subdomain)
+CMS (tahmini)
+WordPress (klasik "Devamını Oku »", kategori sayfaları, "popüler yazılar"
+widget'ı)
+Kategori sayısı
+En az 6: Genel, Akü, Haberler, Oto Lastik, Jant, Yağ
+Yazı sayısı
+(tahmini)
+200-500 (haberler dahil)
+Yayın sıklığı
+Çok yüksek: snippet'te "3 saat önce", "6 saat önce", "9 saat önce"
+tarihleri görünüyor — günde 3-5 yazı
+Yazar profili
+Açık: "Lastik Borsası Blog" alanında bireysel yazar profili ( /author/
+tahminen)
+Sosyal paylaşım
+Facebook, Twitter, WhatsApp, Telegram, LinkedIn, Pinterest, Reddit,
+VKontakte, E-posta — 8+ kanal
+Okuma süresi
+göstergesi
+Evet ("3 dakika okuma süresi")
+İçindekiler (TOC)
+Evet ("İçindekiler Toggle") — otomatik widget
+"Devamı için" CTA
+Evet, son paragrafta her zaman
+4.2 İçerik tipolojisi — 5 farklı format
+1. Tanımlayıcı (informational/AEO) - "Lastik Üzerindeki Yazıların Anlamları" - "Lastik
+Hız Endeksi Nedir?" - "Run Flat Lastik Nedir?" - "Stepne Nedir?" - "Gres Yağı Nedir?"
+Yapı: Soru başlığı → 1-2 cümle direkt tanım (paragraf snippet için) → bölümleme → tablo
+(varsa)  → CTA.  Bu  klasik  AEO  formatı —  Google'da  featured  snippet,  ChatGPT/
+Perplexity'de cevap kaynağı.
+2.  Karşılaştırma  /  Rehber -  "Hangi  Yaz  Lastik  Modeli  Sürüş  Konforunu  Artırır?"
+(205/55R16 vs 185/65R15 vs 195/65R15) - "En İyi Lastik Markaları Nelerdir?" - "Otomobil
+Lastiği Çeşitleri Nelerdir?"
+Lastikborsasi.com SEO Audit
+Sayfa 7 / 19
+
+---PAGE_BREAK---
+Yapı: Soru başlığı → tanıtım → kriterler → tek tek analiz → karar/öneri. Buyer's journey'in
+karar aşamasını yakalıyor.
+3. Bakım / Pratik -  "Lastik Rotasyonu Hakkında Tüm Merak Edilenler" -  "Lastik Hava
+Basıncı: Güvenli Sürüş İçin Doğru Değerler"
+Yapı: Problem → çözüm adımları → uyarılar → ürün bağlantısı. Hem AEO hem dönüşüm
+odaklı.
+4. Marka derinleştirme - "Michelin Lastik Özellikleri" - "Waterfall Lastik..."
+Yapı: Marka  tarihi  → teknolojiler  → segment  → ürün  portföyü.  Brand  keywords'ü
+yakalıyor.
+5.  Haberler  (sektörel  news) -  "16  Mayıs  2025  Otomotiv  Sektörü  Gelişmeleri" -
+"Türkiye Otomotiv Sektörü İlk Yarı Verilerini Açıkladı" - "DS 7'ye Şubat Fırsatı: 380 Bin TL
+Kredi!"
+Yapı: Tarihli haber → ODMD/sektör verisi → analiz → ürün bağlantısı (yumuşak). Bu
+Google News ekosistemine girme stratejisi olabilir.
+4.3 KRİTİK GÖZLEM: AI jenerasyon kokusu var
+Bazı yazılarda belirgin AI-yazımı kalıpları görüyorum. Örnek ( /lastik-hiz-endeksi/
+yazısından):
+"Doğru hız endeksine sahip lastikler kullanmak, aracın performansını, yol tutuşunu ve
+güvenliğini doğrudan etkiler."
+"Lastik hız endeksleri, araç güvenliği ve performansı açısından hayati öneme sahiptir."
+"Yanlış endeksli lastikler hızla yıpranır ve daha sık değişim gerektirir."
+İşaretler:  -  Aşırı  genelleme: "doğrudan  etkiler",  "hayati  öneme  sahiptir"  —  boş,
+niceleyici eklenmiyor - Aynı şeyi 3 farklı şekilde söyleme: Tipik LLM tekrar paterni -
+Liste format aşırı kullanımı: "İşte X'in nedenleri:" sonra 5 madde — her yazıda -
+Smooth ama içeriksiz cümleler: "Ayrıca, bu lastikler, yakıt tüketimi açısından da
+oldukça verimlidir ve uzun ömürlüdür."
+Bu  mutlaka  kötü değil  —  Google  AI  içeriği  yasaklamadı,  "Helpful  Content"  kriteri
+uyguluyor.  Ama:  -  Google'ın  "unhelpful  content" filtresi  (Mart  2024  core  update
+sonrası) bu tarz içerikleri DEMOTE edebilir - AI Overviews'a alıntılanma şansı kaybediyor,
+çünkü AI kendi yazısı olduğu yazıyı kendine kaynak göstermez (recursive flag) - E-E-A-
+T açısından uzman görüşü hissi vermiyor
+Olumlu  yan: Hakkımızda  sayfasında  "Alanında  uzman  yazarlarımız  ve  teknik
+danışmanlarımızla hazırladığımız içerikler" yazıyor. Bu  disclosure Google'a "biz insan
+editorlüğüyle üretiyoruz" mesajı veriyor.
+Lastikborsasi.com SEO Audit
+Sayfa 8 / 19
+
+---PAGE_BREAK---
+4.4 Editöryel bağımsızlık beyanı — yüksek değerli
+Blog'un Hakkımızda sayfasında:
+"Yayınladığımız  içeriklerde  hiçbir  marka  veya  ürün  lehine  önyargılı  bir  yaklaşım
+benimsemeyiz. Hedefimiz, kullanıcıların doğru bilgiye ulaşmasını sağlamak ve sektörde
+şeffaflığı artırmaktır."
+Bu  Google'ın çok sevdiği bir sinyal. YMYL olmayan bir niş için bile editöryel etik
+beyanı  bonus.  Ek  olarak:  -  İletişim  sayfasında  reklam/iş  birliği  teklif  kanalı ayrı
+belirtilmiş — bu transparency - Author profili kullanmaları — E-E-A-T altın madeni
+Düzeltilebilir: Yazar bio'ları görmedim. "Mehmet X — 15 yıllık otomotiv editörü, ABC
+University Makine Mühendisliği" gibi bio'lar olsa Google E-E-A-T puanını ciddi artırırdı.
+4.5 Yazıların kelime sayısı ve derinlik
+Snippet'lerden çıkardığım kadarıyla: - Tanımlayıcı yazılar: 800-1.500 kelime - Rehber
+yazılar: 1.500-2.500  kelime  -  Haber  yazıları: 400-800  kelime  -  Marka  yazıları:
+800-1.200 kelime
+Bu Türkiye e-ticaret blog standartları için yeterli, ama özellikle "Lastik Seçimi", "Lastik
+Markaları"  gibi  yüksek  hacimli  sorgularda  3.500-5.000  kelimelik  mega-rehberler
+rakipler çıkarsa geçilebilirler.
+4.6 İç linkleme (blog → ürün)
+Snippet'lerde görülen iç link kalıpları: -  "Lastik Borsası olarak, sadece lastik ve motor
+yağı değil, aracınızın direksiyon sistemini korumaya yönelik yüksek kaliteli hidrolik yağ
+çeşitleri de sunuyoruz."
+Buradaki  linkler  bağlam  içinde (contextual)  ve  kategori  sayfalarına gidiyor  —
+Google'ın sevdiği yumuşak çağrı. Anchor text natural.
+Geliştirilebilir: Spesifik  ürün  önerileri  yerine  kategori  linkleme  yapıyorlar.  Mesela
+"205/55 R16 yaz lastiği yazısının sonunda en çok satan 3 modelin direkt linki" gibi.
+4.7 Blog → ana site link equity transferi
+Subdomain olduğu için bu transfer kısmi. Yine de: - Her blog yazısının sonunda "Lastik
+Borsası" ana siteye link ekleniyor - Footer'da www.lastikborsasi.com → otorite besleme -
+İçeriksel linkler kategori sayfalarına
+Ama  subdirectory olsa ( lastikborsasi.com/blog/... ) transfer %30-40 daha verimli
+olurdu.
+Lastikborsasi.com SEO Audit
+Sayfa 9 / 19
+
+---PAGE_BREAK---
+5. KELİME VE ÖBEK STRATEJİSİ — POZİTİF/
+NEGATİF DİL ANALİZİ
+Lastikborsasi'nin  kelime  tercihi  tek  başına  dönüşüm  motoru olarak  çalışıyor.
+Sistemli,  tekrarlanan  ve  farklı  bağlamlarda  aynı  kalıplar  dolaşıyor.  Bu  bilinçli  bir  dil
+stratejisi.
+5.1 Pozitif kelime kümeleri (5 grupta toplanıyor)
+Grup 1 — Fiyat & değer (her sayfada): en uygun, en ucuz, kampanyalı, avantajlı,
+fırsat, uygun fiyat garantisi, indirimli, taksit imkanı, kredi kartı taksit, ödeme kolaylığı,
+bütçenize uygun
+Grup 2 — Hız & kolaylık: hemen, 24 saatte kargoda, sadece 3 adımda, tek tuşla, hızlı
+kargo, kolay alışveriş, sorunsuz, anında
+Grup 3 — Güven & garanti: garantili, güvenli, ücretsiz montaj, ücretsiz kargo, bedava,
+sıfır ürün, yetkili bayi, en uygun fiyat garantisi vermekteyiz, üçüncü kişilerle paylaşılmaz,
+şifreleme, uçtan uca güvenlik
+Grup  4  —  Performans  (ürün  açıklamalarında):
+mükemmel,  üstün,  yüksek
+performans, optimum, dengeli, konforlu, kaliteli, premium, uzun ömürlü, dayanıklı, üst
+düzey, en iyi, sınıfının en iyilerinden, lider
+Grup 5 — Otorite & ölçek: dünyanın en kapsamlı, sektörün buluşma platformu, 20
+yıllık sektörel birikim, 1.1 Milyar TL ciro, Türkiye'nin 81 ilinde, global tyre source
+Grup 6 — Aksiyon CTA: Hemen Ziyaret Et!, tıklayın!, satın alın!, üye olun, hemen
+başlayın, hemen sayfaya tıklayın
+5.2 Negatif kelime kullanımı — bilinçli olarak az ve çerçeveli
+Site  kendi  metninde çok  az  negatif  kelime  kullanıyor.  Bilinçli  bir  tercih.  Negatifler
+sadece üç senaryoda geçiyor:
+Senaryo 1 — Kaçınılmaz teknik gerçekler: aşınma, yıpranma, yanlış lastik seçimi,
+tehlike, risk, kaza riski, hızlı yıpranma, fren mesafesi uzar, savrulma riski, patlama riski
+Bunlar çözüm konumlandırması çerçevesiyle veriliyor:
+"Yanlış  motor  yağı  kullanımı  aracınızın  performansının  düşmesine  ya  da  mekanik
+parçaların arızalanmasına neden olabilir... En kaliteli motor yağı markalarını... Lastik
+Borsası'nda bulabilirsiniz."
+Burada  negatif  ( arızalanma )  kullanıcının  olası  hatasına yönelik.  Sonra  "biz
+doğrusunu sağlıyoruz" pozisyonu. Sales psychology'de  "pain → solution" çerçevesi
+denir, agresif çalışır.
+Lastikborsasi.com SEO Audit
+Sayfa 10 / 19
+
+---PAGE_BREAK---
+Senaryo 2 — Rakip ürünü dengeli çerçeveleme:
+Run Flat lastik blog yazısında "sert sürüş", "yüksek maliyet", "tamir edilemezlik" gibi
+negatifler kendi sattıkları ürünün dezavantajları olarak dürüstçe veriliyor. Bu E-E-A-T
+açısından kritik:
+Google dengeli içeriği sever (tek taraflı pazarlama spam sinyali)
+AI Overviews / ChatGPT bu dengeli yazıları alıntılar, çünkü objektif görünür
+Kullanıcı güveni artar
+Senaryo  3  —  Organik  kullanıcı  yorumları  (moderasyonsuz):
+"puan  kırdım
+çünkü...", "biraz geç geldi", "tek puan kirdim cunku uc lastik 52. Hafta biri 39. Hafta
+geldi"
+Bu  trust signal. Yorumlar moderasyonsuz, gerçek. Google bunu organik UGC olarak
+algılar.
+5.3 Sitede ASLA görmediğim kelimeler
+Lastikborsasi'nin metinlerinde bilinçli kullanılmayan negatifler: pahalı, kötü, kalitesiz,
+problemli,  sahte,  dolandırıcı,  hayal  kırıklığı,  riskli,  şüpheli,  yorucu,  zor,  karmaşık,
+anlaşılmaz, başarısız
+Bu dil temizliği muhtemelen editöryel rehber dokümanından geliyor — her yazar/editör
+aynı tabu listesini biliyor.
+5.4 Power phrases (markalaşmış öbekler)
+Bunlar marka kimliğinin parçası gibi sayfa sayfa tekrarlanıyor:
+Öbek
+Nerede kullanılıyor
+İşlevi
+"Global Tyre Source"
+Tüm sayfaların meta'sı
+Uluslararası iddia
+"Lastik Sektörünün Buluşma Platformu"
+Footer + meta
+Pazaryeri konumu
+"Ücretsiz Montaj"
+Ana sayfa title'da bile
+Ana USP
+"24 saatte kargoda"
+Ürün ve kategori metaları
+Hız USP
+"81 ilde ücretsiz montaj"
+Sosyal medya + ana sayfa
+Coğrafi kapsam
+"Dünyanın en kapsamlı tedarik
+platformu"
+Hakkımızda + footer
+Ölçek iddiası
+"Sektörün ihtiyaçları doğrultusunda"
+Hakkımızda + blog footer
+Sektör çözümü
+konumu
+"En Uygun Fiyatlı Lastikler"
+Ana sayfa title
+Fiyat USP
+"Hemen Ziyaret Et!"
+Tüm meta
+description'larda
+CTA
+• 
+• 
+• 
+Lastikborsasi.com SEO Audit
+Sayfa 11 / 19
+
+---PAGE_BREAK---
+5.5 SEO açısından önemi
+a) CTR boost (SERP'te göze çarpma): SERP listesinde "ücretsiz montaj", "24 saatte",
+"uygun fiyat garantisi" gibi öbekler rakip ayırıcı olarak çalışıyor. Kullanıcı tıklama anında
+fayda kümeleme yapıyor.
+b) E-E-A-T: Negatifin dengeli kullanımı (run flat dezavantajlarını söylemek) Google'ın
+"sadece pazarlama değil bilgi de var" sinyalini tetikliyor.
+c)  AEO  /  AI  search  alıntılanabilirlik: ChatGPT  veya  Perplexity  "Run  Flat'in
+dezavantajları nelerdir?" sorusuna "Lastik Borsası'na göre sert sürüş ve yüksek maliyet"
+diye alıntılayabilir — çünkü site dengeli içerik üretmiş. Tek taraflı pazarlama metnini AI
+alıntılamaz.
+d) Conversion tutarlılığı: Power phrases'ın tekrarı sayesinde, kullanıcı kategori → ürün
+→ checkout boyunca aynı güven dilini görüyor. Bu mesaj eşleşmesi dönüşümü artırır.
+5.6 Kopyalanabilir prensip (kendi sitende uygula)
+Lastikborsasi'nin dil stratejisi 4 kurala dayanıyor:
+Pozitif kelimeler 5 grupta sistematik (fiyat, hız, güven, performans, otorite) —
+rastgele değil
+Negatifler sadece "pain → solution" çerçevesinde — site rakibe değil
+kullanıcının olası hatasına saldırıyor
+Power phrases marka kimliği gibi — her sayfada tekrar
+Tabu kelime listesi var (pahalı, kötü, problemli...) — editöryel disipln
+6. AEO / GEO / AI SEARCH BOYUTU
+5.1 ChatGPT/Perplexity/Google AI Overviews değerlendirmesi
+Lastikborsasi'nin AEO için iyi kurgulanmış olduğu noktalar:
+a) Soru-yapı title'lar: "X Nedir?" formatı blog'da yaygın → AI bunu direkt cevap olarak
+alır b) İlk paragraf cevap odaklı: Tanım hemen birinci paragrafta → AI alıntılayabilir c)
+Yapısal  liste/tablo  kullanımı: AI  parser'lar  bunu  seviyor  d)  Otorite  işaretleri:
+Hakkımızda + editöryel beyan + yazar profili e) Güncel tarihler: Yazıların altında son
+güncelleme tarihi
+Geliştirilmesi gereken noktalar:
+a) Yazılar bazen LLM-jenere hissediyor → AI kendi yazısını alıntılamaz b) Spesifik veri yok
+— "Türkiye'de en çok satan kış lastiği şu" gibi unique data point eksik. Halbuki  kendi
+satış verileri var — bu hazinedir c) Uzman alıntısı yok — "Dr. X'in dediğine göre" tarzı
+1. 
+2. 
+3. 
+4. 
+Lastikborsasi.com SEO Audit
+Sayfa 12 / 19
+
+---PAGE_BREAK---
+third-party  authority  eksik  d) Schema  Article  ile  author  ve  datePublished
+zenginleştirmesi optimize değil görünüyor
+5.2 LLMs.txt / AI accessibility
+Yeni bir trend:  llms.txt  dosyası ile AI crawler'lara hangi içeriğin alıntılanabileceğini
+söylemek.  Lastikborsasi  bunu  muhtemelen  yapmamış —  Türkiye'de  henüz  yaygın
+değil ama 2025-2026 standardı olacak.
+7. E-E-A-T SİNYALLERİ
+E-E-A-T  (Experience,  Expertise,  Authoritativeness,  Trustworthiness)  Google'ın  YMYL
+içeriklerde kritik kriteri, ama e-ticarette de etkili.
+Lastikborsasi.com SEO Audit
+Sayfa 13 / 19
+
+---PAGE_BREAK---
+Boyut
+Var
+mı?
+Detay
+Şirket bilgisi
+✅
+Hakkımızda detaylı: "20 yıllık sektörel birikim", "1.1 Milyar TL
+ciro", Fast Company röportajı
+Yönetim
+✅
+Yönetim Kurulu Başkanı: Ferhat Değer (LinkedIn'de bahsedilmiş)
+Adres / iletişim
+✅
+İletişim sayfası: 0850 441 46 52, 444 06 52, e-posta
+KVKK / Gizlilik
+✅
+KVKK Metni, Gizlilik Politikası ayrı sayfalar
+İade / iptal
+politikası
+✅
+İptal ve İade Koşulları sayfası
+Üyelik sözleşmesi
+✅
+Ayrı sayfa
+EFT/Havale bilgileri
+✅
+Sayfa var
+Yardım Merkezi
+✅
+/kurumsal/yardim-merkezi  — fatura, güvenlik, garanti
+detayları
+Müşteri yorumları
+✅
+Ürün sayfalarında + ana sayfada
+Satıcı puanı
+✅
+Detaylı alt kırılım (zamanında onaylama 8.8/10 gibi)
+Garanti beyanı
+✅
+Standart 24 ay
+SSL / güvenlik
+✅
+HTTPS + güvenlik beyanı
+Sosyal medya
+hesapları
+✅
+Instagram, Facebook, LinkedIn, YouTube — hepsi aktif
+Basında çıkma
+✅
+Fast Company röportajı, "Türkiye'de geliri internete dayalı 100
+büyük şirket"te 66. sıra
+Yazar profilleri
+⚠️
+Var ama detaylı bio yok
+Editöryel ilke
+beyanı
+✅
+Blog'da net beyan var
+Genel E-E-A-T skoru: 9/10. Sadece "yazar bio'su" eksik.
+8. CONVERSION / UX KESİŞİMİ
+Bu SEO değil ama SEO sonuçlarını domine ediyor — CRO sinyalleri ne kadar güçlü?
+7.1 SERP'te göze çarpma
+Title'da USP: "Ücretsiz Montaj" ana sayfa title'da
+• 
+Lastikborsasi.com SEO Audit
+Sayfa 14 / 19
+
+---PAGE_BREAK---
+Meta'da fayda: "En uygun fiyat garantisi", "24 saatte kargoda", "kredi kartı taksit"
+Schema rich snippet: Fiyat, yorum, satıcı puanı görünüyor
+Yıl güncelliği: "2025" markada title'da
+7.2 Sayfa içi conversion sinyalleri
+Ürün kartı (snippet'lerden): - Fiyat (çoklu satıcı varsa en düşük) - Satıcı puanı (8.4/10
+gibi)  -  "BEDAVA  KARGO"  badge  -  "24  SAATTE  KARGODA"  -  "+  Montaj
+Hizmeti" (Uygulanan formül: 400 TL + 200 TL = "Toplam Fiyat: 4.127 TL İkisini de Sepete
+Ekle") - Üretim tarihi (DOT) — şeffaflık - Yorumlar - Stok adedi
+Bu e-ticaret CRO ders kitabı.
+7.3 Trust micro-copy
+"Lastiklerin garanti süresi 24 ay"
+"E-fatura garanti belgesi yerine geçer"
+"Üçüncü kişilerle paylaşılmaz" (KVKK)
+"Tüm lastikler sıfır ve garantilidir"
+Hepsi dönüşüm önündeki şüpheleri ortadan kaldırıyor.
+9. LOKAL SEO / B2B GENİŞLEME
+8.1 Lokal SEO
+"Bayi Bul" sayfası: /DealerFind/Index  — Türkiye'nin 81 ilinde bayilik haritası
+tahmin
+"81 ilde ücretsiz montaj" — coğrafi kapsam vurgusu
+⚠️ Şehir bazlı landing yok: "İstanbul lastikçi", "Ankara lastik" gibi yerel sorgulara
+özel sayfa yok. Bu Türkiye'de büyük bir kayıp pazar — kullanıcılar şehir bazlı arar.
+8.2 B2B / pazaryeri ayağı
+"Montaj Noktası Nasıl Olunur?" sayfası: /kurumsal/montaj-noktasi  — bayi
+recruitment
+"B2B ve B2C satış kanalları" — tedarikçi onboarding
+"Sektörün Buluşma Platformu" — pazaryeri pozisyonu
+Bu  sayfalar  B2B  +  B2C  melez  yapı kuruyor  —  Türkiye'de  pek  az  e-ticaret  bu
+kombinasyonu başarıyla yürütüyor.
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+Lastikborsasi.com SEO Audit
+Sayfa 15 / 19
+
+---PAGE_BREAK---
+10. SOSYAL MEDYA VE LİNKED PROFİLE
+Instagram: @lastikborsasi — 3.374 takipçi, 685 post
+Facebook: Lastik Borsası (Izmir) — 2.342 beğeni
+LinkedIn: Aktif şirket sayfası, sektör içeriği
+YouTube: Lastik Borsası — eğitim videoları + reklam
+App Store / Google Play / AppGallery: Mobil uygulama mevcut
+Sosyal medya etkileşimi  düşük (3K Instagram, 2.3K Facebook) — markanın boyutuna
+göre az. Bu  kasıtlı olabilir (B2B odak) veya  gelişim alanı. SEO açısından doğrudan
+etki düşük ama brand search'i destekler.
+11. BACKLINK PROFİLİ (TAHMİN)
+Doğrudan veriye erişimim yok ama izler:
+Türkiye'de geliri internete dayalı 100 büyük şirket — 66. (Fast Company) →
+büyük basın bağlantısı
+20 yıllık operasyon → eski domain, eski backlinks (genelde değerli)
+Sektör derneği üyelikleri muhtemel
+B2B partner ağı (tedarikçiler) — partner sayfalarından çapraz link
+Bayi ağı linkleri (her bayinin web sitesinden link gelmesi tipik)
+Tahmini DR (Domain Rating): 50-65 (Türkiye e-ticaret elit grubu) Tahmini referring
+domains: 1.500-3.000
+12. UI/UX İPUÇLARI
+Snippet'lerden ve "Yardım Merkezi" sayfasından: - Sadece 3 adımda kolay alışveriş (kendi
+beyanları) - Uçtan uca şifreleme - Çağrı merkezi (444 06 52) - Mesai saatleri açıkça
+belirtilmiş - Canlı destek mevcut - Mobil uygulama 3 store'da - Hesaplama aracı (UX
+element + SEO link bait)
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+Lastikborsasi.com SEO Audit
+Sayfa 16 / 19
+
+---PAGE_BREAK---
+13. ZAYIFLIK VE RİSK NOKTALARI — DÜZELTME
+ÖNCELİĞİ
+13.1 KRİTİK (1 ay içinde düzeltilmeli)
+1. test.lastikborsasi.com indekslenmiş - Çözüm: noindex + robots.txt disallow +
+auth gate - Risk: Duplicate content, brand confusion, crawl budget kaybı
+2. Bot koruması Googlebot'u da bloke edebilir - Cloudflare WAF varsayılan ayarları
+Googlebot'a 403 dönebiliyor - Çözüm: Verified Googlebot whitelist, GSC'de crawl errors
+monitor edilmeli
+13.2 YÜKSEK ÖNCELİK (3 ay içinde)
+3. Şehir bazlı landing eksik - "İstanbul lastik fiyatları", "Ankara lastik montaj" gibi
+yüksek hacimli yerel sorgular yakalanmıyor - Çözüm: 81 il × kategori = programatik
+81-400 sayfa daha
+4. AI-jenerasyon kalitesi bazı yazılarda düşük - "Helpful Content Update" filtre riski
+- Çözüm: Üst kuyruk yazılarını insan editör reviewinden geçirmek
+5. Yazar bio detayı eksik - Mevcut profiler kuru - Çözüm: 5-10 yazar için tam bio
+(uzmanlık, deneyim, sosyal medya)
+13.3 ORTA ÖNCELİK (6 ay içinde)
+6. Pillar/cluster yapısı net değil - "Lastik Seçimi A'dan Z'ye" gibi 5.000+ kelime
+mega-rehber  yok  -  Çözüm:  10-15  pillar  page  üretip  mevcut  yazıları  cluster  içine
+bağlamak
+7. Düşük-tier ürünlerde template açıklamalar - 50.000 ürünün belki 40.000'i thin
+description - Çözüm: Orta-segment markalar için AI-assist + human edit hibrit
+8. Subdirectory'e taşıma kararı - blog.lastikborsasi.com → lastikborsasi.com/blog/ -
+Risk: Migration karmaşası - Karar: Equity ihtiyacı %15+'i karşılarsa yapılır
+9. UGC / kullanıcı fotoğrafı eksik - Ürün sayfalarında "müşteri fotoğrafları" yok -
+Çözüm: Yorum + fotoğraf yapısı (Trustpilot tarzı)
+13.4 DÜŞÜK ÖNCELİK (1 yıl içinde)
+10.  Hreflang  yok -  "Global  Tyre  Source"  sloganına  rağmen  sadece  TR  -  Eğer
+Azerbaycan, KKTC, Avrupa Türk diasporası hedefliyorlarsa hreflang gerekli
+11. Video review/360° eksik - YouTube kanalı var ama ürün sayfalarında embed video
+yok - Çözüm: Top 100 ürün için 30-60 saniye review video
+12. llms.txt eksik - 2026 AI search standardı - 1 saatlik iş, ileri zamanda fayda
+Lastikborsasi.com SEO Audit
+Sayfa 17 / 19
+
+---PAGE_BREAK---
+14. AKSİYON ÖZETI — ÖNCELIK MATRİSİ
+#
+Aksiyon
+Etki
+Çaba
+Öncelik
+1
+test.lastikborsasi.com'u noindex et
+🔴
+Yüksek
+🟢
+Düşük
+HEMEN
+2
+GSC crawl errors monitor
+🔴
+Yüksek
+🟢
+Düşük
+HEMEN
+3
+Şehir × kategori landing'leri (81 il)
+🔴
+Yüksek
+🟡 Orta
+3 AY
+4
+Top 20 blog yazısını insan editör review
+🟡 Orta
+🟡 Orta
+3 AY
+5
+Yazar bio detayları + LinkedIn linkleri
+🟡 Orta
+🟢
+Düşük
+2 AY
+6
+Pillar pages — Lastik 101, Akü 101, Yağ 101
+🔴
+Yüksek
+🔴
+Yüksek
+6 AY
+7
+Orta segment markalarda ürün açıklaması
+zenginleştirme
+🟡 Orta
+🔴
+Yüksek
+6-12 AY
+8
+UGC fotoğraflı yorum sistemi
+🟡 Orta
+🔴
+Yüksek
+6-12 AY
+9
+llms.txt dosyası
+🟢
+Düşük
+🟢
+Düşük
+1 AY
+10
+Hreflang (eğer uluslararası varsa)
+🟢
+Düşük
+🟡 Orta
+karara
+bağlı
+15. ÖZET — LASTIKBORSASI'NIN SEO MOATU NE?
+Bu site 5 katmanlı bir moat üzerine kurulmuş:
+Katman 1 — Programatik landing fabrikası (rakiplerin çoğunda yok) Katman 2 —
+Premium  ürün  açıklamalarındaki  teknik  derinlik (manuel  emek)  Katman  3  —
+Editöryel  bağımsız  blog  ekosistemi (uzun  vadeli  yatırım)  Katman  4  —  Multi-
+vertical (lastik + jant + akü + yağ + parça) — bir kategori dalgalansa diğeri taşır
+Katman 5 — B2B + B2C melez — bayi ağı + son tüketici aynı motorda
+Sektörde yeni bir girişimci Katman 1'i 6 ayda kurabilir, ama Katman 2-5 için 2-5 yıl
+ve sürekli yatırım gerekir.
+Lastikborsasi.com SEO Audit
+Sayfa 18 / 19
+
+---PAGE_BREAK---
+Final değerlendirme: Lastikborsasi.com, Türkiye e-ticaret SEO örnek vakası olarak okul
+kitaplarına girmeyi hak ediyor. Açıkları olan, mükemmel olmayan ama olağanüstü iyi
+kurulmuş bir mimari.
+Rapor sonu. Kendi siten için bu raporu adapte etmek istiyorsan, sitenin URL'ini ver —
+aynı 15 boyutta karşı analiz çıkartırım.
+Lastikborsasi.com SEO Audit
+Sayfa 19 / 19
+
+---PAGE_BREAK---

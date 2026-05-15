@@ -1,0 +1,274 @@
+{
+  "domain": "lastikborsasi.com",
+  "analysis_date": "2026-05-15T16:52:58.670315",
+  "crawl_summary": {
+    "pages_crawled": 50,
+    "duration": 144.39840602874756,
+    "ssl_valid": true,
+    "robots_accessible": true,
+    "sitemap_accessible": true
+  },
+  "technical_seo": {
+    "score": 98.0,
+    "issues": [
+      {
+        "severity": "WARNING",
+        "category": "url",
+        "title": "1 URL'de büyük harf var",
+        "description": "Büyük harf içeren URL'ler duplicate content riski oluşturur.",
+        "affected_urls": [
+          "https://lastikborsasi.com/Cart"
+        ],
+        "recommendation": "Tüm URL'leri küçük harfe çevirin, 301 redirect kurun."
+      },
+      {
+        "severity": "WARNING",
+        "category": "meta",
+        "title": "1 adet yinelenen (duplicate) title tespit edildi",
+        "description": "Aynı title'ı paylaşan sayfalar Google'da cannibalization yaratır.",
+        "affected_urls": [],
+        "recommendation": "Her sayfanın benzersiz bir title'ı olmalı."
+      },
+      {
+        "severity": "WARNING",
+        "category": "heading",
+        "title": "2 sayfada H1 etiketi eksik",
+        "description": "H1 etiketi sayfanın ana konusunu belirler, SEO için kritiktir.",
+        "affected_urls": [
+          "https://lastikborsasi.com/Cart",
+          "https://lastikborsasi.com/cart"
+        ],
+        "recommendation": "Her sayfaya tek bir, açıklayıcı H1 etiketi ekleyin."
+      },
+      {
+        "severity": "INFO",
+        "category": "heading",
+        "title": "1 sayfada birden fazla H1 var",
+        "description": "Birden fazla H1 Google'a karışık sinyal verir.",
+        "affected_urls": [
+          "https://lastikborsasi.com/otomobil-lastikleri-c-271462"
+        ],
+        "recommendation": "Her sayfada sadece bir H1 kullanın, diğerlerini H2'ye çevirin."
+      }
+    ],
+    "ssl_status": {
+      "valid": true,
+      "issuer": "Let's Encrypt",
+      "expiry": "Jul 15 17:57:50 2026 GMT"
+    },
+    "robots_status": {
+      "accessible": true,
+      "content_length": 474,
+      "has_sitemap_ref": true,
+      "has_disallow": true
+    },
+    "sitemap_status": {
+      "accessible": true,
+      "url": "https://www.lastikborsasi.com/sitemaps/sitemap.xml",
+      "url_count": 13
+    },
+    "url_analysis": {
+      "total_urls": 50,
+      "long_urls": 0,
+      "param_urls": 0,
+      "uppercase_urls": 1,
+      "underscore_urls": 0,
+      "deep_urls": 0
+    },
+    "meta_analysis": {
+      "missing_title": 0,
+      "long_title": 18,
+      "short_title": 0,
+      "duplicate_titles": 1,
+      "missing_description": 0,
+      "long_description": 0,
+      "short_description": 50,
+      "missing_canonical": 4
+    },
+    "heading_analysis": {
+      "missing_h1": 2,
+      "multiple_h1": 1,
+      "empty_h1": 0
+    },
+    "schema_analysis": {
+      "total_pages": 50,
+      "pages_with_schema": 45,
+      "coverage_percent": 90.0,
+      "schema_types": {
+        "BreadcrumbList": 45
+      },
+      "pages_without_schema": 5
+    },
+    "speed_analysis": {
+      "avg_load_time": 1.48,
+      "min_load_time": 0.56,
+      "max_load_time": 2.67,
+      "slow_pages": 0
+    },
+    "mobile_analysis": {
+      "viewport_coverage": 100.0,
+      "pages_without_viewport": 0
+    },
+    "redirect_analysis": {
+      "https_redirect": true,
+      "www_redirect": true
+    }
+  },
+  "onpage_seo": {
+    "score": 99.0,
+    "issues": [
+      {
+        "severity": "WARNING",
+        "category": "eeat",
+        "title": "E-E-A-T skoru düşük (2.5/10)",
+        "description": "12 kriterden sadece 3'i karşılanıyor. Google, güvenilirlik sinyallerini sıralama için kullanır.",
+        "affected_urls": [],
+        "recommendation": "Hakkımızda, İletişim, Gizlilik Politikası sayfaları ekleyin. Sosyal medya linklerini footer'a koyun. Müşteri yorumları/puanlama sistemi ekleyin."
+      }
+    ],
+    "content_stats": {
+      "total_pages": 50,
+      "avg_word_count": 3586.4,
+      "min_word_count": 1818,
+      "max_word_count": 15202,
+      "thin_content_pages": [],
+      "pages_without_images": [],
+      "images_without_alt": 170,
+      "total_images": 3671,
+      "alt_coverage": 95.369109234541
+    },
+    "link_stats": {
+      "avg_internal_links": 557.96,
+      "avg_external_links": 6.08,
+      "orphan_pages": [],
+      "pages_without_internal_links": [],
+      "total_unique_internal": 1612,
+      "total_unique_external": 10,
+      "external_domains": {
+        "facebook.com": 50,
+        "instagram.com": 50,
+        "twitter.com": 50,
+        "linkedin.com": 50,
+        "youtube.com": 50,
+        "etbis.eticaret.gov.tr": 50,
+        "apps.apple.com": 1,
+        "cutt.ly": 1,
+        "appgallery.huawei.com": 1,
+        "www.sikayetvar.com": 1
+      }
+    },
+    "eeat_signals": {
+      "signals": {
+        "about": false,
+        "contact": true,
+        "privacy": false,
+        "terms": true,
+        "return": false,
+        "faq": false,
+        "blog": false,
+        "ssl": true,
+        "social_media": false,
+        "phone_number": false,
+        "email": false,
+        "reviews": false
+      },
+      "score": 2.5,
+      "details": {}
+    },
+    "title_analysis": {
+      "total_with_title": 50,
+      "avg_length": 53.0,
+      "too_long": 18,
+      "too_short": 0,
+      "with_year": 1,
+      "with_brand_suffix": 48,
+      "brand_suffix": "Lastik Borsası"
+    },
+    "keyword_patterns": {
+      "trust_keywords": {
+        "güvenli": 1,
+        "taksit": 50,
+        "kampanya": 1
+      },
+      "total_trust_mentions": 52,
+      "cta_count": 0,
+      "has_pricing_language": true,
+      "has_urgency_language": false
+    }
+  },
+  "actions": [
+    {
+      "id": 1,
+      "title": "On-Page SEO: 1 adet yinelenen (duplicate) title tespit edildi",
+      "category": "On-Page SEO",
+      "impact": 8,
+      "confidence": 9,
+      "ease": 8,
+      "ice_score": 57.6,
+      "priority": "P1",
+      "description": "Aynı title'ı paylaşan sayfalar Google'da cannibalization yaratır.",
+      "recommendation": "Her sayfanın benzersiz bir title'ı olmalı.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "1 adet yinelenen (duplicate) title tespit edildi"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "E-E-A-T: E-E-A-T skoru düşük (2.5/10)",
+      "category": "E-E-A-T",
+      "impact": 8,
+      "confidence": 9,
+      "ease": 7,
+      "ice_score": 50.4,
+      "priority": "P1",
+      "description": "12 kriterden sadece 3'i karşılanıyor. Google, güvenilirlik sinyallerini sıralama için kullanır.",
+      "recommendation": "Hakkımızda, İletişim, Gizlilik Politikası sayfaları ekleyin. Sosyal medya linklerini footer'a koyun. Müşteri yorumları/puanlama sistemi ekleyin.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "E-E-A-T skoru düşük (2.5/10)"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "On-Page SEO: 2 sayfada H1 etiketi eksik",
+      "category": "On-Page SEO",
+      "impact": 4,
+      "confidence": 8,
+      "ease": 9,
+      "ice_score": 28.8,
+      "priority": "P3",
+      "description": "H1 etiketi sayfanın ana konusunu belirler, SEO için kritiktir.",
+      "recommendation": "Her sayfaya tek bir, açıklayıcı H1 etiketi ekleyin.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "2 sayfada H1 etiketi eksik",
+        "1 sayfada birden fazla H1 var"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Teknik SEO: 1 URL'de büyük harf var",
+      "category": "Teknik SEO",
+      "impact": 5,
+      "confidence": 7,
+      "ease": 6,
+      "ice_score": 21.0,
+      "priority": "P3",
+      "description": "Büyük harf içeren URL'ler duplicate content riski oluşturur.",
+      "recommendation": "Tüm URL'leri küçük harfe çevirin, 301 redirect kurun.",
+      "estimated_cost": "",
+      "expected_benefit": "",
+      "timeline": "",
+      "source_issues": [
+        "1 URL'de büyük harf var"
+      ]
+    }
+  ]
+}
