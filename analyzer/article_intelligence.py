@@ -62,6 +62,14 @@ class ArticleResult:
     suggested_title: str = ""
     llm_summary: str = ""
 
+    # İçerik Kalite Skoru (Lastikcim formülü)
+    quality_score: float = 0.0       # 0-100
+    quality_grade: str = ""          # A / B / C / D / F
+    why_ranking: str = ""            # Neden iyi sıralıyor?
+    why_not_ranking: str = ""        # Neden sıralamada yok?
+    quality_recommendations: list[str] = field(default_factory=list)
+    quality_signals: dict = field(default_factory=dict)  # Ham sinyal sayıları
+
 
 @dataclass
 class ArticleIntelligenceResult:
@@ -130,7 +138,11 @@ class ArticleIntelligence:
             top = sorted(articles, key=lambda x: x.importance_score, reverse=True)[:self.top_n]
             logger.info(f"   🏆 Top {len(top)} makale seçildi")
 
-            # 6. LLM ile gizli kelime analizi (sadece top makaleler)
+            # 6. İçerik kalite skoru (Lastikcim formülü — tüm top makaleler)
+            logger.info("   📊 İçerik kalite skorları hesaplanıyor...")
+            self._apply_quality_scores(top)
+
+            # 7. LLM ile gizli kelime analizi (sadece top makaleler)
             if self.openai_api_key:
                 for i, article in enumerate(top):
                     logger.info(f"   🤖 LLM analiz: {i+1}/{len(top)} — {article.url[:60]}...")
@@ -447,6 +459,57 @@ class ArticleIntelligence:
 
             a.importance_score = round(score, 2)
 
+    # ── İçerik Kalite Skoru ───────────────────────────────────────────────────
+
+    def _apply_quality_scores(self, articles: list):
+        """
+        Her makaleye Lastikcim ters mühendislik formülünü uygular.
+        ArticleResult'ı kalite skoru, açıklama ve önerilerle zenginleştirir.
+        """
+        from analyzer.content_quality_scorer import ContentQualityScorer
+        scorer = ContentQualityScorer()
+
+        for article in articles:
+            # external_links burada yok ama text_content'ten URL pattern'leri bulabiliriz
+            # Pratik çözüm: text_content'ten dış domain'leri çek
+            ext_links = self._extract_external_links_from_text(article.text_content, article.url)
+
+            qr = scorer.score(
+                text_content=article.text_content,
+                headings=article.headings,
+                internal_links=[article.url] * article.internal_link_count,  # approximation
+                external_links=ext_links,
+                lastmod=article.sitemap_lastmod,
+                word_count=article.word_count,
+                url=article.url,
+            )
+
+            article.quality_score = qr.quality_score
+            article.quality_grade = qr.grade
+            article.why_ranking = qr.why_ranking
+            article.why_not_ranking = qr.why_not_ranking
+            article.quality_recommendations = qr.recommendations
+            article.quality_signals = {
+                "question_headers": qr.question_headers,
+                "numeric_data": qr.numeric_data_count,
+                "authority_links": qr.authority_links,
+                "internal_links": qr.internal_link_count,
+                "uncertainty_words": qr.uncertainty_count,
+                "subjective_adjectives": qr.subjective_count,
+                "sales_language": qr.sales_language_count,
+                "freshness_days": qr.freshness_days,
+            }
+
+    def _extract_external_links_from_text(self, text: str, page_url: str) -> list[str]:
+        """Metin içinden harici URL'leri çıkarır (kaba yaklaşım)."""
+        base_domain = urlparse(page_url).netloc.replace("www.", "")
+        url_pattern = re.compile(r'https?://[\w/:%#\$&\?\(\)~\.=\+\-]+', re.I)
+        found = url_pattern.findall(text)
+        return [
+            u for u in found
+            if urlparse(u).netloc.replace("www.", "") != base_domain
+        ]
+
     # ── LLM Keyword Extraction ────────────────────────────────────────────────
 
     def _llm_keyword_extraction(self, article: ArticleResult):
@@ -548,6 +611,13 @@ Sadece JSON döndür, başka açıklama ekleme."""
                     "summary": a.llm_summary,
                     "sitemap_priority": a.sitemap_priority,
                     "last_updated": a.sitemap_lastmod,
+                    # Kalite skoru alanları
+                    "quality_score": a.quality_score,
+                    "quality_grade": a.quality_grade,
+                    "why_ranking": a.why_ranking,
+                    "why_not_ranking": a.why_not_ranking,
+                    "quality_recommendations": a.quality_recommendations,
+                    "quality_signals": a.quality_signals,
                 }
                 for i, a in enumerate(result.top_articles)
             ],

@@ -361,6 +361,14 @@ def generate_html_report(data: dict) -> str:
   {_render_articles(top5)}
 </div>
 
+<!-- ── KALİTE SKORU ÖZETİ ── -->
+<div class="section">
+  <div class="section-title">
+    📊 İçerik Kalite Karşılaştırması (Lastikcim Formülü)
+  </div>
+  {_render_quality_summary(top5)}
+</div>
+
 <!-- ── KELİME HAVUZU ── -->
 <div class="section">
   <div class="section-title">
@@ -389,12 +397,12 @@ def generate_html_report(data: dict) -> str:
 <!-- ── FOOTER ── -->
 <div class="report-footer">
   <span>Oluşturulma: {generated_at}</span>
-  <span>SEO Analyzer — Article Intelligence</span>
+  <span>SEO Analyzer — Article Intelligence + Kalite Skoru</span>
   <button class="no-print" onclick="window.print()" style="
     background:#238636; border:none; border-radius:6px;
     color:#fff; cursor:pointer; font-family:inherit;
     font-size:12px; font-weight:600; padding:6px 14px;
-  ">🖨 PDF Olarak Kaydet</button>
+  ">🖸 PDF Olarak Kaydet</button>
 </div>
 
 </body>
@@ -417,6 +425,44 @@ def _render_articles(articles: list) -> str:
         summary = a.get("summary", "")
         last_updated = a.get("last_updated", "")[:10] if a.get("last_updated") else "—"
 
+        # Kalite skoru
+        qs = a.get("quality_score", 0)
+        grade = a.get("quality_grade", "")
+        grade_colors = {"A": "#3fb950", "B": "#58a6ff", "C": "#d29922", "D": "#db6d28", "F": "#f85149"}
+        grade_color = grade_colors.get(grade, "#8b949e")
+        why_ranking = a.get("why_ranking", "")
+        why_not = a.get("why_not_ranking", "")
+        recs = a.get("quality_recommendations", [])
+        signals = a.get("quality_signals", {})
+
+        # Sinyal tablosu
+        signal_rows = ""
+        signal_map = [
+            ("Soru Başlıklar", signals.get("question_headers", 0), "positive", "≥ 3 ideal"),
+            ("Numerik Veri", signals.get("numeric_data", 0), "positive", "≥ 5 ideal"),
+            ("Otorite Link", signals.get("authority_links", 0), "positive", "≥ 2 ideal"),
+            ("İç Link", signals.get("internal_links", 0), "positive", "8-15 ideal"),
+            ("Belirsizlik", signals.get("uncertainty_words", 0), "negative", "0 olmalı"),
+            ("Subjektif Sıfat", signals.get("subjective_adjectives", 0), "negative", "0 olmalı"),
+            ("Satış Dili", signals.get("sales_language", 0), "negative", "0 olmalı"),
+        ]
+        for name, val, direction, tip in signal_map:
+            if direction == "positive":
+                color = "#3fb950" if val >= 2 else ("#d29922" if val >= 1 else "#f85149")
+            else:
+                color = "#3fb950" if val == 0 else ("#d29922" if val <= 2 else "#f85149")
+            signal_rows += f"""
+<tr>
+  <td style="padding:5px 8px; color:#8b949e; font-size:12px;">{name}</td>
+  <td style="padding:5px 8px; font-weight:700; color:{color}; font-size:13px;">{val}</td>
+  <td style="padding:5px 8px; color:#484f58; font-size:11px;">{tip}</td>
+</tr>"""
+
+        recs_html = ""
+        if recs:
+            recs_html = "<ul style='margin:8px 0 0 16px; font-size:12px; color:#8b949e; line-height:1.7;'>" + \
+                "".join(f"<li>{r}</li>" for r in recs[:4]) + "</ul>"
+
         html += f"""
 <div class="article-card">
   <div class="article-rank">#{a.get('rank', '?')}</div>
@@ -428,37 +474,44 @@ def _render_articles(articles: list) -> str:
     <span class="stat"><b>{a.get('word_count', 0)}</b> kelime</span>
     <span class="stat">Güncelleme: <b>{last_updated}</b></span>
     {f'<span>{intent_html}</span>' if intent_html else ''}
+    <span style="font-weight:700; color:{grade_color}; font-size:14px;"
+          title="Lastikcim Kalite Skoru">{grade} ({qs})</span>
   </div>
 
   <div class="score-bar-wrap">
     <div class="score-bar" style="width:{score_pct}%"></div>
   </div>
 
+  <!-- Keyword Grupları -->
   <div class="kw-groups">
     <div class="kw-group primary">
       <div class="kw-group-title">🎯 Ana Kelimeler</div>
-      <div class="tags">
-        {_tags(a.get('primary_keywords', []), 'primary')}
-      </div>
+      <div class="tags">{_tags(a.get('primary_keywords', []), 'primary')}</div>
     </div>
     <div class="kw-group secondary">
       <div class="kw-group-title">📌 İkincil Kelimeler</div>
-      <div class="tags">
-        {_tags(a.get('secondary_keywords', []), 'secondary')}
-      </div>
+      <div class="tags">{_tags(a.get('secondary_keywords', []), 'secondary')}</div>
     </div>
     <div class="kw-group lsi">
       <div class="kw-group-title">🧠 LSI / Gizli Kelimeler</div>
-      <div class="tags">
-        {_tags(a.get('lsi_keywords', []), 'lsi')}
-      </div>
+      <div class="tags">{_tags(a.get('lsi_keywords', []), 'lsi')}</div>
     </div>
     <div class="kw-group gaps">
       <div class="kw-group-title">⚠️ İçerik Boşlukları</div>
-      <div class="tags">
-        {_tags(a.get('content_gaps', []), 'gap')}
-      </div>
+      <div class="tags">{_tags(a.get('content_gaps', []), 'gap')}</div>
     </div>
+  </div>
+
+  <!-- Kalite Analizi -->
+  <div style="margin-top:16px; background:#0d1117; border-radius:8px; padding:14px; border:1px solid #21262d;">
+    <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px;
+                color:#d29922; margin-bottom:10px;">📊 Kalite Sinyalleri</div>
+    <table style="width:100%; border-collapse:collapse;">
+      {signal_rows}
+    </table>
+    {f'<div style="margin-top:10px; font-size:12px; color:#3fb950; border-left:3px solid #238636; padding-left:10px;">✅ {why_ranking}</div>' if why_ranking else ''}
+    {f'<div style="margin-top:10px; font-size:12px; color:#f85149; border-left:3px solid #da3633; padding-left:10px;">❌ {why_not}</div>' if why_not else ''}
+    {f'<div style="margin-top:10px; font-size:12px; font-weight:600; color:#d29922;">🔧 İyileştirme Önerileri:</div>{recs_html}' if recs else ''}
   </div>
 
   {f'<div class="summary-text">{summary}</div>' if summary else ''}
@@ -487,3 +540,70 @@ def _render_pool(counter: Counter, cls: str) -> str:
   <span class="count {count_cls}">{label}</span>
 </div>"""
     return html
+
+
+def _render_quality_summary(articles: list) -> str:
+    """Tüm makalelerin kalite skorlarının karşılaştırma tablosunu üretir."""
+    if not articles or not articles[0].get("quality_grade"):
+        return '<div style="color:#484f58; font-size:13px;">Kalite skoru verisi yok (API key gerekli).</div>'
+
+    grade_colors = {"A": "#3fb950", "B": "#58a6ff", "C": "#d29922", "D": "#db6d28", "F": "#f85149"}
+
+    rows = ""
+    for a in articles:
+        grade = a.get("quality_grade", "")
+        qs = a.get("quality_score", 0)
+        color = grade_colors.get(grade, "#8b949e")
+        signals = a.get("quality_signals", {})
+        title = (a.get("title") or a.get("url", ""))[:55]
+        if len(a.get("title", "")) > 55:
+            title += "..."
+
+        def dot(val, direction, threshold=2):
+            if direction == "pos":
+                return "green" if val >= threshold else ("yellow" if val >= 1 else "red")
+            return "green" if val == 0 else ("yellow" if val <= 2 else "red")
+
+        dot_colors = {
+            "green": "#3fb950", "yellow": "#d29922", "red": "#f85149"
+        }
+
+        def cell(val, direction, threshold=2):
+            c = dot(val, direction, threshold)
+            return f'<td style="text-align:center; color:{dot_colors[c]}; font-weight:700;">{val}</td>'
+
+        rows += f"""<tr>
+  <td style="padding:8px 10px; font-size:13px;" title="{a.get('url','')}">#{a.get('rank','?')} {title}</td>
+  <td style="text-align:center; font-weight:800; color:{color}; font-size:16px;">{grade}</td>
+  <td style="text-align:center; color:{color}; font-weight:600;">{qs}</td>
+  {cell(signals.get('question_headers',0), 'pos', 3)}
+  {cell(signals.get('numeric_data',0), 'pos', 5)}
+  {cell(signals.get('authority_links',0), 'pos', 2)}
+  {cell(signals.get('uncertainty_words',0), 'neg')}
+  {cell(signals.get('sales_language',0), 'neg')}
+</tr>"""
+
+    return f"""
+<div style="overflow-x:auto;">
+<table style="width:100%; border-collapse:collapse; font-size:13px;">
+  <thead>
+    <tr style="background:#21262d; color:#8b949e;">
+      <th style="padding:10px; text-align:left;">Makale</th>
+      <th style="padding:10px;">Derece</th>
+      <th style="padding:10px;">Skor</th>
+      <th style="padding:10px;">Soru Başlık</th>
+      <th style="padding:10px;">Numerik</th>
+      <th style="padding:10px;">Otorite</th>
+      <th style="padding:10px;">Belirsizlik</th>
+      <th style="padding:10px;">Satış Dili</th>
+    </tr>
+  </thead>
+  <tbody>
+    {rows}
+  </tbody>
+</table>
+</div>
+<div style="margin-top:12px; font-size:11px; color:#484f58;">
+  🟢 İyi &nbsp;&nbsp; 🟡 Orta &nbsp;&nbsp; 🔴 Zayıf &nbsp;&nbsp;
+  Kaynak: Lastikcim #1 yazı ters mühendislik formülü
+</div>"""
