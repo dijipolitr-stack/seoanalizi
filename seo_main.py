@@ -292,6 +292,17 @@ def run_analysis(
         output_path=os.path.join(report_dir, f"{slug}-tam-seo-raporu.pdf"),
     )
 
+    # Article Intelligence verisi varsa pozisyon raporuna ekle
+    ai_data = None
+    ai_json_path = os.path.join(report_dir, f"{slug}-article-intelligence.json")
+    if os.path.exists(ai_json_path):
+        try:
+            with open(ai_json_path, encoding="utf-8") as _f:
+                ai_data = json.load(_f)
+            logger.info(f"  📄 Article Intelligence verisi yüklendi: {ai_json_path}")
+        except Exception:
+            pass
+
     # 4 raporu birden üret (Pozisyon, Etki ve Yol Haritası dahil)
     generate_all_reports(
         domain=domain,
@@ -303,7 +314,8 @@ def run_analysis(
         backlink_result=_serialize(backlink_result),
         actions=actions_list,
         llm_texts=llm_texts,
-        output_dir=report_dir
+        output_dir=report_dir,
+        article_intelligence_data=ai_data,
     )
 
     # JSON veri çıktısı da kaydet (debug/ileride kullanım için)

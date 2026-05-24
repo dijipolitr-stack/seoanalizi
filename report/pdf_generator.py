@@ -275,10 +275,163 @@ def generate_full_audit_pdf(
 """
     _generate_generic_pdf(domain, "360° SEO Audit Raporu", combined_md, output_path)
 
-def generate_position_report_pdf(domain, serp_result, llm_texts, output_path):
-    """Google Pozisyon Ölçüm Raporu."""
+def generate_position_report_pdf(domain, serp_result, llm_texts, output_path,
+                                  article_intelligence_data: dict = None):
+    """Google Pozisyon Ölçüm Raporu.
+    
+    article_intelligence_data: ArticleIntelligence.to_json() çıktısı (opsiyonel).
+    Verildiğinde raporun sonuna Rakip İçerik Analizi bölümü eklenir.
+    """
     md_text = llm_texts.get('position_analysis', 'Pozisyon analizi bulunamadı.')
+
+    # Eğer Article Intelligence verisi varsa Markdown olarak ekle
+    if article_intelligence_data and not article_intelligence_data.get("error"):
+        ai_md = _build_article_intelligence_md(article_intelligence_data)
+        md_text = md_text + "\n\n" + ai_md
+
     _generate_generic_pdf(domain, "Google Pozisyon Ölçüm Raporu", md_text, output_path)
+
+
+def _build_article_intelligence_md(data: dict) -> str:
+    """Article Intelligence verisini Markdown bölümüne dönüştürür."""
+    domain = data.get("domain", "")
+    articles = data.get("top_articles", [])[:5]
+    total = data.get("total_sitemap_urls", 0)
+    duration = data.get("analysis_duration_sec", 0)
+
+    lines = [
+        "---",
+        "",
+        "# RAKİP İÇERİK ANALİZİ",
+        "",
+        f"**Alan Adı:** {domain}  ",
+        f"**Taranan URL:** {total}  ",
+        f"**Analiz Süresi:** {duration}s  ",
+        "",
+        "Bu bölüm, rakip sitenin en önemli makalelerini ve bu makalelerdeki",
+        "gizli semantik anahtar kelimeleri göstermektedir. Veriler sitemap önceliği,",
+        "iç link grafiği ve OpenAI LLM analizi kullanılarak ücretsiz olarak elde edilmiştir.",
+        "",
+    ]
+
+    # ── Kalite Karşılaştırma Tablosu ──────────────────────────────────────────
+    grade_map = {"A": "✅ A", "B": "🔵 B", "C": "⚠️ C", "D": "🟠 D", "F": "❌ F"}
+    lines += [
+        "## İçerik Kalite Karşılaştırması (Lastikcim Formülü)",
+        "",
+        "| # | Makale | Derece | Kalite Skoru | Soru Başlık | Numerik | Otorite Link |",
+        "|---|--------|--------|:------------:|:-----------:|:-------:|:------------:|",
+    ]
+    for a in articles:
+        grade = a.get("quality_grade", "—")
+        qs = a.get("quality_score", 0)
+        sig = a.get("quality_signals", {})
+        title = (a.get("title") or a.get("url", ""))[:50]
+        lines.append(
+            f"| {a.get('rank','?')} | {title} | {grade_map.get(grade, grade)} | {qs} "
+            f"| {sig.get('question_headers', '—')} "
+            f"| {sig.get('numeric_data', '—')} "
+            f"| {sig.get('authority_links', '—')} |"
+        )
+
+    lines += ["", "🟢 İyi (≥ eşik)  🟡 Orta  🔴 Zayıf", ""]
+
+    # ── Top 5 Makale Detayları ─────────────────────────────────────────────────
+    lines += [
+        "## Top 5 En Önemli Rakip Makalesi",
+        "",
+    ]
+
+    for a in articles:
+        rank = a.get("rank", "?")
+        title = a.get("title") or "(Başlık yok)"
+        url = a.get("url", "")
+        score = a.get("importance_score", 0)
+        qs = a.get("quality_score", 0)
+        grade = a.get("quality_grade", "")
+        wc = a.get("word_count", 0)
+        intent = a.get("search_intent", "")
+        updated = (a.get("last_updated") or "")[:10] or "—"
+
+        pk = ", ".join(a.get("primary_keywords", [])[:4]) or "—"
+        sk = ", ".join(a.get("secondary_keywords", [])[:4]) or "—"
+        lsi = ", ".join(a.get("lsi_keywords", [])[:5]) or "—"
+        gaps = ", ".join(a.get("content_gaps", [])[:3]) or "—"
+        why_ranking = a.get("why_ranking", "")
+        why_not = a.get("why_not_ranking", "")
+        recs = a.get("quality_recommendations", [])[:3]
+
+        lines += [
+            f"### #{rank} — {title}",
+            "",
+            f"**URL:** {url}  ",
+            f"**Önem Skoru:** {score}  |  **Kalite:** {grade} ({qs})  |  "
+            f"**Kelime Sayısı:** {wc}  |  **Intent:** {intent}  |  **Güncelleme:** {updated}",
+            "",
+            "**🎯 Ana Anahtar Kelimeler:**",
+            pk,
+            "",
+            "**📌 İkincil Kelimeler:**",
+            sk,
+            "",
+            "**🧠 LSI / Gizli Semantik Kelimeler:**",
+            lsi,
+            "",
+            "**⚠️ İçerik Boşlukları (Fırsat Alanları):**",
+            gaps,
+            "",
+        ]
+
+        if why_ranking:
+            lines += [f"✅ **Neden iyi sıralıyor:** {why_ranking}", ""]
+        if why_not:
+            lines += [f"❌ **Neden sıralamada yok:** {why_not}", ""]
+        if recs:
+            lines.append("**🔧 İyileştirme Önerileri:**")
+            for rec in recs:
+                lines.append(f"- {rec}")
+            lines.append("")
+
+        lines.append("---")
+        lines.append("")
+
+    # ── Tüm Kelime Havuzu ─────────────────────────────────────────────────────
+    all_primary = []
+    all_lsi = []
+    all_gaps_pool = []
+    from collections import Counter
+    for a in articles:
+        all_primary.extend(a.get("primary_keywords", []))
+        all_lsi.extend(a.get("lsi_keywords", []))
+        all_gaps_pool.extend(a.get("content_gaps", []))
+
+    lines += [
+        "## Tüm Kelime Havuzu (Top 5 Makaleden)",
+        "",
+        "### 🎯 En Sık Ana Kelimeler",
+        "",
+    ]
+    for kw, cnt in Counter(all_primary).most_common(15):
+        lines.append(f"- **{kw}** (×{cnt})")
+
+    lines += [
+        "",
+        "### 🧠 En Sık LSI / Semantik Kelimeler",
+        "",
+    ]
+    for kw, cnt in Counter(all_lsi).most_common(15):
+        lines.append(f"- {kw} (×{cnt})")
+
+    lines += [
+        "",
+        "### ⚠️ Tespit Edilen İçerik Boşlukları",
+        "",
+    ]
+    for kw, cnt in Counter(all_gaps_pool).most_common(10):
+        lines.append(f"- *{kw}* (×{cnt})")
+
+    lines += ["", "---", ""]
+    return "\n".join(lines)
 
 def generate_impact_report_pdf(domain, comp_result, backlink_result, llm_texts, output_path):
     """SEO Çalışmalarının Etki Raporu."""
@@ -301,8 +454,13 @@ def generate_all_reports(
     actions: list,
     llm_texts: dict,
     output_dir: str,
+    article_intelligence_data: dict = None,
 ):
-    """4 raporun hepsini üretir."""
+    """4 raporun hepsini üretir.
+    
+    article_intelligence_data: ArticleIntelligence.to_json() çıktısı (opsiyonel).
+    Verildiğinde Pozisyon Raporuna Rakip İçerik Analizi bölümü eklenir.
+    """
     os.makedirs(output_dir, exist_ok=True)
     slug = domain.replace(".", "-").replace("www-", "")
 
@@ -317,12 +475,13 @@ def generate_all_reports(
         output_path=os.path.join(output_dir, f"{slug}-tam-seo-raporu.pdf"),
     )
 
-    # Rapor 2: Pozisyon Raporu
+    # Rapor 2: Pozisyon Raporu (+ Article Intelligence)
     generate_position_report_pdf(
         domain=domain,
         serp_result=serp_result,
         llm_texts=llm_texts,
         output_path=os.path.join(output_dir, f"{slug}-pozisyon-raporu.pdf"),
+        article_intelligence_data=article_intelligence_data,
     )
 
     # Rapor 3: Etki Raporu
