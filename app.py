@@ -116,12 +116,25 @@ def dashboard():
         return redirect(url_for('dashboard'))
 
     reports = []
+    all_files = []
     if os.path.exists("reports"):
-        for filename in os.listdir("reports"):
-            if filename.endswith(".pdf"):
+        for filename in sorted(os.listdir("reports"), reverse=True):
+            fpath = os.path.join("reports", filename)
+            if not os.path.isfile(fpath):
+                continue
+            ext = filename.rsplit(".", 1)[-1].lower() if "." in filename else ""
+            size_bytes = os.path.getsize(fpath)
+            if size_bytes < 1024:
+                size_str = f"{size_bytes} B"
+            elif size_bytes < 1024 * 1024:
+                size_str = f"{size_bytes // 1024} KB"
+            else:
+                size_str = f"{size_bytes / 1024 / 1024:.1f} MB"
+            all_files.append({"name": filename, "ext": ext, "size": size_str})
+            if ext == "pdf":
                 reports.append(filename)
 
-    return render_template('dashboard.html', reports=reports, tasks=TASK_STATUS)
+    return render_template('dashboard.html', reports=reports, tasks=TASK_STATUS, all_files=all_files)
 
 
 @app.route('/status/<domain>')
@@ -138,6 +151,39 @@ def download(filename):
     if os.path.exists(filepath):
         return send_file(filepath, as_attachment=True)
     return "Dosya bulunamadı", 404
+
+
+@app.route('/files/download/<filename>')
+def files_download(filename):
+    """Herhangi bir rapor dosyasını indir (PDF, HTML, JSON)."""
+    if 'user' not in session:
+        return redirect(url_for('login'))
+    # Güvenlik: sadece reports/ klasöründeki dosyalara izin ver
+    filename = os.path.basename(filename)
+    filepath = os.path.join("reports", filename)
+    if os.path.exists(filepath):
+        return send_file(filepath, as_attachment=True)
+    return "Dosya bulunamadı", 404
+
+
+@app.route('/files/view/<filename>')
+def files_view(filename):
+    """HTML/JSON dosyasını tarayıcıda aç."""
+    if 'user' not in session:
+        return redirect(url_for('login'))
+    filename = os.path.basename(filename)
+    filepath = os.path.join("reports", filename)
+    if not os.path.exists(filepath):
+        return "Dosya bulunamadı", 404
+    ext = filename.rsplit(".", 1)[-1].lower()
+    if ext == "html":
+        with open(filepath, encoding="utf-8") as f:
+            return f.read()
+    elif ext == "json":
+        with open(filepath, encoding="utf-8") as f:
+            content = f.read()
+        return f'<pre style="background:#0d1117;color:#e6edf3;padding:24px;font-size:13px;">{content}</pre>'
+    return send_file(filepath, as_attachment=False)
 
 
 # ─── Article Intelligence Endpoint'leri ───────────────────────────────────────

@@ -6,6 +6,67 @@
     <title>Dashboard | Akıllı Watchdog</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+      .files-panel { margin-top: 24px; }
+      .files-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+      .files-table th {
+        background: rgba(255,255,255,0.05);
+        color: #8b949e;
+        font-weight: 600;
+        padding: 10px 12px;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      .files-table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        vertical-align: middle;
+      }
+      .files-table tr:hover td { background: rgba(255,255,255,0.03); }
+      .file-icon { font-size: 16px; margin-right: 6px; }
+      .file-name { color: #e6edf3; font-weight: 500; }
+      .file-type-badge {
+        display: inline-block;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 7px;
+        text-transform: uppercase;
+      }
+      .badge-pdf  { background: #2d1117; color: #f85149; border: 1px solid #6e2020; }
+      .badge-html { background: #1e1535; color: #bc8cff; border: 1px solid #3d2870; }
+      .badge-json { background: #132032; color: #58a6ff; border: 1px solid #1f4a7a; }
+      .btn-file-action {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 6px;
+        color: #e6edf3;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 12px;
+        text-decoration: none;
+        margin-right: 6px;
+        display: inline-block;
+        transition: background 0.2s;
+      }
+      .btn-file-action:hover { background: rgba(255,255,255,0.15); }
+      .btn-file-action.open { background: rgba(88,166,255,0.15); border-color: #58a6ff; color: #79c0ff; }
+      .btn-file-action.open:hover { background: rgba(88,166,255,0.25); }
+      .empty-files { color: #484f58; font-size: 13px; padding: 20px 0; }
+      .file-nav-link {
+        color: #8b949e;
+        text-decoration: none;
+        font-size: 13px;
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 1px solid rgba(255,255,255,0.1);
+        display: inline-block;
+        margin-top: 12px;
+        transition: all 0.2s;
+      }
+      .file-nav-link:hover { color: #58a6ff; border-color: #58a6ff; background: rgba(88,166,255,0.1); }
+    </style>
 </head>
 <body class="dashboard-body">
 
@@ -14,9 +75,12 @@
             <span class="logo-icon">👁️</span>
             <h2>Akıllı <strong>Watchdog</strong></h2>
         </div>
-        <div class="nav-user">
-            <span>Hoş geldin, {{ session['user'] }}</span>
-            <a href="/logout" class="btn-logout">Çıkış Yap</a>
+        <div style="display:flex; gap:12px; align-items:center;">
+            <a href="/article-intelligence" style="color:#58a6ff; text-decoration:none; font-size:13px; font-weight:600;">🧠 Article Intelligence</a>
+            <div class="nav-user">
+                <span>Hoş geldin, {{ session['user'] }}</span>
+                <a href="/logout" class="btn-logout">Çıkış Yap</a>
+            </div>
         </div>
     </nav>
 
@@ -53,7 +117,7 @@
                         {% if status == 'running' %}
                             <li class="task-item running">
                                 <div class="loader"></div>
-                                <span><strong>{{ domain }}</strong> analiz ediliyor... (Crawl & OpenAI)</span>
+                                <span><strong>{{ domain }}</strong> analiz ediliyor...</span>
                             </li>
                         {% endif %}
                     {% endfor %}
@@ -62,36 +126,56 @@
             {% endif %}
         </section>
 
-        <!-- Mevcut Raporlar -->
-        <section class="glass-panel reports-panel">
-            <h3>Üretilmiş PDF Raporları</h3>
-            
-            {% if reports %}
-            <div class="reports-grid">
-                {% for report in reports %}
-                <div class="report-card">
-                    <div class="report-icon">📄</div>
-                    <div class="report-info">
-                        <h4>{{ report }}</h4>
-                        <a href="/download/{{ report }}" class="btn-download">İndir</a>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
+        <!-- Tüm Dosyalar -->
+        <section class="glass-panel files-panel">
+            <h3>📁 Tüm Dosyalar <span style="font-size:13px; color:#8b949e; font-weight:400;">(reports/ klasörü)</span></h3>
+
+            {% if all_files %}
+            <table class="files-table">
+                <thead>
+                    <tr>
+                        <th>Dosya Adı</th>
+                        <th>Tür</th>
+                        <th>Boyut</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for f in all_files %}
+                    <tr>
+                        <td>
+                            <span class="file-icon">
+                                {% if f.ext == 'pdf' %}📄{% elif f.ext == 'html' %}🌐{% elif f.ext == 'json' %}📋{% else %}📁{% endif %}
+                            </span>
+                            <span class="file-name">{{ f.name }}</span>
+                        </td>
+                        <td>
+                            <span class="file-type-badge badge-{{ f.ext }}">{{ f.ext }}</span>
+                        </td>
+                        <td style="color:#8b949e; font-size:12px;">{{ f.size }}</td>
+                        <td>
+                            {% if f.ext in ['html', 'json'] %}
+                            <a href="/files/view/{{ f.name }}" target="_blank" class="btn-file-action open">👁 Aç</a>
+                            {% endif %}
+                            <a href="/files/download/{{ f.name }}" class="btn-file-action">↓ İndir</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
             {% else %}
-            <p class="empty-state">Henüz üretilmiş bir rapor bulunmuyor.</p>
+            <p class="empty-files">Henüz hiçbir dosya üretilmedi. Analiz başlatın veya Article Intelligence çalıştırın.</p>
             {% endif %}
+
+            <a href="/article-intelligence" class="file-nav-link">🧠 Makale Analizi Başlat →</a>
         </section>
 
     </main>
 
     <script>
-        // Sadece 'running' olan task varsa sayfayı periyodik yenile
         const hasRunningTask = document.querySelector('.task-item.running');
         if (hasRunningTask) {
-            setTimeout(() => {
-                window.location.reload();
-            }, 10000); // 10 saniyede bir sayfayı yeniler
+            setTimeout(() => { window.location.reload(); }, 10000);
         }
     </script>
 </body>
