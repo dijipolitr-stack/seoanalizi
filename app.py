@@ -1,12 +1,16 @@
 import os
 import json
 import threading
-from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, send_file
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, send_file, Response
 from werkzeug.security import generate_password_hash, check_password_hash
 
 # Uygulama ve Gizli Anahtar
 app = Flask(__name__)
 app.secret_key = 'super_secret_seo_key_for_watchdog'
+
+@app.route('/favicon.ico')
+def favicon():
+    return Response(status=204)  # No Content — tarayıcıya "yok ama hata da değil" der
 
 # Hardcoded Kullanıcı (Veritabanı olmadan hızlı test için)
 USERS = {
@@ -43,12 +47,20 @@ def run_article_intelligence_async(domain: str):
         result = ai.analyze(domain)
         AI_RESULTS[domain] = ai.to_json(result)
 
-        # Diske de kaydet (varsa)
+        # JSON ve HTML raporları diske kaydet
         os.makedirs("reports", exist_ok=True)
         safe_domain = domain.replace("https://", "").replace("http://", "").replace("/", "-").replace(".", "-")
-        output_path = os.path.join("reports", f"{safe_domain}-article-intelligence.json")
-        with open(output_path, "w", encoding="utf-8") as f:
+
+        json_path = os.path.join("reports", f"{safe_domain}-article-intelligence.json")
+        with open(json_path, "w", encoding="utf-8") as f:
             json.dump(AI_RESULTS[domain], f, ensure_ascii=False, indent=2)
+
+        # HTML raporu üret
+        from report.article_intelligence_report import generate_html_report
+        html_content = generate_html_report(AI_RESULTS[domain])
+        html_path = os.path.join("reports", f"{safe_domain}-article-intelligence-rapor.html")
+        with open(html_path, "w", encoding="utf-8") as f:
+            f.write(html_content)
 
         TASK_STATUS[task_key] = "completed"
     except Exception as e:
@@ -222,6 +234,40 @@ def ai_download(domain):
     fpath = os.path.join("reports", f"{safe}-article-intelligence.json")
     if os.path.exists(fpath):
         return send_file(fpath, as_attachment=True)
+    return "Dosya bulunamadı", 404
+
+
+@app.route('/article-intelligence/report/<path:domain>')
+def ai_report_view(domain):
+    """HTML raporu tarayıcıda aç (yazdırılabilir)."""
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
+    safe = domain.replace("https://", "").replace("http://", "").replace("/", "-").replace(".", "-")
+    fpath = os.path.join("reports", f"{safe}-article-intelligence-rapor.html")
+
+    if os.path.exists(fpath):
+        with open(fpath, encoding="utf-8") as f:
+            return f.read()
+
+    # Dosya yoksa bellekten üret
+    if domain in AI_RESULTS:
+        from report.article_intelligence_report import generate_html_report
+        return generate_html_report(AI_RESULTS[domain])
+
+    return "Rapor bulunamadı — önce analizi tamamlayın.", 404
+
+
+@app.route('/article-intelligence/report-download/<path:domain>')
+def ai_report_download(domain):
+    """HTML raporu dosya olarak indir."""
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
+    safe = domain.replace("https://", "").replace("http://", "").replace("/", "-").replace(".", "-")
+    fpath = os.path.join("reports", f"{safe}-article-intelligence-rapor.html")
+    if os.path.exists(fpath):
+        return send_file(fpath, as_attachment=True, download_name=f"article-intelligence-{safe}.html")
     return "Dosya bulunamadı", 404
 
 
