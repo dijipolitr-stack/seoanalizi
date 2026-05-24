@@ -1,4 +1,5 @@
 import os
+import json
 import threading
 from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, send_file
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -15,15 +16,14 @@ USERS = {
 # Çalışma durumunu tutmak için basit memory dict
 TASK_STATUS = {}
 
+# Article Intelligence sonuçlarını bellekte tut (Railway'de disk kalıcı değil)
+AI_RESULTS: dict[str, dict] = {}
+
+
 def run_seo_bot_async(domain: str):
     """Arka planda seo_main.py'nin çalışmasını tetikler."""
     TASK_STATUS[domain] = "running"
     try:
-        from seo_main import main as run_seo
-        # main() fonksiyonu artık --no-llm gibi argümanlarla çalışıyor ama 
-        # kodda sys.argv tabanlı bir yapı var.
-        # seo_main.py içerisindeki main() fonksiyonu argümanları sys.argv'den okuyor.
-        # sys.argv'yi geçici olarak değiştirelim veya bir process çağıralım.
         import subprocess
         subprocess.run(["python", "seo_main.py", domain], check=True)
         TASK_STATUS[domain] = "completed"
@@ -31,73 +31,200 @@ def run_seo_bot_async(domain: str):
         print(f"Hata oluştu: {e}")
         TASK_STATUS[domain] = "failed"
 
+
+def run_article_intelligence_async(domain: str):
+    """Article Intelligence analizini arka planda çalıştırır."""
+    task_key = f"ai:{domain}"
+    TASK_STATUS[task_key] = "running"
+    try:
+        from analyzer.article_intelligence import ArticleIntelligence
+        openai_key = os.environ.get("OPENAI_API_KEY")
+        ai = ArticleIntelligence(openai_api_key=openai_key, top_n=15)
+        result = ai.analyze(domain)
+        AI_RESULTS[domain] = ai.to_json(result)
+
+        # Diske de kaydet (varsa)
+        os.makedirs("reports", exist_ok=True)
+        safe_domain = domain.replace("https://", "").replace("http://", "").replace("/", "-").replace(".", "-")
+        output_path = os.path.join("reports", f"{safe_domain}-article-intelligence.json")
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(AI_RESULTS[domain], f, ensure_ascii=False, indent=2)
+
+        TASK_STATUS[task_key] = "completed"
+    except Exception as e:
+        print(f"Article Intelligence hatası: {e}")
+        TASK_STATUS[task_key] = "failed"
+        AI_RESULTS[domain] = {"error": str(e)}
+
+
+# ─── Rotalar ──────────────────────────────────────────────────────────────────
+
 @app.route('/')
 def home():
     if 'user' in session:
         return redirect(url_for('dashboard'))
     return redirect(url_for('login'))
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        
         if username in USERS and check_password_hash(USERS.get(username), password):
             session['user'] = username
             return redirect(url_for('dashboard'))
         else:
             flash('Hatalı kullanıcı adı veya şifre.', 'danger')
-            
     return render_template('login.html')
+
 
 @app.route('/logout')
 def logout():
     session.pop('user', None)
     return redirect(url_for('login'))
 
+
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
     if 'user' not in session:
         return redirect(url_for('login'))
-        
+
     if request.method == 'POST':
         domain = request.form.get('domain')
         if not domain:
             flash('Lütfen geçerli bir domain girin.', 'warning')
             return redirect(url_for('dashboard'))
-            
-        # Botu asenkron başlat
+
         thread = threading.Thread(target=run_seo_bot_async, args=(domain,))
         thread.daemon = True
         thread.start()
-        
-        flash(f"{domain} için analiz arka planda başlatıldı! Yaklaşık 5 dakika sürebilir.", "info")
+
+        flash(f"{domain} için SEO analizi arka planda başlatıldı!", "info")
         return redirect(url_for('dashboard'))
-        
-    # Mevcut raporları listele
+
     reports = []
     if os.path.exists("reports"):
         for filename in os.listdir("reports"):
             if filename.endswith(".pdf"):
                 reports.append(filename)
-                
+
     return render_template('dashboard.html', reports=reports, tasks=TASK_STATUS)
+
 
 @app.route('/status/<domain>')
 def status(domain):
     """JS ile periyodik olarak durumu kontrol etmek için endpoint."""
     return jsonify({"status": TASK_STATUS.get(domain, "unknown")})
 
+
 @app.route('/download/<filename>')
 def download(filename):
     if 'user' not in session:
         return redirect(url_for('login'))
-        
     filepath = os.path.join("reports", filename)
     if os.path.exists(filepath):
         return send_file(filepath, as_attachment=True)
     return "Dosya bulunamadı", 404
 
+
+# ─── Article Intelligence Endpoint'leri ───────────────────────────────────────
+
+@app.route('/article-intelligence', methods=['GET', 'POST'])
+def article_intelligence():
+    """
+    En çok ziyaret edilen makaleleri bul + gizli kelime analizi.
+    GET  → form göster
+    POST → analizi başlat
+    """
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
+    if request.method == 'POST':
+        domain = request.form.get('domain', '').strip()
+        if not domain:
+            flash('Lütfen geçerli bir domain girin.', 'warning')
+            return redirect(url_for('article_intelligence'))
+
+        task_key = f"ai:{domain}"
+        if TASK_STATUS.get(task_key) == "running":
+            flash(f"{domain} için analiz zaten çalışıyor, lütfen bekleyin.", "info")
+            return redirect(url_for('article_intelligence'))
+
+        thread = threading.Thread(target=run_article_intelligence_async, args=(domain,))
+        thread.daemon = True
+        thread.start()
+
+        flash(f"{domain} için makale analizi başlatıldı! Birkaç dakika sürebilir.", "info")
+        return redirect(url_for('article_intelligence'))
+
+    # Tamamlanan analizleri listele
+    completed = {
+        domain: result
+        for domain, result in AI_RESULTS.items()
+        if not result.get("error")
+    }
+
+    # Disk'teki JSON dosyaları da ekle (Railway restart sonrası)
+    if os.path.exists("reports"):
+        for fname in os.listdir("reports"):
+            if fname.endswith("-article-intelligence.json"):
+                domain_key = fname.replace("-article-intelligence.json", "")
+                if domain_key not in completed:
+                    try:
+                        with open(os.path.join("reports", fname), encoding="utf-8") as f:
+                            completed[domain_key] = json.load(f)
+                    except Exception:
+                        pass
+
+    return render_template(
+        'article_intelligence.html',
+        tasks=TASK_STATUS,
+        results=completed,
+    )
+
+
+@app.route('/article-intelligence/status/<path:domain>')
+def ai_status(domain):
+    """Article Intelligence analiz durumunu döner."""
+    task_key = f"ai:{domain}"
+    return jsonify({
+        "status": TASK_STATUS.get(task_key, "unknown"),
+        "has_result": domain in AI_RESULTS,
+    })
+
+
+@app.route('/article-intelligence/result/<path:domain>')
+def ai_result(domain):
+    """
+    Article Intelligence JSON sonucunu döner.
+    seo-article-panel botu bu endpoint'i çağıracak.
+    """
+    if domain not in AI_RESULTS:
+        # Disk'ten dene
+        safe = domain.replace("https://", "").replace("http://", "").replace("/", "-").replace(".", "-")
+        fpath = os.path.join("reports", f"{safe}-article-intelligence.json")
+        if os.path.exists(fpath):
+            with open(fpath, encoding="utf-8") as f:
+                return jsonify(json.load(f))
+        return jsonify({"error": "Sonuç bulunamadı"}), 404
+
+    return jsonify(AI_RESULTS[domain])
+
+
+@app.route('/article-intelligence/download/<path:domain>')
+def ai_download(domain):
+    """Article Intelligence JSON sonucunu dosya olarak indir."""
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
+    safe = domain.replace("https://", "").replace("http://", "").replace("/", "-").replace(".", "-")
+    fpath = os.path.join("reports", f"{safe}-article-intelligence.json")
+    if os.path.exists(fpath):
+        return send_file(fpath, as_attachment=True)
+    return "Dosya bulunamadı", 404
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+

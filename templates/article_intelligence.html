@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article Intelligence — SEO Analyzer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      height: 60px;
+    }
+    nav .logo { font-weight: 700; font-size: 18px; color: #58a6ff; }
+    nav a {
+      color: #8b949e;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: color .2s, background .2s;
+    }
+    nav a:hover { color: #e6edf3; background: #21262d; }
+    nav a.active { color: #58a6ff; }
+
+    /* ── Layout ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+
+    h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+    .subtitle { color: #8b949e; font-size: 14px; margin-bottom: 32px; }
+
+    /* ── Form Card ── */
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .card h2 { font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #58a6ff; }
+
+    .form-row { display: flex; gap: 12px; align-items: center; }
+    .form-row input {
+      flex: 1;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      color: #e6edf3;
+      font-family: inherit;
+      font-size: 14px;
+      padding: 10px 14px;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .form-row input:focus { border-color: #58a6ff; }
+    .form-row input::placeholder { color: #484f58; }
+
+    .btn {
+      background: #238636;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 20px;
+      transition: background .2s, transform .1s;
+      white-space: nowrap;
+    }
+    .btn:hover { background: #2ea043; }
+    .btn:active { transform: scale(0.98); }
+    .btn.secondary { background: #21262d; border: 1px solid #30363d; }
+    .btn.secondary:hover { background: #30363d; }
+
+    /* ── Alert ── */
+    .alert {
+      border-radius: 8px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      padding: 12px 16px;
+    }
+    .alert-info    { background: #0d2137; border: 1px solid #1f6feb; color: #79c0ff; }
+    .alert-success { background: #0d2116; border: 1px solid #238636; color: #56d364; }
+    .alert-warning { background: #231a06; border: 1px solid #9e6a03; color: #e3b341; }
+    .alert-danger  { background: #2d1117; border: 1px solid #da3633; color: #ff7b72; }
+
+    /* ── Spinner ── */
+    .spinner {
+      width: 18px; height: 18px;
+      border: 2px solid #30363d;
+      border-top-color: #58a6ff;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Running tasks ── */
+    .running-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: #0d2137;
+      border: 1px solid #1f6feb;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .running-item .domain { color: #79c0ff; font-weight: 600; }
+
+    /* ── Results ── */
+    .result-section { margin-bottom: 40px; }
+    .result-section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .domain-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px 10px 0 0;
+      padding: 14px 20px;
+    }
+    .domain-header .domain-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #58a6ff;
+    }
+    .domain-header .meta {
+      font-size: 12px;
+      color: #8b949e;
+    }
+    .domain-header .actions { display: flex; gap: 8px; }
+
+    .articles-table-wrapper {
+      border: 1px solid #30363d;
+      border-top: none;
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead { background: #21262d; }
+    th {
+      color: #8b949e;
+      font-weight: 600;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    td { padding: 12px 14px; border-top: 1px solid #21262d; vertical-align: top; }
+    tr:hover td { background: #161b22; }
+
+    .score-badge {
+      background: #0d2137;
+      border: 1px solid #1f6feb;
+      border-radius: 6px;
+      color: #79c0ff;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 2px 8px;
+    }
+    .score-badge.high { background: #0d2116; border-color: #238636; color: #56d364; }
+    .score-badge.medium { background: #231a06; border-color: #9e6a03; color: #e3b341; }
+
+    .intent-badge {
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 6px;
+      text-transform: uppercase;
+    }
+    .intent-informational { background: #1f2d3d; color: #79c0ff; }
+    .intent-transactional { background: #1a2a1a; color: #56d364; }
+    .intent-commercial     { background: #2d1f0a; color: #e3b341; }
+    .intent-navigational   { background: #2a1a2a; color: #d2a8ff; }
+
+    .keyword-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tag {
+      background: #21262d;
+      border-radius: 4px;
+      color: #e6edf3;
+      font-size: 11px;
+      padding: 2px 7px;
+    }
+    .tag.primary { background: #132032; color: #79c0ff; border: 1px solid #1f6feb; }
+    .tag.lsi     { background: #1a1a2e; color: #d2a8ff; }
+    .tag.gap     { background: #2d1a1a; color: #ff7b72; font-style: italic; }
+
+    .url-link {
+      color: #8b949e;
+      font-size: 11px;
+      text-decoration: none;
+      display: block;
+      max-width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .url-link:hover { color: #58a6ff; }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #484f58;
+    }
+    .empty-state .icon { font-size: 48px; margin-bottom: 16px; }
+    .empty-state p { font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">🔍 SEO Analyzer</span>
+  <a href="/dashboard">Dashboard</a>
+  <a href="/article-intelligence" class="active">Article Intelligence</a>
+  <a href="/logout" style="margin-left:auto;">Çıkış</a>
+</nav>
+
+<div class="container">
+  <h1>🧠 Article Intelligence</h1>
+  <p class="subtitle">Rakip sitenin en önemli makalelerini bul — gizli semantik kelimeleri çıkar. Sıfır ek API maliyeti.</p>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for cat, msg in messages %}
+      <div class="alert alert-{{ cat }}">{{ msg }}</div>
+    {% endfor %}
+  {% endwith %}
+
+  <!-- Analiz Başlat -->
+  <div class="card">
+    <h2>Yeni Analiz Başlat</h2>
+    <form method="POST" action="/article-intelligence">
+      <div class="form-row">
+        <input
+          type="text"
+          name="domain"
+          placeholder="lastikborsasi.com veya https://lastikborsasi.com"
+          required
+          autofocus
+        />
+        <button type="submit" class="btn">Analiz Et →</button>
+      </div>
+    </form>
+    <p style="margin-top:12px; font-size:12px; color:#484f58;">
+      ⏱ Ortalama süre: 2–5 dakika • 📄 sitemap.xml + iç link grafiği + OpenAI analizi
+    </p>
+  </div>
+
+  <!-- Çalışan Analizler -->
+  {% set running = [] %}
+  {% for key, status in tasks.items() %}
+    {% if key.startswith('ai:') and status == 'running' %}
+      {% set _ = running.append(key[3:]) %}
+    {% endif %}
+  {% endfor %}
+
+  {% if running %}
+  <div class="card">
+    <h2>⏳ Devam Eden Analizler</h2>
+    {% for domain in running %}
+    <div class="running-item" id="running-{{ loop.index }}">
+      <span class="spinner"></span>
+      <span class="domain">{{ domain }}</span>
+      <span style="color:#8b949e; font-size:12px;">analiz ediliyor...</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <script>
+    (function() {
+      const runningDomains = {{ running | tojson }};
+      function checkStatus() {
+        runningDomains.forEach(function(domain) {
+          fetch('/article-intelligence/status/' + domain)
+            .then(r => r.json())
+            .then(data => {
+              if (data.status === 'completed') {
+                window.location.reload();
+              }
+            });
+        });
+      }
+      setInterval(checkStatus, 5000);
+    })();
+  </script>
+  {% endif %}
+
+  <!-- Tamamlanan Analizler -->
+  {% if results %}
+  <div class="result-section">
+    <h2>📊 Tamamlanan Analizler</h2>
+
+    {% for domain_key, data in results.items() %}
+    <div>
+      <div class="domain-header">
+        <div>
+          <div class="domain-name">{{ data.domain }}</div>
+          <div class="meta">
+            {{ data.total_sitemap_urls }} sitemap URL •
+            {{ data.top_articles|length }} makale analiz edildi •
+            {{ data.analysis_duration_sec }}s
+          </div>
+        </div>
+        <div class="actions">
+          <a href="/article-intelligence/result/{{ data.domain }}" target="_blank" class="btn secondary">JSON</a>
+          <a href="/article-intelligence/download/{{ data.domain }}" class="btn">↓ İndir</a>
+        </div>
+      </div>
+
+      <div class="articles-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Makale</th>
+              <th>Skor</th>
+              <th>Intent</th>
+              <th>Ana Kelimeler</th>
+              <th>LSI / Gizli Kelimeler</th>
+              <th>İçerik Boşlukları</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for article in data.top_articles %}
+            <tr>
+              <td style="color:#484f58; font-weight:700;">{{ article.rank }}</td>
+              <td>
+                <div style="font-weight:600; font-size:13px; margin-bottom:4px; max-width:200px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="{{ article.title }}">
+                  {{ article.title or '(başlık yok)' }}
+                </div>
+                <a href="{{ article.url }}" target="_blank" class="url-link">{{ article.url }}</a>
+                <div style="margin-top:4px; font-size:11px; color:#484f58;">
+                  {{ article.word_count }} kelime
+                  {% if article.last_updated %} • {{ article.last_updated[:10] }}{% endif %}
+                </div>
+              </td>
+              <td>
+                {% if article.importance_score >= 60 %}
+                  <span class="score-badge high">{{ article.importance_score }}</span>
+                {% elif article.importance_score >= 35 %}
+                  <span class="score-badge medium">{{ article.importance_score }}</span>
+                {% else %}
+                  <span class="score-badge">{{ article.importance_score }}</span>
+                {% endif %}
+              </td>
+              <td>
+                {% if article.search_intent %}
+                  <span class="intent-badge intent-{{ article.search_intent }}">{{ article.search_intent }}</span>
+                {% else %}
+                  <span style="color:#484f58; font-size:11px;">—</span>
+                {% endif %}
+              </td>
+              <td>
+                <div class="keyword-tags">
+                  {% for kw in article.primary_keywords[:3] %}
+                    <span class="tag primary">{{ kw }}</span>
+                  {% endfor %}
+                  {% for kw in article.secondary_keywords[:3] %}
+                    <span class="tag">{{ kw }}</span>
+                  {% endfor %}
+                </div>
+              </td>
+              <td>
+                <div class="keyword-tags">
+                  {% for kw in article.lsi_keywords[:5] %}
+                    <span class="tag lsi">{{ kw }}</span>
+                  {% endfor %}
+                </div>
+              </td>
+              <td>
+                <div class="keyword-tags">
+                  {% for gap in article.content_gaps[:2] %}
+                    <span class="tag gap">{{ gap }}</span>
+                  {% endfor %}
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% else %}
+  <div class="empty-state">
+    <div class="icon">🔍</div>
+    <p>Henüz tamamlanmış analiz yok.<br>Yukarıdaki formu kullanarak ilk analizini başlat.</p>
+  </div>
+  {% endif %}
+
+</div>
+</body>
+</html>
