@@ -206,8 +206,13 @@ def _save_as_pdf(html: str, output_path: str):
         logger.error(f"❌ Playwright PDF üretim hatası: {e}")
         logger.warning(f"⚠️ HTML olarak bırakıldı: {html_path}")
 
-def _generate_generic_pdf(domain: str, title: str, markdown_text: str, output_path: str):
-    """Ortak Markdown to PDF generator."""
+def _generate_generic_pdf(domain: str, title: str, markdown_text: str, output_path: str,
+                          header_suffix: str = "SEO Audit"):
+    """Ortak Markdown to PDF generator.
+
+    header_suffix: sayfa sağ üst köşesindeki koşu başlığı (SEO için "SEO Audit",
+    GEO için "GEO Görünürlük" gibi). Varsayılan korunur, eski çağrılar etkilenmez.
+    """
     now = datetime.now().strftime("%d %B %Y")
     
     # Markdown'u HTML'e çevir
@@ -226,7 +231,7 @@ def _generate_generic_pdf(domain: str, title: str, markdown_text: str, output_pa
 /* Header sağ üst metni PDF motoru için */
 @page {{
     @top-right {{
-        content: "{domain} SEO Audit";
+        content: "{domain} {header_suffix}";
         font-size: 9pt;
         color: #aaa;
     }}

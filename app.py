@@ -36,6 +36,19 @@ def run_seo_bot_async(domain: str):
         TASK_STATUS[domain] = "failed"
 
 
+def run_geo_bot_async(domain: str):
+    """Arka planda geo_main.py'yi çalıştırır (yapay zeka görünürlük analizi)."""
+    task_key = f"geo:{domain}"
+    TASK_STATUS[task_key] = "running"
+    try:
+        import subprocess
+        subprocess.run(["python", "geo_main.py", domain], check=True)
+        TASK_STATUS[task_key] = "completed"
+    except Exception as e:
+        print(f"GEO analizi hatası: {e}")
+        TASK_STATUS[task_key] = "failed"
+
+
 def run_article_intelligence_async(domain: str):
     """Article Intelligence analizini arka planda çalıştırır."""
     task_key = f"ai:{domain}"
@@ -135,6 +148,30 @@ def dashboard():
                 reports.append(filename)
 
     return render_template('dashboard.html', reports=reports, tasks=TASK_STATUS, all_files=all_files)
+
+
+@app.route('/geo-analiz', methods=['POST'])
+def geo_analiz():
+    """GEO görünürlük analizini arka planda başlatır."""
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
+    domain = request.form.get('domain', '').strip()
+    if not domain:
+        flash('Lütfen geçerli bir domain girin.', 'warning')
+        return redirect(url_for('dashboard'))
+
+    task_key = f"geo:{domain}"
+    if TASK_STATUS.get(task_key) == "running":
+        flash(f"{domain} için GEO analizi zaten çalışıyor.", "info")
+        return redirect(url_for('dashboard'))
+
+    thread = threading.Thread(target=run_geo_bot_async, args=(domain,))
+    thread.daemon = True
+    thread.start()
+
+    flash(f"{domain} için GEO (yapay zeka görünürlük) analizi başlatıldı! Birkaç dakika sürebilir.", "info")
+    return redirect(url_for('dashboard'))
 
 
 @app.route('/status/<domain>')

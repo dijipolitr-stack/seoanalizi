@@ -103,11 +103,21 @@
                 <div class="input-inline">
                     <input type="text" name="domain" placeholder="ornek.com" required>
                     <button type="submit" class="btn-primary">
-                        <span class="btn-icon">🚀</span> Analizi Başlat
+                        <span class="btn-icon">🚀</span> SEO Analizi Başlat
                     </button>
                 </div>
             </form>
-            
+
+            <p style="margin-top:18px;">Yapay zeka aramalarında (ChatGPT, Gemini, Perplexity) görünürlüğü ölçen GEO raporu için:</p>
+            <form action="/geo-analiz" method="POST" class="analyze-form">
+                <div class="input-inline">
+                    <input type="text" name="domain" placeholder="ornek.com" required>
+                    <button type="submit" class="btn-primary">
+                        <span class="btn-icon">🤖</span> GEO Analizi Başlat
+                    </button>
+                </div>
+            </form>
+
             <!-- Canlı Görev Durumları -->
             {% if tasks %}
             <div class="tasks-container">
