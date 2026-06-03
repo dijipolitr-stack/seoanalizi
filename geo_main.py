@@ -27,12 +27,23 @@ from seo_config import SEOConfig
 from analyzer.site_crawler import SiteCrawler
 from analyzer.geo_visibility import (
     run_audit, generate_action_plan, derive_queries_from_site,
-    build_geo_report_markdown, brand_token,
+    build_geo_report_markdown, brand_token, geo_openai_key, openai_diagnostic,
 )
 from report.pdf_generator import _generate_generic_pdf
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s │ %(message)s", datefmt="%H:%M:%S")
 logger = logging.getLogger(__name__)
+
+
+def _write_status(report_dir: str, slug: str, status: dict):
+    """Çalışma durumunu/hatayı reports/ içine görünür biçimde yazar (panelden okunabilir)."""
+    try:
+        os.makedirs(report_dir, exist_ok=True)
+        status["timestamp"] = datetime.now().isoformat()
+        with open(os.path.join(report_dir, f"{slug}-geo-status.json"), "w", encoding="utf-8") as f:
+            json.dump(status, f, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
 
 
 def run_geo_analysis(url: str, num_queries: int = 15, max_pages: int = 25,
@@ -52,9 +63,21 @@ def run_geo_analysis(url: str, num_queries: int = 15, max_pages: int = 25,
     logger.info(f"🤖 GEO GÖRÜNÜRLÜK ANALİZİ — {domain}")
     logger.info("=" * 60)
 
-    if not SEOConfig.OPENAI_API_KEY:
-        logger.error("❌ OPENAI_API_KEY tanımlı değil — GEO analizi yapılamaz.")
-        return {"error": "OPENAI_API_KEY yok"}
+    if not geo_openai_key():
+        logger.error("❌ OpenAI anahtarı tanımlı değil — GEO analizi yapılamaz.")
+        _write_status(SEOConfig.REPORT_OUTPUT_DIR, slug,
+                      {"ok": False, "phase": "key", "error": "OpenAI anahtarı yok",
+                       "diagnostic": openai_diagnostic()})
+        return {"error": "OpenAI anahtarı yok"}
+
+    # Anahtarın GEO (web arama) için gerçekten çalıştığını baştan test et
+    diag = openai_diagnostic()
+    if not diag.get("ok"):
+        logger.error(f"❌ OpenAI web arama testi başarısız: {diag}")
+        _write_status(SEOConfig.REPORT_OUTPUT_DIR, slug,
+                      {"ok": False, "phase": "openai_web_search", "error": "Web arama çalışmıyor",
+                       "diagnostic": diag})
+        return {"error": f"OpenAI web arama çalışmıyor: {diag.get('detail', '')[:120]}"}
 
     # ── FAZ 1: Site tarama (sorgu türetmek için) ──
     logger.info("")
@@ -63,6 +86,8 @@ def run_geo_analysis(url: str, num_queries: int = 15, max_pages: int = 25,
     crawl_result = crawler.crawl(url)
     if not crawl_result.pages:
         logger.error("❌ Hiçbir sayfa taranamadı, site erişilemez olabilir.")
+        _write_status(SEOConfig.REPORT_OUTPUT_DIR, slug,
+                      {"ok": False, "phase": "crawl", "error": "Site erişilemez / sayfa taranamadı"})
         return {"error": "Site erişilemez"}
     titles = [p.title for p in crawl_result.pages if p.title]
     h1s = [p.h1[0] for p in crawl_result.pages if p.h1]
@@ -71,9 +96,12 @@ def run_geo_analysis(url: str, num_queries: int = 15, max_pages: int = 25,
     # ── FAZ 2: Sorgu türetme ──
     logger.info("")
     logger.info("━━━ FAZ 2: Sorgu Türetme (siteden, LLM) ━━━")
-    queries = derive_queries_from_site(domain, titles, h1s, SEOConfig.OPENAI_API_KEY, limit=num_queries)
+    queries = derive_queries_from_site(domain, titles, h1s, geo_openai_key(), limit=num_queries)
     if not queries:
         logger.error("❌ Sorgu türetilemedi.")
+        _write_status(SEOConfig.REPORT_OUTPUT_DIR, slug,
+                      {"ok": False, "phase": "derive_queries",
+                       "error": "Sorgu türetilemedi (LLM boş döndü)", "diagnostic": openai_diagnostic()})
         return {"error": "Sorgu türetilemedi"}
     logger.info(f"  ✅ {len(queries)} sorgu türetildi")
 
@@ -114,6 +142,8 @@ def run_geo_analysis(url: str, num_queries: int = 15, max_pages: int = 25,
         }, f, ensure_ascii=False, indent=2)
 
     s = audit["summary"]
+    _write_status(report_dir, slug, {"ok": True, "phase": "done", "summary": s,
+                                     "report": f"{slug}-geo-gorunurluk-raporu.pdf"})
     elapsed = time.time() - start
     logger.info("")
     logger.info("=" * 60)
@@ -150,6 +180,13 @@ def main():
         sys.exit(0)
     except Exception as e:
         logger.error(f"\n❌ Beklenmeyen hata: {e}", exc_info=True)
+        try:
+            dom = args.url.replace("https://", "").replace("http://", "").split("/")[0]
+            slug = dom.replace(".", "-").replace("www-", "")
+            _write_status(SEOConfig.REPORT_OUTPUT_DIR, slug,
+                          {"ok": False, "phase": "exception", "error": f"{type(e).__name__}: {e}"})
+        except Exception:
+            pass
         sys.exit(1)
 
 

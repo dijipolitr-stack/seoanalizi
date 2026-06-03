@@ -29,9 +29,42 @@ logger = logging.getLogger(__name__)
 OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses"
 
 
+def geo_openai_key() -> str:
+    """GEO için OpenAI anahtarı.
+
+    Önce GEO_OPENAI_API_KEY (GEO web aramasını destekleyen ayrı anahtar), yoksa
+    genel OPENAI_API_KEY. Böylece SEO'nun anahtarına dokunmadan GEO'ya web arama
+    destekli bir anahtar verilebilir.
+    """
+    return os.environ.get("GEO_OPENAI_API_KEY") or SEOConfig.OPENAI_API_KEY
+
+
 def _geo_model() -> str:
     """GEO denetimi için model: çok çağrı yapılır, ucuz model varsayılan."""
     return os.environ.get("GEO_MODEL", "gpt-4o-mini")
+
+
+def openai_diagnostic() -> dict:
+    """Tek bir küçük web aramalı çağrı yapıp anahtarın GEO için çalışıp çalışmadığını
+    test eder. Sessiz başarısızlıkların gerçek nedenini görünür kılar."""
+    key = geo_openai_key()
+    if not key:
+        return {"ok": False, "stage": "key", "detail": "OpenAI anahtarı yok (GEO_OPENAI_API_KEY / OPENAI_API_KEY)"}
+    try:
+        r = requests.post(
+            OPENAI_RESPONSES_URL,
+            headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+            json={"model": _geo_model(), "tools": [{"type": "web_search_preview"}],
+                  "tool_choice": {"type": "web_search_preview"}, "input": "test"},
+            timeout=60,
+        )
+        if r.status_code == 200:
+            return {"ok": True, "stage": "web_search", "detail": "Responses + web_search çalışıyor",
+                    "key_tail": key[-6:]}
+        return {"ok": False, "stage": "web_search", "http_status": r.status_code,
+                "detail": r.text[:300], "key_tail": key[-6:]}
+    except Exception as e:
+        return {"ok": False, "stage": "request", "detail": f"{type(e).__name__}: {e}"}
 
 
 def _quality_model() -> str:
@@ -190,9 +223,9 @@ def audit_one(query: str, brand: str, domain: str, openai_key: str, model: str) 
 
 # ── Toplu denetim ────────────────────────────────────────────────────────
 def run_audit(brand: str, domain: str, queries: list) -> dict:
-    openai_key = SEOConfig.OPENAI_API_KEY
+    openai_key = geo_openai_key()
     if not openai_key:
-        raise EnvironmentError("OPENAI_API_KEY tanımlı değil — GEO denetimi yapılamaz.")
+        raise EnvironmentError("OpenAI anahtarı tanımlı değil — GEO denetimi yapılamaz.")
     model = _geo_model()
     results: list[QueryAudit] = []
 
@@ -268,7 +301,7 @@ Aylık tekrar + 90 günlük gerçekçi hedef.
 
 Sadece bu markdown bölümünü döndür. Üst seviye başlık (# veya ##) EKLEME, doğrudan ### ile başla."""
 
-    plan = ask_openai_text(prompt, SEOConfig.OPENAI_API_KEY, _quality_model()).strip()
+    plan = ask_openai_text(prompt, geo_openai_key(), _quality_model()).strip()
     plan = re.sub(r"\s+—\s+", ", ", plan).replace("—", "-")
     return plan
 
