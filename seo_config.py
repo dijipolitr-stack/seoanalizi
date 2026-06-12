@@ -42,7 +42,7 @@ class SEOConfig:
     # ── Rapor Ayarları ────────────────────────────────────
     REPORT_LANGUAGE = os.environ.get("REPORT_LANGUAGE", "tr")
     REPORT_OUTPUT_DIR = os.environ.get("REPORT_OUTPUT_DIR", "reports")
-    COMPANY_NAME = os.environ.get("COMPANY_NAME", "SEO Analyzer")
+    COMPANY_NAME = os.environ.get("COMPANY_NAME", "GEORANK")
 
     # ── E-E-A-T Kriterleri ────────────────────────────────
     EEAT_CRITERIA = [
