@@ -6,7 +6,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 # Uygulama ve Gizli Anahtar
 app = Flask(__name__)
-app.secret_key = 'super_secret_seo_key_for_watchdog'
+app.secret_key = os.environ.get("SECRET_KEY", "georank-dev-secret-change-me")
+
+# GEORANK müşteri portalının raporları otomatik çekmesi için token korumalı API.
+# Boşsa API kapalıdır (sadece elle JSON yapıştırma çalışır).
+GEORANK_API_TOKEN = os.environ.get("GEORANK_API_TOKEN", "")
 
 @app.route('/favicon.ico')
 def favicon():
@@ -352,6 +356,68 @@ def ai_report_download(domain):
     if os.path.exists(fpath):
         return send_file(fpath, as_attachment=True, download_name=f"article-intelligence-{safe}.html")
     return "Dosya bulunamadı", 404
+
+
+# ─── GEORANK Portalı için Token Korumalı API ──────────────────────────────
+
+def _slugify_domain(domain: str) -> str:
+    """Motorun rapor dosya adı kuralı: 'https://www.x.com/y' -> 'x-com'."""
+    d = (domain or "").strip().lower()
+    d = d.replace("https://", "").replace("http://", "")
+    d = d.split("/")[0]
+    if d.startswith("www."):
+        d = d[4:]
+    return d.replace(".", "-")
+
+
+def _check_api_token() -> bool:
+    if not GEORANK_API_TOKEN:
+        return False
+    token = request.args.get("token") or request.headers.get("X-API-Token", "")
+    return token == GEORANK_API_TOKEN
+
+
+def _serve_report_json(domain: str, kind: str):
+    if not _check_api_token():
+        return jsonify({"error": "unauthorized"}), 401
+    slug = _slugify_domain(domain)
+    fname = f"{slug}-geo-analiz-verisi.json" if kind == "geo" else f"{slug}-analiz-verisi.json"
+    fpath = os.path.join("reports", fname)
+    if not os.path.exists(fpath):
+        return jsonify({"error": "not_found", "domain": domain, "kind": kind}), 404
+    with open(fpath, encoding="utf-8") as f:
+        return jsonify(json.load(f))
+
+
+@app.route('/api/geo/<path:domain>')
+def api_geo(domain):
+    """GEORANK portalı için GEO analiz verisini döndürür (token gerekli)."""
+    return _serve_report_json(domain, "geo")
+
+
+@app.route('/api/seo/<path:domain>')
+def api_seo(domain):
+    """GEORANK portalı için SEO analiz verisini döndürür (token gerekli)."""
+    return _serve_report_json(domain, "seo")
+
+
+@app.route('/api/domains')
+def api_domains():
+    """reports/ klasöründe mevcut domainleri ve rapor türlerini listeler (token gerekli)."""
+    if not _check_api_token():
+        return jsonify({"error": "unauthorized"}), 401
+    found = {}
+    if os.path.exists("reports"):
+        for fname in os.listdir("reports"):
+            if fname.endswith("-geo-analiz-verisi.json"):
+                found.setdefault(fname.replace("-geo-analiz-verisi.json", ""), {})["geo"] = True
+            elif fname.endswith("-analiz-verisi.json"):
+                found.setdefault(fname.replace("-analiz-verisi.json", ""), {})["seo"] = True
+    domains = [
+        {"slug": s, "has_geo": k.get("geo", False), "has_seo": k.get("seo", False)}
+        for s, k in sorted(found.items())
+    ]
+    return jsonify({"domains": domains})
 
 
 if __name__ == '__main__':
