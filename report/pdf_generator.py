@@ -248,7 +248,7 @@ def _generate_generic_pdf(domain: str, title: str, markdown_text: str, output_pa
 <div class="meta-box">
     <strong>Hazırlayan:</strong> {SEOConfig.COMPANY_NAME} Uzman Analizi &nbsp;&nbsp;&nbsp; 
     <strong>Tarih:</strong> {now} &nbsp;&nbsp;&nbsp; 
-    <strong>Yöntem:</strong> Akıllı Watchdog Bot Crawler, OpenAI (GPT-4o) ve SERP Analizi Entegrasyonu üzerinden üretilmiştir.
+    <strong>Yöntem:</strong> GEORANK Crawler, OpenAI (GPT-4o) ve SERP Analizi Entegrasyonu üzerinden üretilmiştir.
 </div>
 
 {html_body}
