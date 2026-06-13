@@ -420,6 +420,24 @@ def api_domains():
     return jsonify({"domains": domains})
 
 
+@app.route('/api/run/geo/<path:domain>', methods=['GET', 'POST'])
+def api_run_geo(domain):
+    """Aylık cron için: GEO analizini arka planda tetikler (token gerekli)."""
+    if not _check_api_token():
+        return jsonify({"error": "unauthorized"}), 401
+    threading.Thread(target=run_geo_bot_async, args=(domain,), daemon=True).start()
+    return jsonify({"started": True, "domain": domain, "kind": "geo"})
+
+
+@app.route('/api/run/seo/<path:domain>', methods=['GET', 'POST'])
+def api_run_seo(domain):
+    """Aylık cron için: SEO analizini arka planda tetikler (token gerekli)."""
+    if not _check_api_token():
+        return jsonify({"error": "unauthorized"}), 401
+    threading.Thread(target=run_seo_bot_async, args=(domain,), daemon=True).start()
+    return jsonify({"started": True, "domain": domain, "kind": "seo"})
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
 
